@@ -1,0 +1,31 @@
+; ===================================
+; Market Def NPC File : 3Wdr-11
+; (TaoVillage)
+; -----------------------------------
+; Name: Mike
+; Job: 
+; Map No: 11
+; Pos X 203
+; Pos Y 321
+; File name: *removed*
+; Comment: (TaoVillage)
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair)
+%150
++10
++11
+
+[@main]
+Hello <$USERNAME>,\
+I learned the hidden skill to special repair armours.\
+I do a fine job repairing them.\
+It will cost a bit more though.\ \
+<Special repair/@s_repair> Clothes\
+<Cancel/@exit>
+
+[goods]
+;Item		Amount		Time

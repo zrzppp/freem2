@@ -1,0 +1,59 @@
+; ===================================
+; Market Def NPC File : 4_jewel-B344
+; 
+; -----------------------------------
+; Name: Jeweler
+; Job: 
+; Map No: B344
+; Pos X 10
+; Pos Y 8
+; File name: *removed*
+; Comment:
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair)
+%100
++
++
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not help such an evil person like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+I will buy any unused bonus stones you have.\
+Just let me have a look at it\
+as I will pay you well\ \ 
+<Sell/@sell>\
+<Talk/@talk>\
+
+[@sell]
+Show me the bonus stone you wish to sell.\ \ \
+ <Back/@main>
+
+[@talk]
+Bonus stones protect their owner by allowing\
+him/her to have special powers.\
+mysterious magic.\ \ \
+<next/@next>\
+
+[@next]
+There is no fixed shape for the bonus stones.\
+Some are natural while the others are\
+cut to make them more powerful.\ \ \
+<close/@exit>
+
+
+[goods]
+;Item		Amount		Time

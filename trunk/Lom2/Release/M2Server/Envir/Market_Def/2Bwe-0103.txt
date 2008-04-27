@@ -1,0 +1,261 @@
+; ===================================
+; Market Def NPC File : 2Bwe-0103
+; Blacksmith in BichonProvince (WeaponShop)
+; -----------------------------------
+; Name: Vincent
+; Job: Blacksmith
+; Map No: 0
+; Pos X 19
+; Pos Y 18
+; File name: *removed*
+; Comment: Blacksmith in BichonProvince (WeaponShop)
+
+;================================================= =
+;
+; Brief Description of the switches used in this NPC.
+; [201] - Unknown
+; [202] - Unknown
+; [203] - This is set once you talk to Vincent.
+;         Now you can talk to Bill about the FateSword.
+; [204] - Unknown
+; [205] - Unknown
+; [210] - Unknown
+; [211] - Unknown
+; [212] - Unknown
+; [213] - Unknown
+; [214] - Unknown
+; [215] - Unknown
+; [216] - Unknown
+; [217] - Unknown
+; [218] - Unknown
+; [219] - Unknown
+; [220] - Unknown
+; [221] - Unknown
+; [222] - Unknown
+;
+
+;Settings
+(@buy @sell @repair @s_repair)
+%100
++5
++6
++43
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+Sorry but I do not deal with evil people like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+[@main-1]
+ Welcome to my shop? How can I be of assistance?\
+ <Buy Weapon/@buy>\
+ <Sell Weapon/@sell>\
+ <Repair Weapon/@repair>\
+ <Ask about Weapon/@qweapon>\
+ <Talk to Vincent/@talk>\
+ <Teleport Out/@Tmove>\
+ <Cancel/@exit>
+
+[@Tmove]
+#IF
+random 4
+#ACT
+mapmove 0 345 310
+break
+
+#IF
+random 4
+#ACT
+mapmove 0 344 309
+break
+
+#IF
+random 4
+#ACT
+mapmove 0 334 300
+break
+
+#IF
+random 4
+#ACT
+mapmove 0 334 301
+break
+
+#ELSEACT
+goto @Tmove
+
+[@buy]
+ Please select the item you wish to buy.\
+ <Back/@main-1>
+
+[@sell]
+ Show me the weapon you wish to sell\
+ <Back/@main-1>
+
+[@repair]
+ Which weapon would you like repaired?\
+ <Back/@main-1>
+
+[~@repair]
+ Your weapon seems to be repaired fine.\\
+ <Back/@main-1>
+
+[@qweapon]
+ When you buy a store weapon, it has some limits to its performance.\
+ However, weapons acquired from monsters (when they drop them after\
+ being slain), occasionally have a higher rating. If you bring any\
+ such weapons to me, I will usually offer a better price for it.\
+ Remember that an item's proce is depepndent upon it's condition. if\
+ it has high durability, it's selling proce is usually higher.\
+ <Back/@main-1>
+
+
+[goods]
+;Item		Amount		Time
+WoodenSword     100         	1
+BronzeSword	100		1 
+Ironsword	100		1
+Dagger		100		1
+SteelAxe	100		1
+EbonySword	100		1
+BronzeAxe	100		1
+HookedSpear	100		1
+PurifierSword	100		1
+KrissSword	100		1
+Trident		100		1
+MartialSword	100		1
+ShortSword 	100		1
+Scimitar	100		1
+HookedSword	100		1
+SteelSword	100		1
+PrinceSword	100		1
+PowerAxe	100		1
+PickAxe		100		1  
+
+;Quest Section of NPC
+
+[@talk]
+#IF
+check [205] 1
+#ACT
+goto @end
+break
+
+#IF
+check [203] 1
+#ACT
+goto @end
+break
+
+#IF
+check [202] 1
+#ACT
+goto @kang
+break
+
+#IF
+check [201] 1
+#ACT
+goto @talkwith
+break
+
+#ELSEACT
+goto @needgold
+break
+
+[@end]
+#IF
+#SAY
+It is a nice day to be open...\ \
+<Erm..Ok/@exit>
+
+
+[@needgold]
+#IF
+checkitem GoldOre 1
+#SAY
+What is that I see there glittering in your bag?\
+Is that a gold ore? Talking about gold ore,\
+Have you ever heard about the FateSword?\
+Bring me higher purity ores and i will tell you more\
+about the sword.\
+<Ok/@main-1>
+
+#ACT
+reset [201] 50
+set [201] 1
+#ELSESAY
+Quick go and get the ores I need...\ 
+<Ok/@exit>
+
+
+[@talkwith]
+#IF
+checkitem GoldOre 3
+checkdura GoldOre 15
+
+#SAY
+Ah I see you found the gold ores I need.\
+Good good, quickly give them to me.\
+I cannot pay you for them as I am having\
+to many expenses today.\
+Would you give them for free to me?\ \
+<Ok/@freegive> I'll give for free.\
+<No/@nogive> I need them.\
+
+#ELSESAY
+Quick go get the gold ores I need... \ \ 
+<Ok/@exit>
+
+[@freegive]
+#IF
+checkitem GoldOre 3
+checkdura GoldOre 13
+
+#ACT
+take GoldOre 2
+takecheckitem
+set [202] 1
+#SAY
+
+Thank you for being so generous!\
+I will give these gold ores to my friend Bill.\
+He knows everything about this FateSword.\
+He is also the only person who can make it.\
+But for him to make it there is a small thing\
+you must do for him.\ \
+<Next/@kang>
+
+
+[@nogive]
+Are you sure you cannot spare those nice GoldOres?\
+They are needed to make this FateSword.\
+Please me and Bill will need them.\
+Think about it!\ \
+<Give for Free/@freegive>\
+<Don't Give/@r_nogive>
+
+[@r_nogive]
+#IF
+#SAY
+Fine then dont give them. \
+Go and think about it! \ \
+<Ok/@exit>
+
+
+[@kang]
+#IF
+#SAY
+I will go and study these Ores now.\
+If you want to know more about this sword\
+then go talk to Bill.\
+<Ok/@exit>
+
+#ACT
+set [203] 1

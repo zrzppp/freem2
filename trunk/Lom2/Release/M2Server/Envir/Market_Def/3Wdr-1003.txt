@@ -1,0 +1,75 @@
+; ===================================
+; Market Def NPC File : 3Wdr-1003
+; (TaoVillage)
+; -----------------------------------
+; Name: Sam
+; Job: 
+; Map No: 1003
+; Pos X 13
+; Pos Y 16
+; File name: *removed*
+; Comment: (TaoVillage)
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair)
+%100
++10
++11
++15
+
+;Clothes Store
+[@main]
+I was here to learn martial arts skills but I have practiced\
+laundering and sewing instead of martial art skills.\
+It's not bad as I made money with selling extra clothing and\
+charging for repairs. Well, what do you want?\ \
+<Buy/@buy> Armour.\
+<Sell/@sell> Armour.\
+<Repair/@repair> Armour.\
+<Cancel/@exit>
+
+[@buy]
+What item do you want to buy?\ \ \
+<Back/@main>
+
+[@sell]
+Show me your clothes to be sold. I'll give you an appraisement.\
+We also trade Helmets.\
+So if you like my store please sell them to me.\ \
+<Back/@main>
+
+[@repair]
+You can repair clothes and Helmets here.\ \ \
+<Back/@main>
+
+[~@repair]
+It seems repaired fine.\ \ \
+<Back/@main>
+
+[goods]
+;Item		Amount		Time
+BaseDress(M)		100	1	
+BaseDress(F)		100	1
+LightArmour(M)		100	1
+LightArmour(F)		100	1
+HeavyArmour(M)		100	1
+HeavyArmour(F)		100	1
+SoulArmour(M)		100	1
+SoulArmour(F)		100	1
+MagicRobe(M)		100	1
+MagicRobe(F)		100	1
+IronArmour(M)		100	1
+IronArmour(M)		100	1
+PearlArmour(M)		100	1
+PearlArmour(F)		100	1
+WizardRobe(M)		100	1
+WizardRobe(F)		100	1
+BronzeHelmet		100	1
+MagicHelmet		100	1
+BrassHelmet		100	1
+GoldenTiara		100	1
+ShamanHelmet		100	1
+SkeletonHelmet		100	1

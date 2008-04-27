@@ -1,0 +1,38 @@
+; ===================================
+; Market Def NPC File : 3Edr-D608
+; BugCave (AmethystRoom)
+; -----------------------------------
+; Name: Jamey
+; Job: 
+; Map No: D608
+; Pos X 30
+; Pos Y 22
+; File name: *removed*
+; Comment: BugCave (AmethystRoom)
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair)
+%200
++10
++11
+
+[@main]
+Welcome to this dangerous place my friend,\
+here you can repair your armour.\ \
+<Repair/@repair> Armour\
+<Cancel/@exit>
+
+[@repair]
+Put in your armour for repair\
+<Back/@main>
+
+[~@repair]
+Your armour seems repaired fine.\ \
+<Back/@main>
+
+[goods]
+;Item		Amount		Time
+

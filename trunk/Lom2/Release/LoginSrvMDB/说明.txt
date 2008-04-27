@@ -1,0 +1,3 @@
+本程序使用Access数据库，数据库在IDDB目录下，有空数据库Account.mdb，此数据库为空白数据库，请替换Account.mdb
+
+Account.mdb数据库文件可以使用OFFICE中的ACCESS打开编辑，如果loginsvr在运行中，请勿打开编辑

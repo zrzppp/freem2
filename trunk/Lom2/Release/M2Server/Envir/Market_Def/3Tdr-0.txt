@@ -1,0 +1,84 @@
+; ===================================
+; Market Def NPC File : 3Tdr-0
+; Clothesshop (BichonProvince)
+; -----------------------------------
+; Name: Whitney
+; Job: 
+; Map No: 0
+; Pos X 305
+; Pos Y 607
+; File name: *removed*
+; Comment: Clothesshop (BichonProvince)
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair)
+%100
++10
++11
++15
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not help an evil person like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+Welcome. What can I do for you?\ \
+<Buy/@buy>  Clothes\
+<Sell/@sell>  Clothes\
+<Repair/@repair> Clothes\
+<Close/@exit>
+
+
+[@buy]
+What would you like to buy?\ \ \
+ <Back/@main>
+
+[@sell]
+Show me your Clothes to be sold. I'll give you an appraisement...\
+We also treat Helmets.\
+So if you don't want something, sell it here.\ \
+<Back/@main>
+
+[@repair]
+What item would you like to repair?\ \ \
+<Back/@main>
+
+[~@repair]
+The item is repaired\ \ \
+<Back/@main>
+
+[goods]
+;Item		Amount		Time
+BaseDress(M)		100	1	
+BaseDress(F)		100	1
+LightArmour(M)		100	1
+LightArmour(F)		100	1
+HeavyArmour(M)		100	1
+HeavyArmour(F)		100	1
+SoulArmour(M)		100	1
+SoulArmour(F)		100	1
+MagicRobe(M)		100	1
+MagicRobe(F)		100	1
+IronArmour(M)		100	1
+IronArmour(M)		100	1
+PearlArmour(M)		100	1
+PearlArmour(F)		100	1
+WizardRobe(M)		100	1
+WizardRobe(F)		100	1
+BronzeHelmet		100	1
+MagicHelmet		100	1
+BrassHelmet		100	1
+GoldenTiara		100	1
+ShamanHelmet		100	1
+SkeletonHelmet		100	1

@@ -1,0 +1,139 @@
+; ===================================
+; Market Def NPC File : 7Bst-0
+; GroceryStore (BichonProvince)
+; -----------------------------------
+; Name: Bull
+; Job: 
+; Map No: 0
+; Pos X 378
+; Pos Y 298
+; File name: *removed*
+; Comment: GroceryStore (BichonProvince)
+
+;================================================= =
+;
+; Brief Description of the switches used in this NPC.
+; [306] - When you have been told of cook in Serpent Village.
+;
+
+;Settings
+(@buy @sell @repair @s_repair @storage @getback)
+%100
++30
++3
++25
+
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not help an evil person like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+#IF
+random 10
+#ACT
+goto @QUEST
+#ELSEACT
+goto @normal
+
+[@QUEST]
+#IF
+check [305] 1
+#ACT
+goto @Q305
+#ELSEACT
+goto @normal
+
+[@Q305]
+#IF
+#ACT
+SET [306] 1
+#SAY
+You are looking for a cook? Sorry I know nothing about that\
+sort of thing but I know where you might be able to find one.\
+Apparently a cook lives in Serpent Village. Try looking there.\
+Good luck.\ \
+<Ok/@exit>
+
+
+[@normal]
+Welcome, May I help you?\ \
+ <Buy/@buy> Item\
+ <Sell/@sell> Item\
+ <Ask/@ask> about Item\	
+ <Cancel/@exit>
+
+[@buy]
+ What Items do you need?\ \ \
+ <Back/@main>
+
+[@sell]
+ I deal with Candles, RandomTeleports,\
+ DungeonEscapes and so on.\ \
+ <Back/@main>
+
+[@ask]
+ I deal with <Candle/@candle>,<Dungeonescape/@dungeonescape>,\
+ <RandomTeleport/@randomteleport>,<RepairOil/@repairoil> and so on forth.\
+ I have heard that there are <Townteleport/@townteleport> which come\
+ from monsters only\ \
+ <Back/@normal>
+
+[@candle]
+Candles are needed when it's dark. without a candle\
+you can not see anything-even your foot for darkness.\ \
+<Back/@ask>
+
+[@dungeonescape]
+A Dungeonescape scroll is a magic paper that moves you promptly\
+to certain fields near the last village you visited.\
+The power of Dungeonescape scroll is weak compared with\
+TownTeleport scrolls but it could still save your liefe.\ \
+<Back/@ask>
+
+[@randomteleport]
+A Randomteleport scroll is a magic paper that can\
+make you randonly move to another place in the same map.\
+For example if you were in a dungeon 1st floor, you will\
+move to another place on that floor by using the RT.\
+If situation is dangerous but you still have potions, use this\
+to help you out of a tight situation.\ \
+<Back/@ask>
+
+[@repairoil]
+A RepairOil makes the durabillity of you hand weapon rise,\
+but this oil doesn't special repair your weapon, so
+remember that then maximum durabillity of the weapon\
+goes down as time goes by.\
+If the weapon at your hand was not expensive,\
+repair with this oil sometimes during hunting.\
+This will make hunts last longer.\ \
+<Back/@ask>
+
+[@townteleport]
+TownTeleport scrolls carn't be made now because the ancient\
+skill is lost.... however....\
+I have heard that it may come randomly from Monsters\
+and you can return to a village promptly by using it...\ \
+<Back/@ask>
+
+
+[goods]
+;Item		Amount		Time
+Candle		200	1
+Torch		200	1
+DungeonEscape	200	1
+RandomTeleport	200	1
+Amulet		200	1
+Amulet(M)	200	1
+RepairOil	200	1
+DungeonEscapeBundlel	200	1
+RandomTeleportBundlel	200	1

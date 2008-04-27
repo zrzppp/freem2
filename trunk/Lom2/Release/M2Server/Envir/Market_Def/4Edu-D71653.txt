@@ -1,0 +1,40 @@
+; ===================================
+; Market Def NPC File : 4Edu-D71653
+; ReagentRoom ()
+; -----------------------------------
+; Name: Barry
+; Job: 
+; Map No: D71653
+; Pos X 23
+; Pos Y 27
+; File name: *removed*
+; Comment: ReagentRoom ()
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair @storage @getback)
+%200
++0
+
+[@main]
+Welcome. How can I help you?\ \
+<Buy/@buy> an item\
+<Close/@exit> 
+
+
+[@buy]
+What items do you need?\
+<Back/@main>
+
+
+[goods]
+;Item		Amount		Time
+Candle              1000        1
+Torch               1000        1
+RandomTeleport      1000        1
+DungeonEscape       1000        1
+DungeonEscapeBundlel         1000        1
+RandomTeleportBundlel         1000        1
+

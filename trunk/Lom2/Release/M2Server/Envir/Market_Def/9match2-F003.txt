@@ -1,0 +1,24 @@
+; ===================================
+; Market Def NPC File : 9match2-F003
+; Warmap3
+; -----------------------------------
+; Name: GuildWar
+; Job: 
+; Map No: F003
+; Pos X 41
+; Pos Y 41
+; File name: *removed*
+; Comment: Warmap3
+
+;================================================= =
+;
+;;Co-Ords 48 61
+
+[@main]
+Do you want to leave the fight?\ \
+<Yes/@back>\
+<No/@exit>
+
+[@back]
+#ACT
+map 3

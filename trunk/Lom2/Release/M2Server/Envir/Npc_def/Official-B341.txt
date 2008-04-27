@@ -1,0 +1,101 @@
+; ===================================
+; Npc Def NPC File : Offical-B341
+; npc in Castle GI-Ryoong
+; -----------------------------------
+; Name: Official
+; Job: 
+; Map No: B341
+; Pos X 11
+; Pos Y 11
+; File name: *removed*
+; Comment: npc in Castle GI-Ryoong
+
+;================================================= =
+;
+
+[@main]
+Welcome to castle Gi-Ryoong.\
+This castle has most facilities you could want\
+so please make yourslef at home\
+ <Listen/@listen1> to the history of the castle\
+ <Listen/@listen2> to the newly discovered cave\
+ <close/@exit>\ \
+
+[@listen1]
+This castle was built for suppressing the monsters, which\
+have been found in massing near Woomyon woods and marauding\
+through villages. Also it has the role of guarding the path\
+which will soon open to the west. So the castle was built\
+with through plans and has all the necessary facilities to\
+be a top class fortress.\ \	
+ <next/@next1>
+
+[@next1]
+However, the reinforcements from the other Walls were\
+few and our reserves are running dangerously low,\
+Furthremore, there are now unexpected threats that\
+constantly appear around the castle, We desperately\
+need help from people like you.\ \
+ <next/@next2>
+
+[@next2]
+The court is even considering the option to let the young\
+and brave people like you to run the castle. So please be\
+conserned about the castle. I really hope that the authorities\
+and the people come together and unite on all issues to\
+overcome current difficulties.\ \
+ <go back/@main>to the beginning of the conversation\
+ <close/@exit>
+
+[@listen2]
+Where did you hear that story?\
+hmm...It's no use to control the rumor.\
+phew, If you want to know more,\
+I'll tell you about the cave.\
+where should I begin first...\ \
+ <next/@next3>
+
+[@next3]
+It was when the construction of the castle\
+was just completed. Our soldiers began mopping up\
+the monsters by using the castle as a base.\
+The first few days went smoothly but soon the\
+soldiers on the patrol duty stopped returning to the castle.\ \
+ <next/@next4>
+
+[@next4]
+Even the search and rescue team for the\
+missing soldiers never returned. The military intelligence\
+thought there must be massive forces of unknown monsters.\
+So we begun searching the spots where the soldiers disappeared.\
+Finally, we discovered traces of the missing soldiers\
+leading towards one very mysterious cave.\ \
+ <next/@next5>
+
+[@next5]
+General Bigmace, who was in charge of the castle at that\
+time, led 70% of the Gi-Ryoong garrison to the cave to\
+defeat the evil forces.\
+And....that was the last time I saw him.\
+Most of the expeditionary troop including the general were\
+annihilated in the cave and only few managed to escape.\ \
+ <next/@next6>
+
+[@next6]
+Dragon's vein..It is called Dragon's vein.\
+thousands of soldiers got slaughtered and in return, our\
+scholars were only able to discover that single name. Can\
+you believe that? Even more..there is no one who knows\
+what is really inside the cave. However, the most worrying\
+thing of all is we are in deep trouble since we lost 70% of out\
+garrison and are surrounded by the monsters we were supposed to\
+hunt down.\ 
+ <next/@next7>
+
+[@next7]
+The monsters, which lost their stongholds to us, are trying\
+to take advantage of the situation and looking for an\
+opportunity to destroy the castle. Phew....So we desperately\
+need help from people like you.\ \
+ <go back/@main>to the beginning of the conversation\
+ <close/@exit>

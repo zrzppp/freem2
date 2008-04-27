@@ -1,0 +1,18 @@
+; ===================================
+; Npc Def NPC File : Herald-11
+; News npc in TaoTown
+; -----------------------------------
+; Name: Herald
+; Job: 
+; Map No: 11
+; Pos X 188
+; Pos Y 301
+; File name: *removed*
+; Comment: News npc in TaoTown
+
+;================================================= =
+;
+
+[@main]
+Greatings stranger, I'm the Herald of this town\
+Here are the latest news:\

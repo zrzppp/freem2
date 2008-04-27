@@ -1,0 +1,247 @@
+; ===================================
+; Market Def NPC File : 5Bbo-0104
+; BichonProvince (Storage)
+; -----------------------------------
+; Name: Steven
+; Job: 
+; Map No: 0104
+; Pos X 5
+; Pos Y 8
+; File name: *removed*
+; Comment: BichonProvince (BoodStore)
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair @storage @getback)
+%100
++3
++4
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not help an evil person like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+Greetings! You have come to purchase skill Books, have you?\
+<List available Books to buy/@buy>\
+<Sell Books/@sell>\
+<Details of Skills/@helpBooks>\ 
+<Have a conversation/@QUEST>\
+<Teleport out/@Tmove>\
+<Cancel/@exit>\
+
+[@Tmove]
+#IF
+random 4
+#ACT
+mapmove 0 320 249
+break
+
+#ELSEACT
+goto @Tmove
+
+[@buy]
+Please select the Book you want to buy.\ \ \
+ <Back/@main>
+
+[@sell]
+Show me the Books you want to sell.\ \ \
+ <Back/@main>
+
+[@QUEST]
+#IF
+check [759] 1
+#ACT
+goto @Q709
+break
+
+#IF
+check [757] 1
+#ACT
+SET [758] 1
+goto @Q707
+#ELSEACT
+goto @normal
+
+[@Q709]
+You went and saw that person then? Good, thank you.. She says\
+she is well? Good.. good.. You went to WoomyonWoods then?\
+WoomyonWoods suits hunting of up to level 15 alough you may need\
+some medical drugs to help you.\ \
+<Next/@q709_1>
+
+[@Q709_1]
+#IF
+#ACT
+reset [750] 10
+#SAY
+The lands of Mir have many villages, valleys, and forests. As you\
+play you will learn more about these places and what is there.
+Good luck, many people are looking for you. I hope you think about\
+todays talk.\ \
+<Next/@q709_2>
+
+[@Q709_2]
+#IF
+checkjob warrior
+#SAY
+Here take this Gold, I hope it will help.\ \
+<Thanks/@exit>
+
+#ACT
+give Gold 10000
+break
+
+#IF
+checkjob wizard
+#SAY
+Here take this Gold, I hope it will help.\ \
+<Thanks/@exit>
+
+#ACT
+give Gold 10000
+break
+
+#IF
+checkjob taoist
+#SAY
+Here take this Gold, I hope it will help.\ \
+<Thanks/@exit>
+
+#ACT
+give Gold 10000
+break
+
+[@Q707]
+Methods of using magic can be different, the master puts\
+the mouse over the monster's body, then presses the corresponding\
+keyboard button (F1-F8) depending on what magic is set. For Taoists\
+and Warriors basic sword techniques do not need to have a button set\
+and will level themselves when you fight.\ \
+<Next/@q707_1>
+
+
+[@Q707_1]
+To get to WoomyonWoods, exit from the north city gate. Go along the\
+right-hand side river bank, so you can see the seacoast, walk upwards,\
+you will see archers and a fence, enter there. You must find the shop\
+boss after the archer in there, tell her my recent situation.\
+This road can be difficult, You could run into a fierce monster like a\
+Oma Warrior or something else, you must be careful, Good luck..\ \ 
+<Ok/@exit>
+
+[@normal]
+Taoist, Warrior and Wizard can all learn differnt spells. Would you\
+like to see the spells?\ \
+<Yes/@helpBooks> please\
+<No/@main1> thanks
+
+
+[@sell]
+What would you like to sell?\ \ \
+<Back/@main1>
+
+
+[@helpBooks]
+What kinds of Books are you interested in?\ \
+Warriors can learn the following <spells/@help1>\
+Taoists can learn the following <spells/@help2>\
+Wizards can learn the following <spells/@help3>\
+
+ <Back/@main>
+
+[@help1]
+From Lvl  7 Fencing\
+From Lvl 19 Slaying\
+From Lvl 25 Thrusting\
+From Lvl 28 HalfMoon\
+From Lvl 30 ShoulderDash\
+From Lvl 35 FlamingSword\
+ <Back/@helpBooks>
+
+
+[@help2]
+From Lvl  7 Healing\
+From Lvl  9 SpiritSword\
+From Lvl 14 Poisoning\
+From Lvl 18 SoulFireBall\
+From Lvl 19 SummonSkeletonton\
+From Lvl 20 Hiding\
+ <Next/@help21>
+
+[@help21]
+From Lvl 21 MassHiding\
+From Lvl 22 SoulShield\
+From Lvl 25 BlessedArmour\
+From Lvl 26 Revelation\
+From Lvl 28 TrapHexagon\
+From Lvl 33 MassHealing\
+From Lvl 35 SummonShinsu\
+ <Back/@helpBooks>
+
+
+[@help3]
+From Lvl  7 FireBall\
+From Lvl 12 Repulsion\
+From Lvl 13 ElectricShock\
+From Lvl 16 HellFire\
+From Lvl 17 ThunderBolt\
+From Lvl 19 Teleport\
+ <Next/@help31>
+
+[@help31]
+From Lvl 19 GreatFireBall\
+From Lvl 22 FireBang\
+From Lvl 24 FireWall\
+From Lvl 26 Lightning\
+From Lvl 30 ThunderStorm\
+From Lvl 31 MagicShield\
+From Lvl 32 TurnUndead\
+From Lvl 35 IceStorm\
+ <Back/@helpBooks>
+
+[goods]
+;Item		Amount		Time
+Fireball           200	   1
+Healing		   200	   1
+Fencing            200	   1
+SpiritSword        200	   1
+Repulsion          200	   1
+SummonSkeleton         200	   1
+Teleport           200	   1
+ElectricShock          200	   1
+SoulFireball       200	   1
+HalfMoon           200	   1
+Thunderbolt        200	   1
+GreatFball         200	   1
+Hellfire           200	   1
+SoulShield         200	   1
+Slaying            200	   1
+MagicShield        200	   1
+Thrusting          200	   1
+FireWall           200	   1
+MassHealing        200	   1
+Hiding             200	   1
+FlamingSword       200	   1
+IceStorm           200	   1
+FireBang           200	   1
+Poisoning          200	   1
+ShoulderDash       200	   1
+TrapHexagon        200	   1
+TurnUndead         200	   1
+BlessedArmour      200	   1
+MassHiding         200	   1
+Lightning          200	   1
+ThunderStorm       200	   1
+SummonShinsu       200	   1
+Revelation         200	   1

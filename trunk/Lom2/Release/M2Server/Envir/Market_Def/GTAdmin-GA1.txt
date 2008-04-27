@@ -1,0 +1,53 @@
+; ===================================
+; Market Def NPC File : 
+; 
+; -----------------------------------
+; Name: GTSteward
+; Job: 
+; Map No: GA1
+; Pos X 13
+; Pos Y 27
+; File name: *removed*
+; Comment: 
+
+;================================================= =
+;
+
+[@main]
+#SAY
+How are you. <$USERNAME>. I am the 'Guild Territory Steward'.\
+How can I help you?\ \
+I want to <Summon/@summon> members to the territory.\
+I want to <extend/@extend> the rental period.\
+I want to <check/@agitremain> the remaining rental period.\
+I want to <apply & cancel/@appcancel> sale of my guild territory.
+
+[@summon]
+#SAY
+I will summon the members scattered in the Mir continent now.\ \
+<Total summon/@agitrecall>\
+<Individual summon/@@agitonerecall>\ \
+<Back/@main>
+
+[@extend]
+#SAY
+<$GUILDAGITEXTENDFEE> gold is required to extend the rental\
+period of this territory for 7 additional days.\
+After the rental period expiration, the guild is given 7 days\
+to extend. If no fee is paid even within the additional 7 days,\
+the ownership of the guild territory will be completely removed.\ \
+<Extend rental period/@agitextend>\ \
+<Back/@main>
+
+[@appcancel]
+#SAY
+I will start & cancel the sale of guild territory.\
+After a successful transaction, the ownership shall be\
+transferred to the buyer 24 hours later.\
+The master and members of the guild that sold the territory\
+willbe booted out automatically.\ \
+<Apply for sale of Guild territory/@@agitforsale>\
+<Cancel sale of Guild territory/@agitforsalecancel>\ \
+<Back/@main>
+
+

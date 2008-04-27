@@ -1,0 +1,19 @@
+; ===================================
+; Market Def NPC File : 9Wae6-11
+; TaoTown
+; -----------------------------------
+; Name: Apprentice
+; Job: 
+; Map No: 11
+; Pos X 193
+; Pos Y 323
+; File name: *removed*
+; Comment: TaoTown
+
+;================================================= =
+;
+
+[@main]
+Ugh... I have pain in my legs..
+Where can I take a rest?\ \
+<Close/@exit>

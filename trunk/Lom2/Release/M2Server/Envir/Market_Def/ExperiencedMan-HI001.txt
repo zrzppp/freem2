@@ -1,0 +1,25 @@
+; ===================================
+; Market Def NPC File : ExperiencedMan-HI001
+; HiddenPlace
+; -----------------------------------
+; Name: ExperiencedMan
+; Job: 
+; Map No: HI001
+; Pos X
+; Pos Y
+; File name: *removed*
+; Comment: HiddenPlace
+
+;================================================= =
+;
+
+[@main]
+#SAY
+Hello\
+Let me introduce myself\
+I am the most experienced brave man exploring all over the world\
+My distinguished experience will bring you\
+most outstanding experience.\
+Are you ready?\
+You will have double experience of what you do.\ \
+<Close/@exit>

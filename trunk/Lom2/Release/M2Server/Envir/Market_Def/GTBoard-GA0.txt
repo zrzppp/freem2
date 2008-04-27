@@ -1,0 +1,28 @@
+; ===================================
+; Market Def NPC File : GTBulletinBoard-GA0
+; 
+; -----------------------------------
+; Name: GTBulletinBoard
+; Job: 
+; Map No: GA0
+; Pos X 57
+; Pos Y 50
+; File name: *removed*
+; Comment: 
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair)
+%100
++40
++45
++1
+
+[@main]
+#SAY
+Hello <$USERNAME>!\
+This is the Guild Territory Bulletin Board.\ \
+<Look at/@gaboardlist> the Guild Territory Bulletin Board.\
+<Skip/@exit> the Guild Territory Bulletin Board.

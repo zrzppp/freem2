@@ -1,0 +1,18 @@
+; ===================================
+; Npc Def NPC File : Herald-0
+; News npc in BichonProvince
+; -----------------------------------
+; Name: Herald
+; Job: 
+; Map No: 0
+; Pos X 304
+; Pos Y 254
+; File name: *removed*
+; Comment: News npc in BichonProvince
+
+;================================================= =
+;
+
+[@main]
+Greatings stranger, I'm the Herald of this town\
+Here are the latest news:\

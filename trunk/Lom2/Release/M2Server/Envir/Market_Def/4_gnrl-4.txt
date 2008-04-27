@@ -1,0 +1,50 @@
+; ===================================
+; Market Def NPC File : 4_gnrl-4
+; 
+; -----------------------------------
+; Name: Derby
+; Job: 
+; Map No: 4
+; Pos X 252
+; Pos Y 222
+; File name: *removed*
+; Comment:
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair)
+%100
++0
++42
++30
++3
+
+[@main]
+Welcome, how may I help you?\ \
+<Buy/@buy>  Items\
+<Sell/@sell>  Items\
+<Close/@exit>
+
+[@buy]
+What Item would you like to buy?\ \ \
+ <back/@main>
+
+
+[@sell]
+What Item would you like to sell?\ \ \
+ <Back/@main>
+
+[goods]
+;Item		Amount		Time
+Candle			200	1
+Torch			200	1
+DungeonEscape		200	1
+RandomTeleport		200	1
+DungeonEscapeBundlel		200	1
+RandomTeleportBundlel		200	1
+Amulet			200	1
+Amulet(M)		200	1
+RepairOil		200	1
+TeleportHome		200	1

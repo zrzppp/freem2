@@ -1,0 +1,148 @@
+; ===================================
+; Market Def NPC File : DreamPouch-GA0
+; 
+; -----------------------------------
+; Name: Domitian
+; Job: 
+; Map No: GA0
+; Pos X 52
+; Pos Y 71
+; File name: *removed*
+; Comment: 
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair)
+%100
++20
++19
++21
++22
++23
++24
++26
+
+[@main]
+#SAY
+Hello. This is the territory of <$AGITGUILDNAME> guild!\
+The Dream Pouch I made can only be used by the members of\
+<$AGITGUILDNAME> guild! And remember, the images displayed through\
+the Dream Pouch are all illusions, not real.\ \
+<Check/@ga_decomon_count> the number of <images/@images.>\
+<Purchase/@ga_decoitem_buy> a Dream Pouch.    <Sell/@sell> the Dream Pouch.\
+<Listen to/@listen> Domitian's story.\
+<Learn/@learn> how to use the Dream Pouch.
+
+[@images]
+#SAY
+The images that re displayed through the Pouch\
+are created by your dream and imagination.\
+Although they are not real,\
+how wonderfull it is to have dreams about them.\
+You shouldn't lose your dream and draw many things in your mind too.\ \
+<Back/@main>
+
+
+[@listen]
+#SAY
+Do you believe in the mysterious force of dragons?\
+There are many unrevealed secrets in this Mir continent.\
+I have researched the force of dragons for decades.\
+You may have heard about the 'dragon's vein,'\
+the flow of the dragon's gigantic force.\
+<Next/@next1>
+
+[@next1]
+#SAY
+It wouldn't make sence if you didn't know about such things,\
+when you live in Mir continent. The force that flows through\
+the Dragon's vein protects each and every part of the continent,\
+although there are mutated monsters emerging\
+from somewhere because of the force.\
+<Next/@next2>
+
+[@next2]
+#SAY
+It is also because of the force from the Dragon's vein,\
+that human settlements survived and Mirian fighters can\
+become strong through training.\
+However, one of the 7 Dragon's veins has been contaminated\
+with evil force after the invasion of the once powerful Omas.\
+We call this place the 'Evil Dragon's Vein'\ \
+<Next/@next3>
+
+[@next3]
+#SAY
+Thanks to the Oma invasion, We were able to discover\
+one of the 7 locations of Dragon's vein.\
+Although it is contaminated with evil force and\
+I had no exact coordinates for the location,\
+there is no doubt it is still filled with the power of Dragon.\
+So I began searching for the place by following the Oma trails.\ \
+<Next/@next4>
+
+[@next4]
+#SAY
+For my research, I risked my life by going deep into\
+the Evil Dragon's vein. After collecting some dirt,\
+I put them into a pouch and carried them back to the Tao village.\
+The Taoists there all helped and supported my research in every way.\
+But one day! When I was invited to a guild territory\
+by the guild master and I visited there,\
+I spilled some dirt by mistake.\ \
+<Next/@next5>
+
+[@next5]
+#SAY
+And then, an image of a dragon suddenly appeared.\
+Scared by its gigantic size, I flopped to the ground...\
+Then it mysteriously disappeared... Yes... It was an illusion...\
+Do you know why the illusion took place?\
+It's because of... this place...\ \
+<Next/@next6>
+
+[@next6]
+#SAY
+This guild territory is a purified and sacred place\
+where evil things cannot exist. And the force of the Dragon's\
+vein met this holy place, It caused the mysterious illusion.\
+Once I put the dirt in this sacred magic pouch while thinking\
+about flowers, beautiful flowers appeared before my eyes\
+when I sprinkled them in the places!\
+Just like that, the illusion of the Dragon at the time appeared because\
+I was thinking about the legendary Dragon all the time.\ \
+<Next/@next7>
+
+[@next7]
+#SAY
+This is...just what I found out by devoting half my life...\
+It is just a small part of the force of Dragon's vein.\
+Nobody knows what could be discovered next.\
+My heart is already throbbing for the protential power around it...\
+I will find out by sacrificing all my life.\
+And... I believe in the enormous, sacred power of the Dragon...\ \
+<Back/@main>
+
+[@learn]
+#SAY
+If you drop a Dream Pouch on desired spot,\
+the image will appear.\
+If a guild member uses the pouch, the location can\
+only be modified within 2 minutes after the use.\
+After 2 minutes, only the guild master can change the location.\ \
+<Next/@next>
+
+[@next]
+#SAY
+In order to change the location of the image,\
+move to the center of the image and pick up the image\
+from the ground and then turn it back to a Dream Pouch again.\
+The image will last for a week.\
+The number of decorative items allowed for both inner\
+and outer guild territory is limited to total 50.\
+Purchase screen can be managed with arrow keys.\
+<Back/@main>
+
+

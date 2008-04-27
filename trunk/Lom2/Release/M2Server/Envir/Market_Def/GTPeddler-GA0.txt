@@ -1,0 +1,102 @@
+; ===================================
+; Market Def NPC File : GTPeddler-GA0
+; 
+; -----------------------------------
+; Name: GTPeddler
+; Job: 
+; Map No: GA0
+; Pos X 59
+; Pos Y 52
+; File name: *removed*
+; Comment: 
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair)
+%100
++40
++45
++1
+
+[@main]
+#SAY
+Welcome. What are you looking for?\ \
+<Buy/@buy> Items.\
+<Sell/@sell> Items.\
+<Ask/@ask> about items\
+<Exit/@exit>
+
+[@buy]
+#SAY
+What do you want to buy?\ \
+<Back/@main>     <List proceding items/@buy>
+
+[@sell]
+#SAY
+We handle scrolls or repair oils here.\   \
+<Back/@main>
+
+[@ask]
+#SAY
+What do you want to know?\ \
+<Candle & Torch/@ask1>   <Repair oil/@ask2>\
+<Dungeon Escape/@ask3>   <Random Teleport/@ask4>\
+<Town Teleport/@ask5>\ \
+<Back/@main>
+
+
+[@ask1]
+#SAY
+Candles and Torches are used when it is dark.\
+They are particaulry usefull in dungeons and at night.\   \
+<Back/@ask>
+
+[@ask2]
+#SAY
+Repair Oil is a substance that increases the durability\
+of the weapons you are equipping.\
+Compared to special repair, the durability of the weapon\
+will keep decreasing, as you repair your weapon with it.\
+It is usefull when you are on the field hunting far from\
+your village.\ \
+<Back/@ask>
+
+[@ask3]
+#SAY
+Dungeon Escape is a scroll that immediately teleports\
+you to a field nearby the last village you visited.\
+It will be usefull when you want to get out of\
+a dungeon very quickly.\ \
+<Back/@ask>
+
+[@ask4]
+#SAY
+Random Teleport is a scroll that immediately moves\
+you to a random location of the map you are on.\
+It can be usefull in times of danger, such as\
+being surrounded by monsters in dungeons.\ \
+<Back/@ask>
+
+[@ask5]
+#SAY
+Town Teleport is a scroll that immediately moves\
+you to the village you visited last time.\
+It is more expensive than other scrolls,\
+but you can travel to the village safely.\ \
+<Back/@ask>
+
+
+[goods]
+;Item		Amount		Time
+GTTeleport		200	1
+GTInvitation		200	1
+Candle		        200	1
+Torch			200	1
+DungeonEscape		200	1
+RandomTeleport		200	1
+Amulet			200	1
+Amulet(M)		200	1
+RepairOil		200	1
+TownTeleport		200	1

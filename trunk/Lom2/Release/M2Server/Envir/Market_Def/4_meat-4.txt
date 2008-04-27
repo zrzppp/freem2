@@ -1,0 +1,49 @@
+; ===================================
+; Market Def NPC File : 4_meat-4
+; Butcher
+; -----------------------------------
+; Name: Jim
+; Job: Butcher
+; Map No: 4
+; Pos X 244
+; Pos Y 188
+; File name: *removed*
+; Comment: Butcher
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair)
+%100
++40
++1
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I won't help someone evil like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+Welcome, what can I do for you?\ \
+<Sell/@sell> Meat\
+<Cancel/@exit>
+
+[@sell]
+We'll buy high qualitiy at high price.\
+But we'll buy at low price meat stained with soil or burned by fire.\ \
+ <Back/@main>
+
+
+
+[goods]
+;Item		Amount		Time
+Meat     1000            1
+Chicken  1000            1 

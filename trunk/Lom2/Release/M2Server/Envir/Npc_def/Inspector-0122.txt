@@ -1,0 +1,23 @@
+; ===================================
+; Npc Def NPC File : Inspector-0
+; npc in BichonProvince
+; -----------------------------------
+; Name: Inspector
+; Job: 
+; Map No: 0
+; Pos X 
+; Pos Y 
+; File name: *removed*
+; Comment: npc in BichonProvince
+
+;================================================= =
+;
+
+[@main]
+Adicaster,a catastrophe!\
+The power of DragonBlood is unstable these days.\
+And that's why monsters are pouring out of Bottomless Pit in PrajnaIsland.\
+What should I do? It's the crisis of MIR continent.\
+I shall recruit the heroes immediately.\
+I must dispatch the investigator, and seal the Bottomless Pit.\ \
+<Close/@exit>

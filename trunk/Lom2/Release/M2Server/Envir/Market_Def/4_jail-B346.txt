@@ -1,0 +1,19 @@
+; ===================================
+; Market Def NPC File : 4_jail-B346
+; 
+; -----------------------------------
+; Name: Edward
+; Job: 
+; Map No: B346
+; Pos X 8
+; Pos Y 12
+; File name: *removed*
+; Comment:
+
+;================================================= =
+;
+
+[@main]
+You shouldn't be here!\
+Go away before I lock you up as well!\ \
+<Ok/@exit>

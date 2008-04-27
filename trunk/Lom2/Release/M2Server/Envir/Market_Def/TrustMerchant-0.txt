@@ -1,0 +1,260 @@
+; ===================================
+; Market Def NPC File : 
+; 
+; -----------------------------------
+; Name: 
+; Job: 
+; Map No: 
+; Pos X 
+; Pos Y 
+; File name: *removed*
+; Comment: 
+
+;================================================= =
+;
+
+(@consign)
+%100
+
+[@main]
+#IF
+#ACT
+CLOSEAUCTION
+#SAY
+Hello. I am the 'Commission Merchant'. I am in charge\
+of commission sales. We are located at five places of\
+Bichon Province, Mongchon Province, Tao Village, Prajna\
+Island and Past Bichon, the item sales information are\
+all shared by the five merchants.\ \
+<Consign/@Consign1>  <Check sales list/@checklist>\
+<Item sales confirm & cancel/@market_100>\
+<Exit/@exit> <Help/@help>\
+
+[@Consign1]
+#IF
+#ACT
+CLOSEAUCTION
+#SAY
+The following are 'cautions' in the commission sale.\
+1. Consignment fee: After confirming the sale,\
+   1% of the selling price is paid.\
+2. Trust money: when it is consigned, '1,000 Gold' is paid.\
+3. Commission period: After 100 days of item sale registration,\
+   the item will be automatically deleted from the list.\
+<Next/@Consign2>\
+<Back/@main>\
+
+[@Consign2]
+#IF
+#ACT
+CLOSEAUCTION
+#SAY
+4. Number of commission items: Maximum 5 items are allowed\
+   for sale\
+5. Trust money amount: can be set in the range of\
+   1,000 - 50,000,000 gold.\ \
+Do you agree?\
+<Agree/@consign> <Leave/@exit> <Back/@main>\
+
+[@checklist]
+#IF
+#ACT
+CLOSEAUCTION
+#SAY
+This is the item sales list.   <Go back/@main>\ \
+Total sales <List/@market_0>\ \
+<Weapon/@market_1>  <Accessory/@acclist>   <Armour/@armourlist>\ \
+<Misc Items/@misclist>   <Set Items/@market_200>\
+
+[@market_0]
+#IF
+#ACT
+GETAUCTIONITEMS 1
+#SAY
+Total list of consigned Items.\
+<Back/@checklist>\
+
+[@acclist]
+#IF
+#ACT
+CLOSEAUCTION
+#SAY
+This is the item sales list for 'Accessory'   <Back/@checklist>\ \
+<Necklace/@market_2>   <Ring/@market_3>\ \
+<Bracelet & Glove/@market_4>   <Magic Stone/@market_5>\
+
+[@armourlist]
+#IF
+#ACT
+CLOSEAUCTION
+#SAY
+This is the item sales list for 'Armour'   <Back/@checklist>\ \
+<Armour/@market_9>   <Helmet/@market_6>\ \
+<Shoes/@market_8>   <Belt/@market_7>\
+
+[@misclist]
+#IF
+#ACT
+CLOSEAUCTION
+#SAY
+This is the item sales list for 'Misc Items'   <Back/@checklist>\ \
+<Special Potions/@market_10>   <Gems & Orbs/@market_11>\ \
+<Skill Books/@market_12>   <Ores/@market_13>\ \
+<Quest Items/@market_14>   <Other Items/@market_15>\
+
+[@market_15]
+#IF
+#ACT
+GETAUCTIONITEMS 16
+#SAY
+Item information of consigned 'Other Items'\
+<Back/@misclist>\
+
+[@market_14]
+#IF
+#ACT
+GETAUCTIONITEMS 15
+#SAY
+Item information of consigned 'Quest Items'\
+<Back/@misclist>\
+
+[@market_13]
+#IF
+#ACT
+GETAUCTIONITEMS 14
+#SAY
+Item information of consigned 'Ores'\
+<Back/@misclist>\
+
+[@market_12]
+#IF
+#ACT
+GETAUCTIONITEMS 13
+#SAY
+Item information of consigned 'Skill Books'\
+<Back/@misclist>\
+
+[@market_11]
+#IF
+#ACT
+GETAUCTIONITEMS 12
+#SAY
+Item information of consigned 'Gems & Orbs'\
+<Back/@misclist>\
+
+[@market_10]
+#IF
+#ACT
+GETAUCTIONITEMS 11
+#SAY
+Item information of consigned 'Potions'\
+<Back/@misclist>\
+
+[@market_200]
+#IF
+#SAY
+Item information of consigned 'Set Items'\
+<Back/@checklist>\
+
+[@market_7]
+#IF
+#ACT
+GETAUCTIONITEMS 10
+#SAY
+Item information of consigned 'Belts'\
+<Back/@armourlist>\
+
+[@market_8]
+#IF
+#ACT
+GETAUCTIONITEMS 9
+#SAY
+Item information of consigned 'Shoes'\
+<Back/@armourlist>\
+
+[@market_6]
+#IF
+#ACT
+GETAUCTIONITEMS 8
+#SAY
+Item information of consigned 'Helmets'\
+<Back/@armourlist>\
+
+[@market_9]
+#IF
+#ACT
+GETAUCTIONITEMS 7
+#SAY
+Item information of consigned 'Armours'\
+<Back/@armourlist>\
+
+[@market_5]
+#IF
+#ACT
+GETAUCTIONITEMS 6
+#SAY
+Item information of consigned 'Magic Stones'\
+<Back/@acclist>\
+
+[@market_4]
+#IF
+#ACT
+GETAUCTIONITEMS 5
+#SAY
+Item information of consigned 'Bracelets'\
+<Back/@acclist>\
+
+[@market_3]
+#IF
+#ACT
+GETAUCTIONITEMS 4
+#SAY
+Item information of consigned 'Rings'\
+<Back/@acclist>\
+
+[@market_2]
+#IF
+#ACT
+GETAUCTIONITEMS 3
+#SAY
+Item information of consigned 'Necklaces'\
+<Back/@acclist>\
+
+[@market_1]
+#IF
+#ACT
+GETAUCTIONITEMS 2
+#SAY
+Item information of consigned 'Weapons'\
+<Back/@checklist>\
+
+[@market_100]
+#IF
+#ACT
+GETAUCTIONITEMS 17
+#SAY
+You can check ether the item sale status, or cancel it.\ 
+<Back/@main>\
+
+[@help]
+#IF
+#ACT
+CLOSEAUCTION
+#SAY
+The following are 'cautions' in the commission sale.\
+1. Consignment fee: After confirming the sale,\
+   1% of the selling price is paid.\
+2. Trust money: when it is consigned, '1,000 Gold' is paid.\
+3. Commission period: After 100 days of item sale registration,\
+   the item will be automatically deleted from the list.\
+<Next/@help2>\
+<Back/@main>\
+
+[@help2]
+#IF
+#SAY
+4. Number of commission items: Maximum 5 items are allowed\
+   for sale\
+5. Trust money amount: can be set in the range of\
+   1,000 - 50,000,000 gold.\ \
+<Back/@main>\

@@ -1,0 +1,20 @@
+; ===================================
+; Market Def NPC File : 5_fish-B355
+; PrajnaIsland
+; -----------------------------------
+; Name: Fisherman
+; Job: 
+; Map No: B355
+; Pos X 15
+; Pos Y 12
+; File name: *removed*
+; Comment: PrajnaIsland
+
+;================================================= =
+;
+
+[@main]
+Hello there <$USERNAME>. I don't have any work that\
+needs doing at the moment. Come back next week and I\
+may be able to help you.\ \
+<Ok/@exit>

@@ -1,0 +1,68 @@
+; ===================================
+; Market Def NPC File : 4Wdm-1006
+; DrugStore (TaoVillage)
+; -----------------------------------
+; Name: Eugene
+; Job: 
+; Map No: 1006
+; Pos X 12
+; Pos Y 7
+; File name: *removed*
+; Comment: DrugStore (TaoVillage)
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair @storage @getback)
+%100
++0
++42
+
+[@main]
+This is the place to make a Drug and teach you how to make it\
+Every Drug is here from the royal elixir of eternal youth\
+to fatally poisonous powerdered medicine.\
+The Drugs can be used the right way or the wrong way according\
+to the person who uses the Drug.\
+Keep it mind.\ 
+<Buy/@buy> Drug\
+<Listen to/@explanation> the explanation of poison\
+<Get/@Tmove> out\
+<Cancel/@exit>
+
+[@Tmove]
+#IF
+#ACT
+mapmove 11 211 277
+break
+
+[@buy]
+Select the Drug you want to buy.\ \
+<Back/@main>
+
+
+[@explanation]
+There are two kinds of Drugs.\ \ \
+<Grey Poison Powder/@grey> effeciancy\
+<Yellow Poison Powder/@yellow> effeciancy\
+<Back/@main>\
+
+[@grey]
+Grey Poison Powder can be used by Taoists when\
+they execute poisoning skill.\
+If the target is poisoned, its health power will slowly decrease.\
+<Back/@explanation>\
+
+[@yellow]
+Yellow Poison Powder can be used by Taoists when\
+they execute poisoning skill.\
+If the target is poisoned, its defence power will decrease.\
+<Back/@explanation>\
+
+[goods]
+;Item		Amount		Time
+GreyPoison(S)		200	1
+YellowPoison(S)		200	1
+GreyPoison(M)		200	1
+YellowPoison(M)		200	1

@@ -1,0 +1,53 @@
+; ===================================
+; Market Def NPC File : 4Bdu-0
+; PotionStore (BichonProvince)
+; -----------------------------------
+; Name: Samuel
+; Job: 
+; Map No: 0
+; Pos X 324
+; Pos Y 291
+; File name: *removed*
+; Comment: PotionStore (BichonProvince)
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair @storage @getback)
+%100
++0
++42
+
+[@main]
+Welcome. You can buy all kind of Drugs here\ \
+<Buy/@buy> Drug\
+<Sell/@sell> Drug\
+<Talk with/@talkwith>\
+<Cancel/@exit>
+
+
+[@buy]
+What item do you want?\ \ \
+<Back/@main>
+
+
+[@sell]
+Show me your items.\ \ \
+<Back/@main>
+
+
+[goods]
+;Item		Amount		Time
+(HP)DrugSmall		200	1	
+(MP)DrugSmall		200	1
+(HP)DrugMedium		200	1
+(MP)DrugMedium		200	1
+(HP)DrugLarge		200	1
+(MP)DrugLarge		200	1
+(HP)SmallDrugBundle		200	1
+(MP)SmallDrugBundle		200	1
+(HP)MediumDrugBundle		200	1
+(MP)MediumDrugBundle		200	1
+(HP)DrugBundle		200	1
+(MP)DrugBundle		200	1

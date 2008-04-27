@@ -1,0 +1,1472 @@
+; ===================================
+; Npc Def NPC File : crafting-11
+; 
+; -----------------------------------
+; Name: CraftsLady
+; Job: 
+; Map No: 11
+; Pos X 
+; Pos Y 
+; File name: *removed*
+; Comment: 
+
+;================================================= =
+;
+
+(@makegemlist)
+
+[@Main]
+I can Create many Things, but i'll need you to bring me\
+the correct Items First!\
+Which Type of Item would you like to Craft?\ \
+ <Equipment/@create2> <Potions/@create3> <Others/@create4>\
+ <Make Gem/@makegemlist>\ \
+ <Back/@main> <Exit/@exit>\
+
+[@create2]
+Which Item Would you like to Craft?\ \
+ <Bone Set/@boneset> <Bug Set/@bugset>\
+ <WhiteGold Set/@whitegoldset> <WhiteGold(H) Set/@whitegoldsetH>\
+ <Nephrite Set/@nephriteset> <Nephrite(H) Set/@nephritesetH>\
+ <RedJade Set/@redjadeset> <RedJade(H) Set/@redjadesetH>\
+ <Back/@main> <Exit/@exit>\
+
+[@create3]
+Which Item Would you like to Craft?\ \
+ <(HP)DrugXL/@hpxl> <(HP)XLBundl/@hpxlbundl>\
+ <(MP)DrugXL/@mpxl> <(MP)XLBundl/@mpxlbundl>\
+ <Back/@main> <Exit/@exit>\
+
+[@create4]
+Which Item Would you like to Craft?\ \
+ <LargeBone/@largebone> <WhiteThread/@whitethread>\
+ <BlackThread/@blackthread> <RedThread/@redthread>\
+ <Back/@main> <Exit/@exit>\
+
+;------------------------------------------------------------
+
+[@boneset]
+Which Item Would you like to Craft?\ \
+ <BoneDecapitor/@bonesword> <BoneHood/@boneHelmet>\
+ <BoneRobe(M)/@boneArmourM> <BoneRobe(F)/@boneArmourF>\ \
+ <Back/@main> <Exit/@exit>\
+
+[@bonesword]
+Item Name: <BoneDecapitor>\
+Item Type: <Weapon>\
+Stats: <Dc6-14> <Mc1-1> <Sc1-1>\
+Items Needed: <IronSword Copperore 10Bones 10SpiderWebs>\ \
+ <Craft Item/@makebonesword>\
+ <Back/@main> <Exit/@exit>\
+
+[@makebonesword]
+#IF
+checkitem Bone 10
+checkitem IronSword 1
+checkitem Copperore 1
+checkdura CopperOre 12
+checkitem SpiderWeb 10
+#ACT
+take Bone 10
+take IronSword 1
+take Copperore 1
+take SpiderWeb 10
+give BoneDecapitor 1
+#SAY
+<BoneDecapitor> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@boneHelmet]
+Item Name: <BoneHood>\
+Item Type: <Helmet>\
+Stats: <Ac0-1> <Amc0-1>\
+Items Needed: <MagicHelmet CopperOre 10Bones 10SpiderWebs>\ \
+ <Craft Item/@makeboneHelmet>\
+ <Back/@main> <Exit/@exit>\
+
+[@makeboneHelmet]
+#IF
+checkitem MagicHelmet 1
+checkitem CopperOre 1
+checkdura CopperOre 12
+checkitem Bone 10
+checkitem SpiderWeb 10
+#ACT
+take MagicHelmet 1
+take CopperOre 1
+take Bone 10
+take SpiderWeb 10
+give BoneHood 1
+#SAY
+<BoneHood> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@boneArmourM]
+Item Name: <BoneRobe(M)>\
+Item Type: <Armour>\
+Stats: <Ac3-3> <Amc1-1>\
+Items Needed: <LightArmour(M) CopperOre 15Bones 10SpiderWebs>\ \
+ <Craft Item/@makeboneArmourM>\
+ <Back/@main> <Exit/@exit>\
+
+[@makeboneArmourM]
+#IF
+checkitem LightArmour(M) 1
+checkitem CopperOre 1
+checkdura CopperOre 12
+checkitem Bone 15
+checkitem SpiderWeb 15
+#ACT
+take LightArmour(M) 1
+take CopperOre 1
+take Bone 15
+take SpiderWeb 15
+give BoneRobe(M) 1
+#SAY
+<BoneRobe(M)> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@boneArmourF]
+Item Name: <BoneRobe(F)>\
+Item Type: <Armour>\
+Stats: <Ac3-3> <Amc1-1>\
+Items Needed: <LightArmour(F) CopperOre 15Bones 10SpiderWebs>\ \
+ <Craft Item/@makeboneArmourF>\
+ <Back/@main> <Exit/@exit>\
+
+[@makeboneArmourF]
+#IF
+checkitem LightArmour(F) 1
+checkitem CopperOre 1
+checkdura CopperOre 12
+checkitem Bone 15
+checkitem SpiderWeb 15
+#ACT
+take LightArmour(F) 1
+take CopperOre 1
+take Bone 15
+take SpiderWeb 15
+give BoneRobe(F) 1
+#SAY
+<BoneRobe(F)> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+;------------------------------------------------------------
+
+[@bugset]
+Which Item Would you like to Craft?\ \
+ <BugNecklace/@bugneck> <BugBracelet/@bugbrace>\
+ <BugRing/@bugring>\ \
+ <Back/@main> <Exit/@exit>\
+
+[@bugneck]
+Item Name: <BugNecklace>\
+Item Type: <Necklace>\
+Stats: <Dc1-2> <Mc1-2> <Sc1-2>\
+Items Needed: <WarriorNeck SilverOre 10bugeyes 10SpiderWebs>\ \
+ <Craft Item/@makebugneck>\
+ <Back/@main> <Exit/@exit>\
+
+[@makebugneck]
+#IF
+checkitem WarriorNeck 1
+checkitem SilverOre 1
+checkdura SilverOre 12
+checkitem BugEye 10
+checkitem SpiderWeb 10
+#ACT
+take WarriorNeck 1
+take SilverOre 1
+take BugEye 10
+take SpiderWeb 10
+give BugNecklace 1
+#SAY
+<BugNecklace> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@bugbrace]
+Item Name: <BugBracelet>\
+Item Type: <Bracelet>\
+Stats: <Dc0-1> <Mc0-1> <Sc0-1>\
+Items Needed: <MonkBracelet SilverOre 10BugLegs 10SpiderWebs>\ \
+ <Craft Item/@makebugbrace>\
+ <Back/@main> <Exit/@exit>\
+
+[@makebugbrace]
+#IF
+checkitem MonkBracelet 1
+checkitem SilverOre 1
+checkdura SilverOre 12
+checkitem BugLeg 10
+checkitem SpiderWeb 10
+#ACT
+take MonkBracelet 1
+take SilverOre 1
+take BugLeg 10
+take SpiderWeb 10
+give BugBracelet 1
+#SAY
+<BugBracelet> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@bugring]
+Item Name: <BugRing>\
+Item Type: <Ring>\
+Stats: <Dc1-1> <Mc1-1> <Sc1-1>\
+Items Needed: <SerpentEyeRing SilverOre 10Mandibles 10SpiderWebs>\ \
+ <Craft Item/@makebugring>\
+ <Back/@main> <Exit/@exit>\
+
+[@makebugring]
+#IF
+checkitem SerpentEyeRing 1
+checkitem SilverOre 1
+checkdura SilverOre 12
+checkitem Mandible 10
+checkitem SpiderWeb 10
+#ACT
+take SerpentEyeRing 1
+take SilverOre 1
+take Mandible 10
+take SpiderWeb 10
+give BugRing 1
+#SAY
+<BugRing> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+;------------------------------------------------------------
+
+[@whitegoldset]
+Which Item Would you like to Craft?\ \
+ <WhiteGoldBelt/@whgldbelt> <WhiteGoldShoes/@whgldshoes>\
+ <WhiteGoldNecklace/@whgldneck> <WhiteGoldBracelet/@whgldbrace>\
+ <WhiteGoldRing/@whgldring>\ \
+ <Back/@main> <Exit/@exit>\
+
+[@whgldbelt]
+Item Name: <WhiteGoldBelt>\
+Item Type: <Belt>\
+Stats: <Ac0-1> <Amc0-1> <Dc1-0>\
+Items Needed: <Platinum BronzeBelt 10WhiteThread 15BugShell>\ \
+ <Craft Item/@makewhgldbelt>\
+ <Back/@main> <Exit/@exit>\
+
+[@makewhgldbelt]
+#IF
+checkitem Platinum 1
+checkdura Platinum 12
+checkitem BronzeBelt 1
+checkitem WhiteThread 10
+checkitem BugShell 15
+#ACT
+take Platinum 1
+take BronzeBelt 1
+take WhiteThread 10
+take BugShell 15
+give WhiteGoldBelt 1
+#SAY
+<WhiteGoldBelt> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@whgldshoes]
+Item Name: <WhiteGoldShoes>\
+Item Type: <Shoes>\
+Stats: <Ac1-0> <Amc1-0> <Dc1-0>\
+Items Needed: <Platinum SilkBoots 10WhiteThread 15BugShell>\ \
+ <Craft Item/@makewhgldshoes>\
+ <Back/@main> <Exit/@exit>\
+
+[@makewhgldshoes]
+#IF
+checkitem Platinum 1
+checkdura Platinum 12
+checkitem SilkBoots 1
+checkitem WhiteThread 10
+checkitem BugShell 15
+#ACT
+take Platinum 1
+take SilkBoots 1
+take WhiteThread 10
+take BugShell 15
+give WhiteGoldShoes 1
+#SAY
+<WhiteGoldShoes> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@whgldneck]
+Item Name: <WhiteGoldNeck>\
+Item Type: <Necklace>\
+Stats: <Dc1-2>\
+Items Needed: <Platinum NagaNecklace 10WhiteThread 15BugEye>\ \
+ <Craft Item/@makewhgldneck>\
+ <Back/@main> <Exit/@exit>\
+
+[@makewhgldneck]
+#IF
+checkitem Platinum 1
+checkdura Platinum 12
+checkitem NagaNecklace 1
+checkitem WhiteThread 10
+checkitem BugEye 15
+#ACT
+take Platinum 1
+take NagaNecklace 1
+take WhiteThread 10
+take BugEye 15
+give WhiteGoldNeck 1
+#SAY
+<WhiteGoldNeck> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@whgldbrace]
+Item Name: <WhiteGoldBrace>\
+Item Type: <Bracelet>\
+Stats: <Dc0-2>\
+Items Needed: <Platinum StrainBracelet 10WhiteThread 15BugLeg>\ \
+ <Craft Item/@makewhgldbrace>\
+ <Back/@main> <Exit/@exit>\
+
+[@makewhgldbrace]
+#IF
+checkitem Platinum 1
+checkdura Platinum 12
+checkitem StrainBracelet 1
+checkitem WhiteThread 10
+checkitem BugLeg 15
+#ACT
+take Platinum 1
+take StrainBracelet 1
+take WhiteThread 10
+take BugLeg 15
+give WhiteGoldBrace 1
+#SAY
+<WhiteGoldBrace> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@whgldring]
+Item Name: <WhiteGoldRing>\
+Item Type: <Ring>\
+Stats: <Ac0-1> <Dc0-1>\
+Items Needed: <Platinum BlueRing 10WhiteThread 15Mandible>\ \
+ <Craft Item/@makewhgldring>\
+ <Back/@main> <Exit/@exit>\
+
+[@makewhgldring]
+#IF
+checkitem Platinum 1
+checkdura Platinum 12
+checkitem BlueRing 1
+checkitem WhiteThread 10
+checkitem Mandible 15
+#ACT
+take Platinum 1
+take BlueRing 1
+take WhiteThread 10
+take Mandible 15
+give WhiteGoldRing 1
+#SAY
+<WhiteGoldRing> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+;------------------------------------------------------------
+
+[@whitegoldsetH]
+Which Item Would you like to Craft?\ \
+ <WhiteGoldBelt(H)/@whgldbeltH> <WhiteGoldShoes(H)/@whgldshoesH>\
+ <WhiteGoldNecklace(H)/@whgldneckH> <WhiteGoldBracelet(H)/@whgldbraceH>\
+ <WhiteGoldRing(H)/@whgldringH>\ \
+ <Back/@main> <Exit/@exit>\
+
+[@whgldbeltH]
+Item Name: <WhitGldBelt(H)>\
+Item Type: <Belt>\
+Stats: <Ac0-2> <Amc0-1> <Dc1-0>\
+Items Needed: <WhiteGoldBelt 2Platinum 15LargeBone 15WhiteThread>\ \
+ <Craft Item/@makewhgldbeltH>\
+ <Back/@main> <Exit/@exit>\
+
+[@makewhgldbeltH]
+#IF
+checkitem WhiteGoldBelt 1
+checkitem Platinum 2
+checkdura Platinum 12
+checkitem LargeBone 15
+checkitem WhiteThread 15
+#ACT
+take WhiteGoldBelt 1
+take Platinum 2
+take LargeBone 15
+take WhiteThread 15
+give WhitGldBelt(H) 1
+#SAY
+<WhitGldBelt(H)> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@whgldshoesH]
+Item Name: <WhitGldShoe(H)>\
+Item Type: <Shoes>\
+Stats: <Ac1-1> <Amc1-1> <Dc1-0>\
+Items Needed: <WhiteGoldShoes 2Platinum 15LargeBone 15WhiteThread>\ \
+ <Craft Item/@makewhgldshoesH>\
+ <Back/@main> <Exit/@exit>\
+
+[@makewhgldshoesH]
+#IF
+checkitem WhiteGoldShoes 1
+checkitem Platinum 2
+checkdura Platinum 12
+checkitem LargeBone 15
+checkitem WhiteThread 15
+#ACT
+take WhiteGoldShoes 1
+take Platinum 2
+take LargeBone 15
+take WhiteThread 15
+give WhitGldShoe(H) 1
+#SAY
+<WhitGldShoe(H)> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@whgldneckH]
+Item Name: <WhitGldNeck(H)>\
+Item Type: <Necklace>\
+Stats: <Dc0-4>\
+Items Needed: <WhiteGoldNeck 2Platinum 15LargeBone 15WhiteThread>\ \
+ <Craft Item/@makewhgldneckH>\
+ <Back/@main> <Exit/@exit>\
+
+[@makewhgldneckH]
+#IF
+checkitem WhiteGoldNeck 1
+checkitem Platinum 2
+checkdura Platinum 12
+checkitem LargeBone 15
+checkitem WhiteThread 15
+#ACT
+take WhiteGoldNeck 1
+take Platinum 2
+take LargeBone 15
+take WhiteThread 15
+give WhitGldNeck(H) 1
+#SAY
+<WhitGldNeck(H)> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@whgldbraceH]
+Item Name: <WhitGldBrac(H)>\
+Item Type: <Bracelet>\
+Stats: <Ac1-1> <Dc0-2>\
+Items Needed: <WhiteGoldBrace 2Platinum 15LargeBone 15WhiteThread>\ \
+ <Craft Item/@makewhgldbraceH>\
+ <Back/@main> <Exit/@exit>\
+
+[@makewhgldbraceH]
+#IF
+checkitem WhiteGoldBrace 1
+checkitem Platinum 2
+checkdura Platinum 12
+checkitem LargeBone 15
+checkitem WhiteThread 15
+#ACT
+take WhiteGoldBrace 1
+take Platinum 2
+take LargeBone 15
+take WhiteThread 15
+give WhitGldBrac(H) 1
+#SAY
+<WhitGldBrac(H)> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@whgldringH]
+Item Name: <WhitGldRing(H)>\
+Item Type: <Ring>\
+Stats: <Ac0-2> <Dc0-3>\
+Items Needed: <WhiteGoldRing 2Platinum 15LargeBone 15WhiteThread>\ \
+ <Craft Item/@makewhgldringH>\
+ <Back/@main> <Exit/@exit>\
+
+[@makewhgldringH]
+#IF
+checkitem WhiteGoldRing 1
+checkitem Platinum 2
+checkdura Platinum 12
+checkitem LargeBone 15
+checkitem WhiteThread 15
+#ACT
+take WhiteGoldRing 1
+take Platinum 2
+take LargeBone 15
+take WhiteThread 15
+give WhitGldRing(H) 1
+#SAY
+<WhitGldRing(H)> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+;------------------------------------------------------------
+
+[@nephriteset]
+Which Item Would you like to Craft?\ \
+ <NephriteBelt/@nephbelt> <NephriteShoes/@nephshoes>\
+ <NephriteNecklace/@nephneck> <NephriteBracelet/@nephbrace>\
+ <NephriteRing/@nephring>\ \
+ <Back/@main> <Exit/@exit>\
+
+[@nephbelt]
+Item Name: <NephritBelt>\
+Item Type: <Belt>\
+Stats: <Ac0-1> <Amc0-1> <Sc1-0>\
+Items Needed: <Nephirite BronzeBelt 10BlackThread 15BugShell>\ \
+ <Craft Item/@makenephbelt>\
+ <Back/@main> <Exit/@exit>\
+
+[@makenephbelt]
+#IF
+checkitem Nephirite 1
+checkdura Nephirite 12
+checkitem BronzeBelt 1
+checkitem BlackThread 10
+checkitem BugShell 15
+#ACT
+take Nephirite 1
+take BronzeBelt 1
+take BlackThread 10
+take BugShell 15
+give NephritBelt 1
+#SAY
+<NephritBelt> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@nephshoes]
+Item Name: <NephritShoes>\
+Item Type: <Shoes>\
+Stats: <Ac1-0> <Amc1-0> <Sc1-0>\
+Items Needed: <Nephirite SilkBoots 10BlackThread 15BugShell>\ \
+ <Craft Item/@makenephshoes>\
+ <Back/@main> <Exit/@exit>\
+
+[@makenephshoes]
+#IF
+checkitem Nephirite 1
+checkdura Nephirite 12
+checkitem SilkBoots 1
+checkitem BlackThread 10
+checkitem BugShell 15
+#ACT
+take Nephirite 1
+take SilkBoots 1
+take BlackThread 10
+take BugShell 15
+give NephritShoes 1
+#SAY
+<NephritShoes> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@nephneck]
+Item Name: <NephritNeck>\
+Item Type: <Necklace>\
+Stats: <Sc1-2>\
+Items Needed: <Nephirite JadeNecklace 10BlackThread 15BugEye>\ \
+ <Craft Item/@makenephneck>\
+ <Back/@main> <Exit/@exit>\
+
+[@makenephneck]
+#IF
+checkitem Nephirite 1
+checkdura Nephirite 12
+checkitem JadeNecklace 1
+checkitem BlackThread 10
+checkitem BugEye 15
+#ACT
+take Nephirite 1
+take JadeNecklace 1
+take BlackThread 10
+take BugEye 15
+give NephritNeck 1
+#SAY
+<NephritNeck> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@nephbrace]
+Item Name: <NephritBrace>\
+Item Type: <Bracelet>\
+Stats: <Sc0-2>\
+Items Needed: <Nephirite MonkBracelet 10BlackThread 15BugLeg>\ \
+ <Craft Item/@makenephbrace>\
+ <Back/@main> <Exit/@exit>\
+
+[@makenephbrace]
+#IF
+checkitem Nephirite 1
+checkdura Nephirite 12
+checkitem MonkBracelet 1
+checkitem BlackThread 10
+checkitem BugLeg 15
+#ACT
+take Nephirite 1
+take MonkBracelet 1
+take BlackThread 10
+take BugLeg 15
+give NephritBrace 1
+#SAY
+<NephritBrace> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@nephring]
+Item Name: <NephritRing>\
+Item Type: <Ring>\
+Stats: <Ac01> <Sc0-1>\
+Items Needed: <Nephirite WhiteJadeRing 10BlackThread 15Mandible>\ \
+ <Craft Item/@makenephring>\
+ <Back/@main> <Exit/@exit>\
+
+[@makenephring]
+#IF
+checkitem Nephirite 1
+checkdura Nephirite 12
+checkitem WhiteJadeRing 1
+checkitem BlackThread 10
+checkitem Mandible 15
+#ACT
+take Nephirite 1
+take WhiteJadeRing 1
+take BlackThread 10
+take Mandible 15
+give NephritRing 1
+#SAY
+<NephritRing> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+;------------------------------------------------------------
+
+[@nephritesetH]
+Which Item Would you like to Craft?\ \
+ <NephriteBelt(H)/@nephbeltH> <NephriteShoes(H)/@nephshoesH>\
+ <NephriteNecklace(H)/@nephneckH> <NephriteBracelet(H)/@nephbraceH>\
+ <NephriteRing(H)/@nephringH>\ \
+ <Back/@main> <Exit/@exit>\
+
+[@nephbeltH]
+Item Name: <NephritBelt(H)>\
+Item Type: <Belt>\
+Stats: <Ac0-2> <Amc0-1> <Sc1-0>\
+Items Needed: <NephritBelt 2Nephirite 15LargeBone 15BlackThread>\ \
+ <Craft Item/@makenephbeltH>\
+ <Back/@main> <Exit/@exit>\
+
+[@makenephbeltH]
+#IF
+checkitem NephritBelt 1
+checkitem Nephirite 2
+checkdura Nephirite 12
+checkitem LargeBone 15
+checkitem BlackThread 15
+#ACT
+take NephritBelt 1
+take Nephirite 2
+take LargeBone 15
+take BlackThread 15
+give NephritBelt(H) 1
+#SAY
+<NephritBelt(H)> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@nephshoesH]
+Item Name: <NephritShoe(H)>\
+Item Type: <Shoes>\
+Stats: <Ac0-2> <Amc0-2> <Sc1-0>\
+Items Needed: <NephritShoes 2Nephirite 15LargeBone 15BlackThread>\ \
+ <Craft Item/@makenephshoesH>\
+ <Back/@main> <Exit/@exit>\
+
+[@makenephshoesH]
+#IF
+checkitem NephritShoes 1
+checkitem Nephirite 2
+checkdura Nephirite 12
+checkitem LargeBone 15
+checkitem BlackThread 15
+#ACT
+take NephritShoes 1
+take Nephirite 2
+take LargeBone 15
+take BlackThread 15
+give NephritShoe(H) 1
+#SAY
+<NephritShoe(H)> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@nephneckH]
+Item Name: <NephritNeck(H)>\
+Item Type: <Necklace>\
+Stats: <Sc0-4>\
+Items Needed: <NephritNeck 2Nephirite 15LargeBone 15BlackThread>\ \
+ <Craft Item/@makenephneckH>\
+ <Back/@main> <Exit/@exit>\
+
+[@makenephneckH]
+#IF
+checkitem NephritNeck 1
+checkitem Nephirite 2
+checkdura Nephirite 12
+checkitem LargeBone 15
+checkitem BlackThread 15
+#ACT
+take NephritNeck 1
+take Nephirite 2
+take LargeBone 15
+take BlackThread 15
+give NephritNeck(H) 1
+#SAY
+<NephritNeck(H)> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@nephbraceH]
+Item Name: <NephritBrac(H)>\
+Item Type: <Bracelet>\
+Stats: <Ac0-1> <Amc0-1> <Sc0-2>\
+Items Needed: <NephritBrace 2Nephirite 15LargeBone 15BlackThread>\ \
+ <Craft Item/@makenephbraceH>\
+ <Back/@main> <Exit/@exit>\
+
+[@makenephbraceH]
+#IF
+checkitem NephritBrace 1
+checkitem Nephirite 2
+checkdura Nephirite 12
+checkitem LargeBone 15
+checkitem BlackThread 15
+#ACT
+take NephritBrace 1
+take Nephirite 2
+take LargeBone 15
+take BlackThread 15
+give NephritBrac(H) 1
+#SAY
+<NephritBrac(H)> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@nephringH]
+Item Name: <NephritRing(H)>\
+Item Type: <Ring>\
+Stats: <Ac01> <Amc0-1> <Sc0-3>\
+Items Needed: <NephritRing 2Nephirite 15LargeBone 15BlackThread>\ \
+ <Craft Item/@makenephringH>\
+ <Back/@main> <Exit/@exit>\
+
+[@makenephringH]
+#IF
+checkitem NephritRing 1
+checkitem Nephirite 2
+checkdura Nephirite 12
+checkitem LargeBone 15
+checkitem BlackThread 15
+#ACT
+take NephritRing 1
+take Nephirite 2
+take LargeBone 15
+take BlackThread 15
+give NephritRing(H) 1
+#SAY
+<NephritRing(H)> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+;------------------------------------------------------------
+
+[@redjadeset]
+Which Item Would you like to Craft?\ \
+ <RedJadeBelt/@redjadebelt> <RedJadeShoes/@redjadeshoes>\
+ <RedJadeNecklace/@redjadeneck> <RedJadeBracelet/@redjadebrace>\
+ <RedJadeRing/@redjadering>\ \
+ <Back/@main> <Exit/@exit>\
+
+[@redjadebelt]
+Item Name: <RedJadeBelt>\
+Item Type: <Belt>\
+Stats: <Ac0-1> <Amc0-1> <Mc1-0>\
+Items Needed: <Ruby BronzeBelt 10RedThread 15BugShell>\ \
+ <Craft Item/@makeredjadebelt>\
+ <Back/@main> <Exit/@exit>\
+
+[@makeredjadebelt]
+#IF
+checkitem Ruby 1
+checkdura Ruby 12
+checkitem BronzeBelt 1
+checkitem RedThread 10
+checkitem BugShell 15
+#ACT
+take Ruby 1
+take BronzeBelt 1
+take RedThread 10
+take BugShell 15
+give RedJadeBelt 1
+#SAY
+<RedJadeBelt> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@redjadeshoes]
+Item Name: <RedJadeShoes>\
+Item Type: <Shoes>\
+Stats: <Ac1-0> <Amc1-0> <Mc1-0>\
+Items Needed: <Ruby SilkBoots 10RedThread 15BugShell>\ \
+ <Craft Item/@makeredjadeshoes>\
+ <Back/@main> <Exit/@exit>\
+
+[@makeredjadeshoes]
+#IF
+checkitem Ruby 1
+checkdura Ruby 12
+checkitem SilkBoots 1
+checkitem RedThread 10
+checkitem BugShell 15
+#ACT
+take Ruby 1
+take SilkBoots 1
+take RedThread 10
+take BugShell 15
+give RedJadeShoes 1
+#SAY
+<RedJadeShoes> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@redjadeneck]
+Item Name: <RedJadeNeck>\
+Item Type: <Necklace>\
+Stats: <Mc1-2>\
+Items Needed: <Ruby AmberNecklace 10RedThread 15BugEye>\ \
+ <Craft Item/@makeredjadeneck>\
+ <Back/@main> <Exit/@exit>\
+
+[@makeredjadeneck]
+#IF
+checkitem Ruby 1
+checkdura Ruby 12
+checkitem AmberNecklace 1
+checkitem RedThread 10
+checkitem BugEye 15
+#ACT
+take Ruby 1
+take AmberNecklace 1
+take RedThread 10
+take BugEye 15
+give RedJadeNeck 1
+#SAY
+<RedJadeNeck> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@redjadebrace]
+Item Name: <RedJadeBrace>\
+Item Type: <Bracelet>\
+Stats: <Mc0-2>\
+Items Needed: <Ruby EbonyBracelet 10RedThread 15BugLeg>\ \
+ <Craft Item/@makeredjadebrace>\
+ <Back/@main> <Exit/@exit>\
+
+[@makeredjadebrace]
+#IF
+checkitem Ruby 1
+checkdura Ruby 12
+checkitem EbonyBracelet 1
+checkitem RedThread 10
+checkitem BugLeg 15
+#ACT
+take Ruby 1
+take EbonyBracelet 1
+take RedThread 10
+take BugLeg 15
+give RedJadeBrace 1
+#SAY
+<RedJadeBrace> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@redjadering]
+Item Name: <RedJadeRing>\
+Item Type: <Ring>\
+Stats: <Ac01> <Mc0-1>\
+Items Needed: <Ruby IronRing 10RedThread 15Mandible>\ \
+ <Craft Item/@makeredjadering>\
+ <Back/@main> <Exit/@exit>\
+
+[@makeredjadering]
+#IF
+checkitem Ruby 1
+checkdura Ruby 12
+checkitem IronRing 2
+checkitem RedThread 10
+checkitem Mandible 15
+#ACT
+take Ruby 1
+take IronRing 2
+take RedThread 10
+take Mandible 15
+give RedJadeRing 1
+#SAY
+<RedJadeRing> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+;------------------------------------------------------------
+
+[@redjadesetH]
+Which Item Would you like to Craft?\ \
+ <RedJadeBelt(H)/@redjadebeltH> <RedJadeShoes(H)/@redjadeshoesH>\
+ <RedJadeNecklace(H)/@redjadeneckH> <RedJadeBracelet(H)/@redjadebraceH>\
+ <RedJadeRing(H)/@redjaderingH>\ \
+ <Back/@main> <Exit/@exit>\
+
+[@redjadebeltH]
+Item Name: <RedJadeBelt(H)>\
+Item Type: <Belt>\
+Stats: <Ac0-2> <Amc0-1> <Mc1-0>\
+Items Needed: <RedJadeBelt 2Ruby 15LargeBone 15RedThread>\ \
+ <Craft Item/@makeredjadebeltH>\
+ <Back/@main> <Exit/@exit>\
+
+[@makeredjadebeltH]
+#IF
+checkitem RedJadeBelt 1
+checkitem Ruby 2
+checkdura Ruby 12
+checkitem LargeBone 15
+checkitem RedThread 15
+#ACT
+take RedJadeBelt 1
+take Ruby 2
+take LargeBone 15
+take RedThread 15
+give RedJadeBelt(H) 1
+#SAY
+<RedJadeBelt(H)> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@redjadeshoesH]
+Item Name: <RedJadeShoe(H)>\
+Item Type: <Shoes>\
+Stats: <Ac0-2> <Amc0-2> <Mc1-0>\
+Items Needed: <RedJadeShoes 2Ruby 15LargeBone 15RedThread>\ \
+ <Craft Item/@makeredjadeshoesH>\
+ <Back/@main> <Exit/@exit>\
+
+[@makeredjadeshoesH]
+#IF
+checkitem RedJadeShoes 1
+checkitem Ruby 2
+checkdura Ruby 12
+checkitem LargeBone 15
+checkitem RedThread 15
+#ACT
+take RedJadeShoes 1
+take Ruby 2
+take LargeBone 15
+take RedThread 15
+give RedJadeShoe(H) 1
+#SAY
+<RedJadeShoe(H)> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@redjadeneckH]
+Item Name: <RedJadeNeck(H)>\
+Item Type: <Necklace>\
+Stats: <Mc0-4>\
+Items Needed: <RedJadeNeck 2Ruby 15LargeBone 15RedThread>\ \
+ <Craft Item/@makeredjadeneckH>\
+ <Back/@main> <Exit/@exit>\
+
+[@makeredjadeneckH]
+#IF
+checkitem RedJadeNeck 1
+checkitem Ruby 2
+checkdura Ruby 12
+checkitem LargeBone 15
+checkitem RedThread 15
+#ACT
+take RedJadeNeck 1
+take Ruby 2
+take LargeBone 15
+take RedThread 15
+give RedJadeNeck(H) 1
+#SAY
+<RedJadeNeck(H)> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@redjadebraceH]
+Item Name: <RedJadeBrac(H)>\
+Item Type: <Bracelet>\
+Stats: <Amc1-1> <Mc0-2>\
+Items Needed: <RedJadeBrace 2Ruby 15LargeBone 15RedThread>\ \
+ <Craft Item/@makeredjadebraceH>\
+ <Back/@main> <Exit/@exit>\
+
+[@makeredjadebraceH]
+#IF
+checkitem RedJadeBrace 1
+checkitem Ruby 2
+checkdura Ruby 12
+checkitem LargeBone 15
+checkitem RedThread 15
+#ACT
+take RedJadeBrace 1
+take Ruby 2
+take LargeBone 15
+take RedThread 15
+give RedJadeBrac(H) 1
+#SAY
+<RedJadeBrac(H)> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@redjaderingH]
+Item Name: <RedJadeRing(H)>\
+Item Type: <Ring>\
+Stats: <Amc0-2> <Mc0-3>\
+Items Needed: <RedJadeRing 2Ruby 15LargeBone 15RedThread>\ \
+ <Craft Item/@makeredjaderingH>\
+ <Back/@main> <Exit/@exit>\
+
+[@makeredjaderingH]
+#IF
+checkitem RedJadeRing 1
+checkitem Ruby 2
+checkdura Ruby 12
+checkitem LargeBone 15
+checkitem RedThread 15
+#ACT
+take RedJadeRing 1
+take Ruby 2
+take LargeBone 15
+take RedThread 15
+give RedJadeRing(H) 1
+#SAY
+<RedJadeRing(H)> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+;------------------------------------------------------------
+
+[@hpxl]
+Item Name: <(HP)DrugXL>\
+Item Type: <Potion>\
+Effect: <Health +150>\
+Items Needed:<(HP)DrugLarge 2CannibalLeaf 1EbonyFruit>\ \
+ <Craft Item/@makehpxl>\
+ <Back/@main> <Exit/@exit>\
+
+[@makehpxl]
+#IF
+checkitem (HP)DrugLarge 1
+checkitem CannibalLeaf 2
+checkitem EbonyFruit 1
+#ACT
+take (HP)DrugLarge 1
+take CannibalLeaf 2
+take EbonyFruit 1
+give (HP)DrugXL 1
+#SAY
+<(HP)DrugXL> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@hpxlbundl]
+Item Name: <(HP)XLBundl>\
+Item Type: <Item>\
+Effect: <Creates 6 (HP)XL Potions>\
+Items Needed: <(HP)LargeBundl 8CannibalLeafs 6EbonyFruits>\ \
+ <Craft Item/@makehpxlbundl>\
+ <Back/@main> <Exit/@exit>\
+
+[@makehpxlbundl]
+#IF
+checkitem (HP)LargeBundl 1
+checkitem CannibalLeaf 8
+checkitem EbonyFruit 6
+#ACT
+take (HP)LargeBundl 1
+take CannibalLeaf 8
+take EbonyFruit 6
+give (HP)XLBundl 1
+#SAY
+<(HP)XLBundl> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@mpxl]
+Item Name: <(MP)DrugXL>\
+Item Type: <Potion>\
+Effect: <Magic +200>\
+Items Needed: <(MP)DrugLarge 1CannibalFruit 1Mushroom>\ \
+ <Craft Item/@makempxl>\
+ <Back/@main> <Exit/@exit>\
+
+[@makempxl]
+#IF
+checkitem (MP)DrugLarge 1
+checkitem CannibalFruit 1
+checkitem Mushroom 1
+#ACT
+take (MP)DrugLarge 1
+take CannibalFruit 1
+take Mushroom 1
+give (MP)DrugXL 1
+#SAY
+<(MP)DrugXL> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@mpxlbundl]
+Item Name: <(MP)XLBundl>\
+Item Type: <Item>\
+Effect: <Creates 6 (MP)XL Potions>\
+Items Needed: <(MP)LargeBundl 4CannibalFruits 6Mushrooms>\ \
+ <Craft Item/@makempxlbundl>\
+ <Back/@main> <Exit/@exit>\
+
+[@makempxlbundl]
+#IF
+checkitem (MP)LargeBundl 1
+checkitem CannibalFruit 4
+checkitem Mushroom 6
+#ACT
+take (MP)LargeBundl 1
+take CannibalFruit 4
+take Mushroom 6
+give (MP)XLBundl 1
+#SAY
+<(MP)XLBundl> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+;------------------------------------------------------------
+
+[@largebone]
+Item Name: <LargeBone>\
+Item Type: <Item>\
+Quantity: <1>\
+Items Needed: <10Bones>\ \
+ <Craft Item/@makelargebone>\
+ <Back/@main> <Exit/@exit>\
+
+[@makelargebone]
+#IF
+checkitem Bone 10
+#ACT
+take Bone 10
+give LargeBone 1
+#SAY
+<LargeBone> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@whitethread]
+Item Name: <WhiteThread>\
+Item Type: <Item>\
+Quantity: <1>\
+Items Needed: <10SpiderWebs 1Mushroom>\ \
+ <Craft Item/@makewhitethread>\
+ <Back/@main> <Exit/@exit>\
+
+[@makewhitethread]
+#IF
+checkitem SpiderWeb 10
+checkitem Mushroom 1
+#ACT
+take SpiderWeb 10
+take Mushroom 1
+give WhiteThread 1
+#SAY
+<WhiteThread> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@blackthread]
+Item Name: <BlackThread>\
+Item Type: <Item>\
+Quantity: <1>\
+Items Needed: <10SpiderWebs 1BugShell>\ \
+ <Craft Item/@makeblackthread>\
+ <Back/@main> <Exit/@exit>\
+
+[@makeblackthread]
+#IF
+checkitem SpiderWeb 10
+checkitem BugShell 1
+#ACT
+take SpiderWeb 10
+take BugShell 1
+give BlackThread 1
+#SAY
+<BlackThread> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@redthread]
+Item Name: <RedThread>\
+Item Type: <Item>\
+Quantity: <1>\
+Items Needed:<10SpiderWebs 1CannibalFruit>\ \
+ <Craft Item/@makeredthread>\
+ <Back/@main> <Exit/@exit>\
+
+[@makeredthread]
+#IF
+checkitem SpiderWeb 10
+checkitem CannibalFruit 1
+#ACT
+take SpiderWeb 10
+take CannibalFruit 1
+give RedThread 1
+#SAY
+<RedThread> Crafted Successfully!\ \
+ <Exit/@exit>\
+#ELSESAY
+You dont have all the Items i Need!!\ \
+ <Exit/@exit>\
+
+[@makegemlist]
+#SAY
+Please choose the Gem that you wish to craft.\
+All information regarding what items you need\
+to craft a specific gem is shown when you select\
+which Gem you want to craft.\
+Please note that using a Gem can cause your\
+item to break.\ \
+<Back/@main> <Exit/@exit>\
+
+[@InfoBraveryGem]
+#SAY
+This Gem can be used to increase Equipment's Destructive Power.\ 
+The following materials are needed to craft a Bravery Gem.\ \
+Accessory + Platinum + Nephrite + Stone Of Guardian \ \
+Please note that the purity of all minerals must be \
+at least 12 \ \
+<Back/@main> <Exit/@exit>\
+
+[@InfoMagicGem]
+#SAY
+This Gem can be used to increase Equipment's Magic Power.\
+The following materials are needed to craft a Magic Gem.\ \
+Accessory + Platinum + Nephrite + Stone Of Guardian \ \
+Please note that the purity of all minerals must be \
+at least 12 \ \
+<Back/@main> <Exit/@exit>\
+
+[@InfoSoulGem]
+#SAY
+This Gem can be used to increase Equipment's Taoist Power.\
+The following materials are needed to craft a Soul Gem.\ \
+Accessory + Platinum + Nephrite + Stone Of Guardian \ \
+Please note that the purity of all minerals must be \
+at least 12 \ \
+<Back/@main> <Exit/@exit>\
+
+[@InfoProtectionGem]
+#SAY
+This Gem can be used to increase Equipment's Defensive Power.\
+The following materials are needed to craft a Protection Gem.\ \
+Accessory + Gold Ore + Black Iron Ore + Stone Of Guardian \ \
+Please note that the purity of all minerals must be \
+at least 12 \ \
+<Back/@main> <Exit/@exit>\
+
+[@InfoEvilSlayerGem]
+#SAY
+This Gem can be used to increase Equipment's Demonic Power.\
+The following materials are needed to craft an Evil Slayer Gem.\ \
+Accessory + Gold Ore + Black Iron Ore + Stone Of Guardian \ \
+Please note that the purity of all minerals must be \
+at least 12 \ \
+<Back/@main> <Exit/@exit>\
+
+
+[@InfoDurabilityGem]
+#SAY
+This Gem can be used to increase Equipment's Durability.\
+The following materials are needed to craft a Durability Gem.\ \
+Accessory + Gold Ore + Black Iron Ore + Stone Of Guardian \ \
+Please note that the purity of all minerals must be \
+at least 12 \ \
+<Back/@main> <Exit/@exit>\
+
+[@InfoStormGem]
+#SAY
+This Gem can be used to increase Equipment's Attack Speed.\
+The following materials are needed to craft a Storm Gem.\ \
+5 Wind Marbles + Plantinum + Gold Ore + Stone Of Guardian \ \
+Please note that the purity of all minerals must be \
+at least 15 \ \
+<Back/@main> <Exit/@exit>\
+
+[@InfoAgilityGem]
+#SAY
+This Gem can be used to increase Equipment's Agility.\
+The following materials are needed to craft an Agility Gem.\ \
+5 Evasion Marbles + Plantinum + Gold Ore + Stone Of Guardian \ \
+Please note that the purity of all minerals must be \
+at least 15 \ \
+<Back/@main> <Exit/@exit>\
+
+[@InfoAccuracyGem]
+#SAY
+This Gem can be used to increase Equipment's Accuracy.\
+The following materials are needed to craft an Accuracy Gem.\ \
+5 Focus Marbles + Plantinum + Gold Ore + Stone Of Guardian \ \
+Please note that the purity of all minerals must be \
+at least 15 \ \
+<Back/@main> <Exit/@exit>\
+
+[@InfoPoisonGem]
+#SAY
+This Gem can be used to increase Equipment's Poison Effect.\
+The following materials are needed to craft a Poison Gem.\ \
+5 Poison Marbles + Plantinum + Gold Ore + Stone Of Guardian \ \
+Please note that the purity of all minerals must be \
+at least 15 \ \
+<Back/@main> <Exit/@exit>\
+
+[@InfoFreezingGem]
+#SAY
+This Gem can be used to increase Equipment's Freezing Effect.\
+The following materials are needed to craft a Freezing Gem.\ \
+5 Ice Marbles + Plantinum + Gold Ore + Stone Of Guardian \ \
+Please note that the purity of all minerals must be \
+at least 15 \ \
+<Back/@main> <Exit/@exit>\
+
+[@InfoDisillusionGem]
+#SAY
+This Gem can be used to increase Equipment's Magic Resistance.\ 
+The following materials are needed to craft a Disillusion Gem.\ \
+5 Will Marbles + Plantinum + Gold Ore + Stone Of Guardian \ \
+Please note that the purity of all minerals must be \
+at least 15 \ \
+<Back/@main> <Exit/@exit>\
+
+[@InfoEnduranceGem]
+#SAY
+This Gem can be used to increase Equipment's Poison Resistance.\
+The following materials are needed to craft an Endurance Gem.\ \
+5 Antidote Marbles + Plantinum + Gold Ore + Stone Of Guardian \ \
+Please note that the purity of all minerals must be \
+at least 15 \ \
+<Back/@main> <Exit/@exit>\

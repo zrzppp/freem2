@@ -1,0 +1,51 @@
+; ===================================
+; Market Def NPC File : 
+; 
+; -----------------------------------
+; Name: 
+; Job: 
+; Map No: 
+; Pos X 
+; Pos Y 
+; File name: *removed*
+; Comment: 
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair @storage @getback)
+%100
++0
++42
++30
++3
+
+[@main]
+Welcome, how may I help you?\ \
+<Buy/@buy>  items\
+<Sell/@sell>  items\
+<Help/@questionprize>\
+<Close/@exit>
+
+[@buy]
+What item would you like to buy?\ \ \
+ <back/@main>
+
+
+[@sell]
+What item would you like to sell?\ \ \
+ <Back/@main>
+
+[goods]
+;Item		Amount		Time
+Candle			200	1
+Torch			200	1
+DungeonEscape		200	1
+DungeonEscapeBundlel		200	1
+RandomTeleport		200	1
+RandomTeleportBundlel		200	1
+Amulet			200	1
+Amulet(M)		200	1
+RepairOil		200	1
+TeleportHome		200	1

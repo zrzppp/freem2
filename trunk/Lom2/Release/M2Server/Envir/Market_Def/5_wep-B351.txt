@@ -1,0 +1,74 @@
+; ===================================
+; Market Def NPC File : 5_wep-B351
+; PrajnaIsland (WeaponShop)
+; -----------------------------------
+; Name: Geoff
+; Job: 
+; Map No: B351
+; Pos X 8
+; Pos Y 8
+; File name: *removed*
+; Comment: PrajnaIsland (WeaponShop)
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair @storage @getback)
+%100
++5
++6
++43
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not help an evil person like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+Welcome. Thanks for dropping in\ \
+<Buy/@buy>  Weapon\
+<Sell/@sell>  Weapon\
+<Repair/@repair> Weapon\
+<Close/@exit>
+
+[@buy]
+Which item would you like to buy?\ \ \
+<Back/@main>
+
+[@sell]
+Show me your Weapon to be sold.\ \ \
+<Back/@main>
+
+[@repair]
+Would like to repair Weapon? Show me your Weapon that need it.\ \
+<Back/@main>
+
+[~@repair]
+It seems in good condition now.\ \
+<Back/@main>
+
+
+[goods]
+;Item		Amount		Time
+WoodenSword     100         	1
+Dagger		100		1
+EbonySword	100		1	
+BronzeSword	100		1 
+ShortSword 	100		1
+Ironsword	100		1
+BronzeAxe	100		1
+Trident		100		1
+HookedSword	100		1
+Scimitar	100		1
+SteelSword	100		1
+PurifierSword	100		1
+SteelAxe	100		1
+PickAxe		100		1

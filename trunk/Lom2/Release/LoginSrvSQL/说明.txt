@@ -1,0 +1,3 @@
+本程序使用MSSQL数据库，请新建立Account数据库，再把目录下个Account.bak还原到数据库
+
+设置好Logsrv.ini的数据库连接设置即可使用

@@ -1,0 +1,31 @@
+; ===================================
+; Market Def NPC File : 2Are-0151
+; Blacksmith in MongchonProvince (SabukWall)
+; -----------------------------------
+; Name: Dean
+; Job: Blacksmith
+; Map No: 3
+; Pos X 3
+; Pos Y 19
+; File name: *removed*
+; Comment: Blacksmith in MongchonProvince (SabukWall)
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair)
+%100
++5
++6
+
+[@main]
+I can do special repairs on your weapon. Special repair\
+costs more than normal repair, but you won't lose durability.\
+By order of <$LORD> members of <$OWNERGUILD> will get a\
+discount on my prices\ \
+<Repair/@s_repair>\
+<No thanks/@exit>
+
+[goods]
+;Item		Amount		Time

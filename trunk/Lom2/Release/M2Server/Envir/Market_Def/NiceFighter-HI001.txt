@@ -1,0 +1,25 @@
+; ===================================
+; Market Def NPC File : NiceFighter-HI001
+; HiddenPlace
+; -----------------------------------
+; Name: NiceFighter
+; Job: 
+; Map No: HI001
+; Pos X
+; Pos Y
+; File name: *removed*
+; Comment: HiddenPlace
+
+;================================================= =
+;
+
+[@main]
+#SAY
+Hello\
+You need a help from this magnificent looking warrior?\
+I will strengthen your power ability!!\
+As a typical warrior,\
+you must give your soul to your power and weapon\
+Raise your power and ability.\
+Then you can become as I am.\ \
+<Close/@exit>
