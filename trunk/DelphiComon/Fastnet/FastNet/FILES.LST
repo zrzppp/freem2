@@ -1,0 +1,150 @@
+The following is a list of the files included with the FastNet Tools for
+Delphi 3 distribution, and the directory structure created during the
+setup process.
+
+
++---Install Directory (Default is a FastNet directory in your Delphi 3
+|                                                                Directory
+|   NMDayTim.dcr
+|   NMDayTim.pas
+|   NMEcho.dcr
+|   NMEcho.pas
+|   nmextstr.pas
+|   NMFast.dpk
+|   NMFast.dpl
+|   NMFast1.dcr
+|   NMFast1.pas
+|   NMFngr.dcr
+|   NMFngr.pas
+|   NMftp.dcr
+|   NMFtp.pas
+|   NMhttp.dcr
+|   NMHttp.pas
+|   NMMSG.dcr
+|   NMMSG.pas
+|   NMnntp.dcr
+|   NMNNTP.pas
+|   NMPop3.dcr
+|   NMpop3.pas
+|   NMSmtp.dcr
+|   NMsmtp.pas
+|   NMSTRM.pas
+|   NMtime.dcr
+|   NMTime.pas
+|   NMUdp.dcr
+|   NMUDP.pas
+|   NMURL.dcr
+|   NMURL.pas
+|   NMUUE.dcr
+|   nmuue.pas
+|   PSock.dcr
+|   Psock.pas
+|   readme.txt
+|   
++---Help
+|       nmdaytim.cnt
+|       nmdaytim.hlp
+|       nmecho.cnt
+|       nmecho.hlp
+|       nmfinger.cnt
+|       nmfinger.hlp
+|       nmfngr.cnt
+|       nmfngr.hlp
+|       nmftp.cnt
+|       nmftp.hlp
+|       Nmhttp.cnt
+|       Nmhttp.hlp
+|       nmicmp.cnt
+|       nmicmp.hlp
+|       nmmsg.cnt
+|       nmmsg.hlp
+|       nmnntp.cnt
+|       nmnntp.hlp
+|       nmpop3.cnt
+|       nmpop3.hlp
+|       nmsmtp.cnt
+|       nmsmtp.hlp
+|       nmstream.cnt
+|       nmstream.hlp
+|       nmstrm.cnt
+|       nmstrm.hlp
+|       nmtime.cnt
+|       nmtime.hlp
+|       NMUDP.cnt
+|       NMUDP.hlp
+|       nmurl.cnt
+|       nmurl.hlp
+|       NMUUE.cnt
+|       NMUUE.hlp
+|       
+\---Samples
+    +---DayTime
+    |       DayTmDemo.dpr
+    |       Unit1.dfm
+    |       Unit1.pas
+    |       
+    +---Echo
+    |       EchoDemo.dpr
+    |       Unit1.dfm
+    |       Unit1.pas
+    |       
+    +---Finger
+    |       FngrDemo.dpr
+    |       unit1.dfm
+    |       unit1.pas
+    |       
+    +---ftp
+    |       FTPDemo.dpr
+    |       Unit1.dfm
+    |       Unit1.pas
+    |       
+    +---HTTP
+    |       HTTPDemo.dpr
+    |       Unit1.dfm
+    |       Unit1.pas
+    |       
+    +---Msg
+    |       msgdemo.dpr
+    |       Unit1.dfm
+    |       Unit1.pas
+    |       
+    +---NNTP
+    |       nntpdemo.dpr
+    |       Unit1.dfm
+    |       Unit1.pas
+    |       
+    +---pop3
+    |       pop3demo.dpr
+    |       Unit1.dfm
+    |       Unit1.pas
+    |       
+    +---SMTP
+    |       smtpdemo.dpr
+    |       Unit1.dfm
+    |       Unit1.pas
+    |       
+    +---Strm
+    |       strmdemo.dpr
+    |       Unit1.dfm
+    |       Unit1.pas
+    |       
+    +---Time
+    |       TimeDemo.dpr
+    |       Unit1.dfm
+    |       UNIT1.PAS
+    |       
+    +---UDP
+    |       UDPDemo.dpr
+    |       Unit1.dfm
+    |       Unit1.pas
+    |       
+    +---url
+    |       Unit1.dfm
+    |       Unit1.pas
+    |       urldemo.dpr
+    |       
+    +---uue
+    |       Unit1.dfm
+    |       Unit1.pas
+    |       uuedemo.dpr
+    |        
