@@ -1,0 +1,49 @@
+Build
+  [Warning] HUtil32.pas(519): Symbol 'FileSetAttr' is specific to a platform
+  [Warning] HUtil32.pas(519): Symbol 'FileGetAttr' is specific to a platform
+  [Warning] HUtil32.pas(548): Symbol 'FileSetAttr' is specific to a platform
+  [Warning] HUtil32.pas(548): Symbol 'FileGetAttr' is specific to a platform
+  [Hint] HUtil32.pas(1110): Value assigned to 'Fin' never used
+  [Hint] HUtil32.pas(1084): Variable 'BufCount' is declared but never used in 'ArrestStringEx'
+  [Hint] HUtil32.pas(1084): Variable 'SrcCount' is declared but never used in 'ArrestStringEx'
+  [Hint] HUtil32.pas(1810): Variable 'i' is declared but never used in 'TakeOffTag'
+  [Hint] UsrSoc.pas(312): Value assigned to 'nGateIdx' never used
+  [Hint] UsrSoc.pas(48): Private symbol 'n2DC' declared but never used
+  [Hint] UsrSoc.pas(49): Private symbol 'n2E0' declared but never used
+  [Hint] UsrSoc.pas(50): Private symbol 'n2E4' declared but never used
+  [Hint] UsrSoc.pas(72): Private symbol 'GateRoutePort' declared but never used
+  [Warning] FDBexpl.pas(605): Variable 'HumItems' might not have been initialized
+  [Warning] FDBexpl.pas(605): Variable 'HumAddItems' might not have been initialized
+  [Hint] FDBexpl.pas(523): Variable 'HumItems' is declared but never used in 'TFrmFDBExplore.ClearHumanItem'
+  [Hint] FDBexpl.pas(524): Variable 'HumAddItems' is declared but never used in 'TFrmFDBExplore.ClearHumanItem'
+  [Hint] DBTools.pas(45): Private symbol 'UpdateProcess' declared but never used
+  [Hint] RouteManage.pas(125): Variable 'ListItem' is declared but never used in 'TfrmRouteManage.ProcessAddRoute'
+  [Hint] DBSMain.pas(238): Variable 'DefMsg' is declared but never used in 'TFrmDBSrv.ProcessServerPacket'
+  [Hint] DBSMain.pas(341): Variable 'DefMsg' is declared but never used in 'TFrmDBSrv.LoadHumanRcd'
+  [Hint] DBSMain.pas(393): Variable 'DefMsg' is declared but never used in 'TFrmDBSrv.SaveHumanRcd'
+  [Hint] DBSMain.pas(449): Variable 'bo21' is declared but never used in 'TFrmDBSrv.SaveHumanRcdEx'
+  [Hint] DBSMain.pas(450): Variable 'DefMsg' is declared but never used in 'TFrmDBSrv.SaveHumanRcdEx'
+  [Hint] DBSMain.pas(451): Variable 'HumanRCD' is declared but never used in 'TFrmDBSrv.SaveHumanRcdEx'
+  [Hint] DBSMain.pas(612): Variable 'nIndex' is declared but never used in 'TFrmDBSrv.ShowModule'
+  [Hint] DBSMain.pas(639): Variable 'Conf' is declared but never used in 'TFrmDBSrv.FormCreate'
+  [Hint] DBSMain.pas(824): Value assigned to 'TFrmDBSrv.LoadMagicDB' never used
+  [Hint] DBShare.pas(279): Variable 'I' is declared but never used in 'GetStdItemName'
+  [Hint] UserSoc.pas(309): Value assigned to 'nGateIdx' never used
+  [Hint] UserSoc.pas(48): Private symbol 'n2DC' declared but never used
+  [Hint] UserSoc.pas(49): Private symbol 'n2E0' declared but never used
+  [Hint] UserSoc.pas(50): Private symbol 'n2E4' declared but never used
+  [Hint] UserSoc.pas(72): Private symbol 'GateRoutePort' declared but never used
+  [Warning] DateManage.pas(298): Return value of function 'TFrmDateManage.LoadChrNameList' might be undefined
+  [Warning] DateManage.pas(303): Return value of function 'TFrmDateManage.LoadClearMakeIndexList' might be undefined
+  [Warning] DateManage.pas(815): Return value of function 'TFrmDateManage.GetMapIndex' might be undefined
+  [Warning] DateManage.pas(827): Return value of function 'TFrmDateManage.CheckDenyChrName' might be undefined
+  [Hint] DateManage.pas(48): Private symbol 'n2DC' declared but never used
+  [Hint] DateManage.pas(49): Private symbol 'n2E0' declared but never used
+  [Hint] DateManage.pas(50): Private symbol 'n2E4' declared but never used
+  [Hint] DateManage.pas(53): Private symbol 'MapList' declared but never used
+  [Hint] DateManage.pas(55): Private symbol 'LoadChrNameList' declared but never used
+  [Hint] DateManage.pas(56): Private symbol 'LoadClearMakeIndexList' declared but never used
+  [Hint] DateManage.pas(72): Private symbol 'GateRoutePort' declared but never used
+  [Error] WARNING. Duplicate resource(s):
+  [Error]   Type 10 (RCDATA), ID TFRMUSERSOC:
+  [Error]     File D:\Delphi\GameOfMir\EDBServer\UserSoc.DFM resource kept; file D:\Delphi\GameOfMir\EDBServer\UsrSoc.DFM resource discarded.

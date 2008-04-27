@@ -1,0 +1,26 @@
+[Error] ObjPlayMon.pas(1866): Label declared and referenced, but not set: 'L0001'
+[Error] ObjPlayMon.pas(1868): Label declared and referenced, but not set: 'L0003'
+[Error] ObjPlayMon.pas(1886): ';' expected but 'ELSE' found
+[Error] ObjPlayMon.pas(1889): Undeclared identifier: 'L0002'
+[Error] ObjPlayMon.pas(1891): ';' expected but 'ELSE' found
+[Error] ObjPlayMon.pas(1892): Undeclared identifier: 'L0003'
+[Error] ObjPlayMon.pas(1893): '.' expected but ';' found
+[Warning] ObjPlayMon.pas(1894): Text after final 'END.' - ignored by compiler
+[Hint] ObjPlayMon.pas(49): Private symbol 'Think' declared but never used
+[Hint] ObjPlayMon.pas(57): Private symbol 'WarrorAttackTarget' declared but never used
+[Hint] ObjPlayMon.pas(58): Private symbol 'WizardAttackTarget' declared but never used
+[Hint] ObjPlayMon.pas(59): Private symbol 'TaoistAttackTarget' declared but never used
+[Hint] ObjPlayMon.pas(66): Private symbol 'WalkToTargetXY' declared but never used
+[Hint] ObjPlayMon.pas(68): Private symbol 'CheckSlaveTarget' declared but never used
+[Hint] ObjPlayMon.pas(69): Private symbol 'CheckSlavePickUpItem' declared but never used
+[Hint] ObjPlayMon.pas(73): Private symbol 'AllowGotoTargetXY' declared but never used
+[Hint] ObjPlayMon.pas(76): Private symbol 'UseItem' declared but never used
+[Error] ObjPlayMon.pas(81): Unsatisfied forward or external declaration: 'TPlayMonster.AddItemsFromConfig'
+[Hint] ObjPlayMon.pas(82): Private symbol 'CheckTakeOnItems' declared but never used
+[Hint] ObjPlayMon.pas(83): Private symbol 'FindMagic' declared but never used
+[Error] ObjPlayMon.pas(89): Unsatisfied forward or external declaration: 'TPlayMonster.AttackTarget'
+[Error] ObjPlayMon.pas(90): Unsatisfied forward or external declaration: 'TPlayMonster.AddItems'
+[Error] ObjPlayMon.pas(91): Unsatisfied forward or external declaration: 'TPlayMonster.AddMagic'
+[Error] ObjPlayMon.pas(92): Unsatisfied forward or external declaration: 'TPlayMonster.GetAbility'
+[Error] ObjPlayMon.pas(93): Unsatisfied forward or external declaration: 'TPlayMonster.Run'
+[Fatal Error] M2Server.dpr(65): Could not compile used unit 'ObjPlayMon.pas'

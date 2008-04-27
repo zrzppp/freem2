@@ -1,0 +1,13 @@
+program Test;
+
+uses
+  Forms,
+  Main in 'Main.pas' {FormTest};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFormTest, FormTest);
+  Application.Run;
+end.

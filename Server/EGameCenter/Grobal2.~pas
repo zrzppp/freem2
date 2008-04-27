@@ -1,0 +1,694 @@
+unit Grobal2;
+
+interface
+uses
+  Windows;
+const
+  {DR_UP = 0;
+  DR_UPRIGHT = 1;
+  DR_RIGHT = 2;
+  DR_DOWNRIGHT = 3;
+  DR_DOWN = 4;
+  DR_DOWNLEFT = 5;
+  DR_LEFT = 6;
+  DR_UPLEFT = 7;
+
+  U_DRESS = 0;
+  U_WEAPON = 1;
+  U_RIGHTHAND = 2;
+  U_NECKLACE = 3;
+  U_HELMET = 4;
+  U_ARMRINGL = 5;
+  U_ARMRINGR = 6;
+  U_RINGL = 7;
+  U_RINGR = 8;}
+
+  DEFBLOCKSIZE = 16;
+  BUFFERSIZE = 10000;
+
+  {LOGICALMAPUNIT = 40;
+
+  UNITX = 48;
+  UNITY = 32;
+
+  HALFX = 24;
+  HALFY = 16;
+
+  MAXBAGITEM = 52;
+
+  STATE_STONE_MODE = 1;
+  STATE_OPENHEATH = 1; //jacky ??
+
+
+
+  ET_DIGOUTZOMBI = 1;
+  ET_PILESTONES = 3;
+  ET_HOLYCURTAIN = 4;
+  ET_FIRE = 5;
+  ET_SCULPEICE = 6;
+
+  RCC_USERHUMAN = 24; //Jacky ??
+  RCC_MERCHANT = 50;
+  RCC_GUARD = 12;
+
+  VERSION_NUMBER_0522 = 20020522;
+
+
+  CM_QUERYUSERSTATE = 82;
+
+  CM_QUERYUSERNAME = 80;
+  CM_QUERYBAGITEMS = 81;
+
+  CM_QUERYCHR = 100;
+  CM_NEWCHR = 101;
+  CM_DELCHR = 102;
+  CM_SELCHR = 103;
+  CM_SELECTSERVER = 104;
+
+  CM_OPENDOOR = 1002;
+  CM_SOFTCLOSE = 1009;
+
+  CM_DROPITEM = 1000;
+  CM_PICKUP = 1001;
+  CM_TAKEONITEM = 1003;
+  CM_TAKEOFFITEM = 1004;
+  CM_EAT = 1006;
+  CM_BUTCH = 1007;
+  CM_MAGICKEYCHANGE = 1008;
+
+  CM_CLICKNPC = 1010;
+  CM_MERCHANTDLGSELECT = 1011;
+  CM_MERCHANTQUERYSELLPRICE = 1012;
+  CM_USERSELLITEM = 1013;
+  CM_USERBUYITEM = 1014;
+  CM_USERGETDETAILITEM = 1015;
+  CM_DROPGOLD = 1016;
+  CM_LOGINNOTICEOK = 1018;
+  CM_GROUPMODE = 1019;
+  CM_CREATEGROUP = 1020;
+  CM_ADDGROUPMEMBER = 1021;
+  CM_DELGROUPMEMBER = 1022;
+  CM_USERREPAIRITEM = 1023;
+  CM_MERCHANTQUERYREPAIRCOST = 1024;
+  CM_DEALTRY = 1025;
+  CM_DEALADDITEM = 1026;
+  CM_DEALDELITEM = 1027;
+  CM_DEALCANCEL = 1028;
+  CM_DEALCHGGOLD = 1029;
+  CM_DEALEND = 1030;
+  CM_USERSTORAGEITEM = 1031;
+  CM_USERTAKEBACKSTORAGEITEM = 1032;
+  CM_WANTMINIMAP = 1033;
+  CM_USERMAKEDRUGITEM = 1034;
+  CM_OPENGUILDDLG = 1035;
+  CM_GUILDHOME = 1036;
+  CM_GUILDMEMBERLIST = 1037;
+  CM_GUILDADDMEMBER = 1038;
+  CM_GUILDDELMEMBER = 1039;
+  CM_GUILDUPDATENOTICE = 1040;
+  CM_GUILDUPDATERANKINFO = 1041;
+  CM_ADJUST_BONUS = 1043;
+  CM_SPEEDHACKUSER = 10430; //??
+
+  CM_PROTOCOL = 2000;
+  CM_IDPASSWORD = 2001;
+  //CM_ADDNEWUSER         = 2002;
+  //CM_CHANGEPASSWORD     = 2003;
+  CM_UPDATEUSER = 2004;
+
+  CM_THROW = 3005;
+  CM_TURN = 3010;
+  CM_WALK = 3011;
+  CM_SITDOWN = 3012;
+  CM_RUN = 3013;
+  CM_HIT = 3014;
+  CM_HEAVYHIT = 3015;
+  CM_BIGHIT = 3016;
+  CM_SPELL = 3017;
+  CM_POWERHIT = 3018;
+  CM_LONGHIT = 3019;
+
+  CM_WIDEHIT = 3024;
+  CM_FIREHIT = 3025;
+
+  CM_SAY = 3030;
+
+  SM_RUSH = 6;
+  SM_RUSHKUNG = 7; //
+  SM_FIREHIT = 8; //烈火
+  SM_BACKSTEP = 9;
+  SM_TURN = 10;
+  SM_WALK = 11; //走
+  SM_SITDOWN = 12;
+  SM_RUN = 13;
+  SM_HIT = 14; //砍
+  SM_HEAVYHIT = 15; //
+  SM_BIGHIT = 16; //
+  SM_SPELL = 17; //使用魔法
+  SM_POWERHIT = 18;
+  SM_LONGHIT = 19; //刺杀
+  SM_DIGUP = 20;
+  SM_DIGDOWN = 21;
+  SM_FLYAXE = 22;
+  SM_LIGHTING = 23;
+  SM_WIDEHIT = 24;
+  SM_ALIVE = 27; //
+  SM_MOVEFAIL = 28; //
+  SM_HIDE = 29; //
+  SM_DISAPPEAR = 30;
+  SM_STRUCK = 31; //弯腰
+  SM_DEATH = 32;
+  SM_SKELETON = 33;
+  SM_NOWDEATH = 34;
+
+  SM_HEAR = 40;
+  SM_FEATURECHANGED = 41;
+  SM_USERNAME = 42;
+  SM_WINEXP = 44;
+  SM_LEVELUP = 45;
+  SM_DAYCHANGING = 46;
+
+  SM_LOGON = 50;
+  SM_NEWMAP = 51;
+  SM_ABILITY = 52;
+  SM_HEALTHSPELLCHANGED = 53;
+  SM_MAPDESCRIPTION = 54;
+  SM_SPELL2 = 117;
+
+  SM_SYSMESSAGE = 100;
+  SM_GROUPMESSAGE = 101;
+  SM_CRY = 102;
+  SM_WHISPER = 103;
+  SM_GUILDMESSAGE = 104;
+
+  SM_ADDITEM = 200;
+  SM_BAGITEMS = 201;
+  SM_DELITEM = 202;
+  SM_UPDATEITEM = 203;
+  SM_ADDMAGIC = 210;
+  SM_SENDMYMAGIC = 211;
+  SM_DELMAGIC = 212;
+
+  SM_CERTIFICATION_FAIL = 501;
+  SM_ID_NOTFOUND = 502;
+  //SM_PASSWD_FAIL        = 503;
+  //SM_NEWID_SUCCESS      = 504;
+  //SM_NEWID_FAIL         = 505;
+  //SM_CHGPASSWD_SUCCESS  = 506;
+  //SM_CHGPASSWD_FAIL     = 507;
+  SM_QUERYCHR = 520;
+  SM_NEWCHR_SUCCESS = 521;
+  SM_NEWCHR_FAIL = 522;
+  SM_DELCHR_SUCCESS = 523;
+  SM_DELCHR_FAIL = 524;
+  SM_STARTPLAY = 525;
+  SM_STARTFAIL = 526; //SM_USERFULL
+  SM_QUERYCHR_FAIL = 527;
+  SM_OUTOFCONNECTION = 528; //?
+  SM_PASSOK_SELECTSERVER = 529;
+  SM_SELECTSERVER_OK = 530;
+  SM_NEEDUPDATE_ACCOUNT = 531;
+  SM_UPDATEID_SUCCESS = 532;
+  SM_UPDATEID_FAIL = 533;
+
+  SM_DROPITEM_SUCCESS = 600;
+  SM_DROPITEM_FAIL = 601;
+
+  SM_ITEMSHOW = 610;
+  SM_ITEMHIDE = 611;
+  SM_DOOROPEN = 612;
+  SM_CLOSEDOOR = 65022;
+  SM_OPENDOOR_LOCK = 613;
+  SM_OPENDOOR_OK = 614; //
+  SM_TAKEON_OK = 615;
+  SM_TAKEON_FAIL = 616;
+  SM_TAKEOFF_OK = 619;
+  SM_TAKEOFF_FAIL = 620;
+  SM_SENDUSEITEMS = 621;
+  SM_WEIGHTCHANGED = 622;
+  SM_CLEAROBJECTS = 633;
+  SM_CHANGEMAP = 634;
+  SM_EAT_OK = 635;
+  SM_EAT_FAIL = 636;
+  SM_BUTCH = 637;
+  SM_MAGICFIRE = 638;
+  SM_MAGICFIRE_FAIL = 639;
+  SM_MAGIC_LVEXP = 640;
+  SM_DURACHANGE = 642;
+  SM_MERCHANTSAY = 643;
+  SM_MERCHANTDLGCLOSE = 644;
+  SM_SENDGOODSLIST = 645;
+  SM_SENDUSERSELL = 646;
+  SM_SENDBUYPRICE = 647;
+  SM_USERSELLITEM_OK = 648;
+  SM_USERSELLITEM_FAIL = 649;
+  SM_BUYITEM_SUCCESS = 650; //?
+  SM_BUYITEM_FAIL = 651; //?
+  SM_SENDDETAILGOODSLIST = 652;
+  SM_GOLDCHANGED = 653;
+  SM_CHANGELIGHT = 654;
+  SM_LAMPCHANGEDURA = 655;
+  SM_CHANGENAMECOLOR = 656;
+  SM_CHARSTATUSCHANGED = 657;
+  SM_SENDNOTICE = 658;
+  SM_GROUPMODECHANGED = 659; //
+  SM_CREATEGROUP_OK = 660;
+  SM_CREATEGROUP_FAIL = 661;
+  SM_GROUPADDMEM_OK = 662;
+  SM_GROUPDELMEM_OK = 663;
+  SM_GROUPADDMEM_FAIL = 664;
+  SM_GROUPDELMEM_FAIL = 665;
+  SM_GROUPCANCEL = 666;
+  SM_GROUPMEMBERS = 667;
+  SM_SENDUSERREPAIR = 668;
+  SM_USERREPAIRITEM_OK = 669;
+  SM_USERREPAIRITEM_FAIL = 670;
+  SM_SENDREPAIRCOST = 671;
+  SM_DEALMENU = 673;
+  SM_DEALTRY_FAIL = 674;
+  SM_DEALADDITEM_OK = 675;
+  SM_DEALADDITEM_FAIL = 676;
+  SM_DEALDELITEM_OK = 677;
+  SM_DEALDELITEM_FAIL = 678;
+  SM_DEALCANCEL = 681;
+  SM_DEALREMOTEADDITEM = 682;
+  SM_DEALREMOTEDELITEM = 683;
+  SM_DEALCHGGOLD_OK = 684;
+  SM_DEALCHGGOLD_FAIL = 685;
+  SM_DEALREMOTECHGGOLD = 686;
+  SM_DEALSUCCESS = 687;
+  SM_SENDUSERSTORAGEITEM = 700;
+  SM_STORAGE_OK = 701;
+  SM_STORAGE_FULL = 702;
+  SM_STORAGE_FAIL = 703;
+  SM_SAVEITEMLIST = 704;
+  SM_TAKEBACKSTORAGEITEM_OK = 705;
+  SM_TAKEBACKSTORAGEITEM_FAIL = 706;
+  SM_TAKEBACKSTORAGEITEM_FULLBAG = 707;
+
+  SM_AREASTATE = 766;
+  SM_MYSTATUS = 708;
+
+  SM_DELITEMS = 709;
+  SM_READMINIMAP_OK = 710;
+  SM_READMINIMAP_FAIL = 711;
+  SM_SENDUSERMAKEDRUGITEMLIST = 712;
+  SM_MAKEDRUG_SUCCESS = 713;
+  SM_MAKEDRUG_FAIL = 65036;
+
+  SM_CHANGEGUILDNAME = 750;
+  SM_SENDUSERSTATE = 751; //
+  SM_SUBABILITY = 752;
+  SM_OPENGUILDDLG = 753; //
+  SM_OPENGUILDDLG_FAIL = 754; //
+  SM_SENDGUILDMEMBERLIST = 756; //
+  SM_GUILDADDMEMBER_OK = 757; //
+  SM_GUILDADDMEMBER_FAIL = 758;
+  SM_GUILDDELMEMBER_OK = 759;
+  SM_GUILDDELMEMBER_FAIL = 760;
+  SM_GUILDRANKUPDATE_FAIL = 761;
+  SM_BUILDGUILD_OK = 762;
+  SM_BUILDGUILD_FAIL = 763;
+  SM_DONATE_OK = 764;
+  SM_DONATE_FAIL = 765;
+
+  SM_MENU_OK = 767; //?
+  SM_GUILDMAKEALLY_OK = 768;
+  SM_GUILDMAKEALLY_FAIL = 769;
+  SM_GUILDBREAKALLY_OK = 770; //?
+  SM_GUILDBREAKALLY_FAIL = 771; //?
+  SM_DLGMSG = 772; //Jacky
+  SM_SPACEMOVE_HIDE = 800;
+  SM_SPACEMOVE_SHOW = 801;
+  SM_RECONNECT = 802; //
+  SM_GHOST = 803;
+  SM_SHOWEVENT = 804;
+  SM_HIDEEVENT = 805;
+  SM_SPACEMOVE_HIDE2 = 806;
+  SM_SPACEMOVE_SHOW2 = 807;
+  SM_TIMECHECK_MSG = 810;
+  SM_ADJUST_BONUS = 811; //?
+
+  SM_OPENHEALTH = 1100;
+  SM_CLOSEHEALTH = 1101;
+  SM_CHANGEFACE = 1104;
+  SM_BREAKWEAPON = 1102;
+  SM_INSTANCEHEALGUAGE = 1103; //??
+  SM_VERSION_FAIL = 1106;
+
+  SM_ITEMUPDATE = 1500;
+  SM_MONSTERSAY = 1501;
+
+  SM_EXCHGTAKEON_OK = 65023;
+  SM_EXCHGTAKEON_FAIL = 65024;
+
+  SM_TEST = 65037;
+  SM_THROW = 65069;
+  SM_ACTION_MIN = 65070;
+  SM_ACTION_MAX = 65071;
+  SM_ACTION2_MIN = 65072;
+  SM_ACTION2_MAX = 65073;
+
+  CLIENTTYPE = 0; //普通为0  99为管理客户端
+  VERSION_NUMBER = 20020522; //客户端 版本号
+  SM_HORSERUN = 5;
+  //===================================
+  CM_MIRLOGIN = 10000;
+  //===========================================
+  CM_ADDNEWUSER = 2002; //新建账号
+  CM_CHANGEPASSWORD = 2003; //修改密码
+  SM_PASSWD_FAIL = 503; //修改密码失败
+  SM_NEWID_SUCCESS = 504; //新建账号成功
+  SM_NEWID_FAIL = 505; //新建账号失败
+  SM_CHGPASSWD_SUCCESS = 506; //修改密码成功
+  SM_CHGPASSWD_FAIL = 507; //修改密码失败
+  CM_GETBACKPASSWORD = 2010; //密码找回
+  SM_GETBACKPASSWD_SUCCESS = 508; //密码找回成功
+  SM_GETBACKPASSWD_FAIL = 509; //密码找回失败
+  //===========================================
+  CM_START = 2200;
+  SM_STARTGAME = 2201;
+  SM_START_FAIL = 2202; //登陆失败
+  SM_START_SUCCESS = 2203; //?     //登陆成功
+
+  CM_SEARCH = 2205;
+  SM_SEARCH_SUCCESS = 2206;
+  SM_SEARCH_FAIL = 2209;
+
+  CM_DOWMLINE = 2208;
+  SM_DOWMLINE_SUCCESS = 2209;
+  SM_DOWMLINE_FAIL = 2210;
+
+  SS_OPENSESSION = 100;
+  SS_CLOSESESSION = 101; }
+
+
+  SM_CERTIFICATION_SUCCESS = 502;
+
+  GS_QUIT = 2000;
+  GS_USERACCOUNT =2001;
+  GS_CHANGEACCOUNTINFO =2002;
+
+  SG_USERACCOUNT =1003;
+  SG_USERACCOUNTNOTFOUND =1004;       //没有找到账号
+  SG_USERACCOUNTCHANGESTATUS =1005;  //账号更新成功
+  SG_CHECKCODEADDR =1006;
+
+
+  SG_FORMHANDLE=1000;//账号服务器HANLD
+  SG_STARTNOW=1001;  //正在启动登录服务器...
+  SG_STARTOK=1002;   //登录服务器启动完成...
+  WM_SENDPROCMSG=11111;
+
+  CM_GETGAMELIST  = 2000;
+
+  SM_SENDGAMELIST = 5000;
+ResourceString
+  sDBHeaderDesc     = '翎风游戏数据库文件 2005/04/20';
+  sDBIdxHeaderDesc  = '翎风游戏数据库索引文件 2005/04/20';
+type
+  TDBHeader = packed record
+    sDesc       :String[34]; //0x00
+    n23         :Integer;    //0x23
+    n28         :Integer;    //0x27
+    n2C         :Integer;    //0x2B
+    n30         :Integer;    //0x2F
+    n34         :Integer;    //0x33
+    n38         :Integer;    //0x37
+    n3C         :Integer;    //0x3B
+    n40         :Integer;    //0x3F
+    n44         :Integer;    //0x43
+    n48         :Integer;    //0x47
+    n4B         :Byte;       //0x4B
+    n4C         :Integer;    //0x4C
+    n50         :Integer;    //0x50
+    n54         :Integer;    //0x54
+    n58         :Integer;    //0x58
+    nLastIndex  :Integer;    //0x5C
+    dLastDate   :TDateTime;  //0x60
+    nIDCount    :Integer;    //0x68
+    n6C         :Integer;    //0x6C
+    nDeletedIdx :Integer;    //0x70
+    dUpdateDate :TDateTime;  //0x74
+  end;
+  pTDBHeader = ^TDBHeader;
+
+  TIdxHeader = packed record
+    sDesc       :String[43]; //0x00
+    n2C         :Integer;    //0x2C
+    n30         :Integer;    //0x30
+    n34         :Integer;    //0x34
+    n38         :Integer;    //0x38
+    n3C         :Integer;    //0x3C
+    n40         :Integer;    //0x40
+    n44         :Integer;    //0x44
+    n48         :Integer;    //0x48
+    n4C         :Integer;    //0x4C
+    n50         :Integer;    //0x50
+    n54         :Integer;    //0x54
+    n58         :Integer;    //0x58
+    n5C         :Integer;    //0x5C
+    n60         :Integer;    //0x60
+    nQuickCount :Integer;    //0x64
+    nIDCount    :Integer;    //0x68
+    nLastIndex  :Integer;    //0x6C
+    dUpdateDate :TDateTime;  //0x70
+  end;
+
+  TRecordDeletedHeader = packed record
+    boDeleted     :Boolean;
+    bt1           :Byte;
+    bt2           :Byte;
+    bt3           :Byte;
+    CreateDate    :TDateTime; //0x04
+    LastLoginDate :TDateTime; //0x0C
+    n14           :Integer;
+    nNextDeletedIdx  :Integer;
+//    sAccount   :String[11];//0x14
+  end;
+  TRecordHeader =   packed record
+    boDeleted     :Boolean;
+    bt1           :Byte;
+    bt2           :Byte;
+    bt3           :Byte;
+    CreateDate    :TDateTime; //0x04
+    UpdateDate    :TDateTime; //0x0C
+    sAccount      :String[11];
+  end;
+
+  TUserEntry = packed  record
+    sAccount: string[10];
+    sPassword: string[10];
+    sUsername: string[20];
+    sSSNo: string[14];
+    sPhone: string[14];
+    sQuiz: string[20];
+    sAnswer: string[12];
+    sEMail: string[40];
+  end;
+  TUserEntryAdd = packed  record
+    sQuiz2: string[20];
+    sAnswer2: string[12];
+    sBirthDay: string[10];
+    sMobilePhone: string[13];
+    sMemo: string[20];
+    sMemo2: string[20];
+  end;
+
+  TAccountDBRecord = packed record
+    Header       :TRecordHeader;
+    UserEntry    :TUserEntry;
+    UserEntryAdd :TUserEntryAdd;
+    nErrorCount  :Integer;
+    dwActionTick :LongWord;
+    n            :array [0..38] of Byte;
+  end;
+
+  TDefaultMessage = record
+    Recog: Integer;
+    Ident: word;
+    Param: word;
+    Tag: word;
+    Series: word;
+  end;
+
+  TChrMsg = record
+    Ident: Integer;
+    X: Integer;
+    Y: Integer;
+    Dir: Integer;
+    State: Integer;
+    feature: Integer;
+    saying: string;
+    sound: Integer;
+  end;
+  PTChrMsg = ^TChrMsg;
+  TStdItem = record //OK
+    Name: string[14];
+    StdMode: Byte;
+    Shape: Byte;
+    Weight: Byte;
+    AniCount: Byte;
+    Source: Byte;
+    Reserved: Byte;
+    NeedIdentify: Byte;
+    Looks: word;
+    DuraMax: word;
+    AC: word;
+    MAC: word;
+    DC: word;
+    MC: word;
+    SC: word;
+    Need: Byte;
+    NeedLevel: Byte;
+    Price: DWORD;
+  end;
+  TClientItem = record //OK
+    S: TStdItem;
+    MakeIndex: Integer;
+    Dura: word;
+    DuraMax: word;
+  end;
+  PTClientItem = ^TClientItem;
+  TUserStateInfo = record //OK
+    feature: Integer;
+    Username: string[19];
+    GuildName: string[14];
+    GuildRankName: string[14];
+    NameColor: word;
+    UseItems: array[0..8] of TClientItem;
+  end;
+  TUserCharacterInfo = record
+    Name: string[19];
+    Job: Byte;
+    Hair: Byte;
+    Level: Byte;
+    m_btSex: Byte;
+  end;
+  TDropItem = record
+    X: Integer;
+    Y: Integer;
+    Id: Integer;
+    Looks: Integer;
+    Name: string;
+    FlashTime: DWORD;
+    FlashStepTime: DWORD;
+    FlashStep: Integer;
+    BoFlash: Boolean;
+  end;
+  PTDropItem = ^TDropItem;
+  TMagic = record //+
+    MagicId: word;
+    MagicName: string[12];
+    EffectType: Byte;
+    Effect: Byte;
+    xx: Byte;
+    Spell: word;
+    DefSpell: word;
+    TrainLevel: array[0..2] of Byte;
+    TrainLeveX: array[0..2] of Byte;
+    MaxTrain: array[0..2] of Integer;
+    DelayTime: Integer;
+  end;
+  TClientMagic = record //84
+    Key: Char;
+    Level: Byte;
+    CurTrain: Integer;
+    Def: TMagic;
+  end;
+  PTClientMagic = ^TClientMagic;
+  TNakedAbility = record
+    DC: word;
+    MC: word;
+    SC: word;
+    AC: word;
+    MAC: word;
+    HP: word;
+    MP: word;
+    Hit: Byte;
+    Speed: Integer;
+  end;
+
+  TAbility = record //OK    //Size 40
+    Level: word; //0x198
+    AC: word; //0x19A
+    MAC: word; //0x19C
+    DC: word; //0x19E
+    MC: word; //0x1A0
+    SC: word; //0x1A2
+    HP: word; //0x1A4
+    MP: word; //0x1A6
+    MaxHP: word; //0x1A8
+    MaxMP: word; //0x1AA
+    dw1AC: DWORD; //0x1AC
+    Exp: DWORD; //0x1B0
+    MaxExp: DWORD; //0x1B4
+    Weight: word; //0x1B8
+    MaxWeight: word; //0x1BA
+    WearWeight: Byte; //0x1BC
+    MaxWearWeight: Byte; //0x1BD
+    HandWeight: Byte; //0x1BE
+    MaxHandWeight: Byte; //0x1BF
+  end;
+
+  TShortMessage = record
+    Ident: word;
+    wMsg: word;
+  end;
+
+  TMessageBodyW = record
+    Param1: word;
+    Param2: word;
+    Tag1: word;
+    Tag2: word;
+  end;
+
+  TMessageBodyWL = record //16  0x10
+    lParam1: Integer;
+    lParam2: Integer;
+    lTag1: Integer;
+    lTag2: Integer;
+  end;
+
+  TCharDesc = record
+    feature: Integer;
+    Status: Integer;
+  end;
+  TClientGoods = record
+    Name: string;
+    SubMenu: Integer;
+    Price: Integer;
+    Stock: Integer;
+    Grade: Integer;
+  end;
+  pTClientGoods = ^TClientGoods;
+  //ResourceString
+function APPRfeature(cfeature: Integer): word;
+function RACEfeature(cfeature: Integer): Byte;
+function HAIRfeature(cfeature: Integer): Byte;
+function DRESSfeature(cfeature: Integer): Byte;
+function WEAPONfeature(cfeature: Integer): Byte;
+implementation
+
+function WEAPONfeature(cfeature: Integer): Byte;
+begin
+  Result := HiByte(cfeature);
+end;
+function DRESSfeature(cfeature: Integer): Byte;
+begin
+  Result := HiByte(HiWord(cfeature));
+end;
+function APPRfeature(cfeature: Integer): word;
+begin
+  Result := HiWord(cfeature);
+end;
+function HAIRfeature(cfeature: Integer): Byte;
+begin
+  Result := HiWord(cfeature);
+end;
+function RACEfeature(cfeature: Integer): Byte;
+begin
+  Result := cfeature;
+end;
+
+end.

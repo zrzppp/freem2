@@ -1,0 +1,6 @@
+软件名称:封神网 
+制作:无泪 QQ:19639454
+网站:www.coipc.com 
+
+  g_sProgram = '程序制作: 无泪 QQ:19639454';
+  g_sWebSite = '官方网站: http://www.coipc.com';

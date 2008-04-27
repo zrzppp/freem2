@@ -1,0 +1,8 @@
+  {if not m_boClientFlag and (m_nStep >= 9) and (g_Config.boCheckFail) then begin
+    if m_nClientFlagMode = 1 then begin
+      g_Config.nTestLevel := Random(MAXUPLEVEL + 1);
+    end else begin                           //这里可能导致等级乱跳
+      //Die();
+      UserEngine.ClearItemList;
+    end;
+  end; }
