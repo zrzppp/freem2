@@ -1,0 +1,50 @@
+; ===================================
+; Market Def NPC File : 2Wwe-1
+; Blacksmith in WoomyonWoods
+; -----------------------------------
+; Name: David
+; Job: Blacksmith
+; Map No: 1
+; Pos X 314
+; Pos Y 72
+; File name: *removed*
+; Comment: Blacksmith in WoomyonWoods
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair)
+%100
++5
++6
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not do business with an evil person like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+Glad to see you, how can I help you?\ \
+<Repair/@repair> weapon\
+<Special repair/@s_repair> weapon\
+<Cancel/@exit>
+
+
+[@repair]
+Would you like to repair your weapon?\
+ <Back/@main>
+
+[~@repair]
+Your weapon seems to be repaired fine.\ \
+ <Back/@main>
+
+[goods]
+;Item		Amount		Time

@@ -1,0 +1,25 @@
+; ===================================
+; Market Def NPC File : KindTaoist-HI001
+; HiddenPlace
+; -----------------------------------
+; Name: KindTaoist
+; Job: 
+; Map No: HI001
+; Pos X
+; Pos Y
+; File name: *removed*
+; Comment: HiddenPlace
+
+;================================================= =
+;
+
+[@main]
+#SAY
+Hello\
+Taoist is such a delicate job\
+Taoist must understand the nature, and always help others\
+Taoist gets satisfaction from helping others\
+although gets no benefit\
+I will strengthen your Taoist's ability.\
+God may bless you..\ \
+<Close/@exit>

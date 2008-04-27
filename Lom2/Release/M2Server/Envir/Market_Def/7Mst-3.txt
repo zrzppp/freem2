@@ -1,0 +1,65 @@
+; ===================================
+; Market Def NPC File : 7Mst-3
+; GroceryStore (MongchonProvince)
+; -----------------------------------
+; Name: Gabriel
+; Job: 
+; Map No: 3
+; Pos X 346
+; Pos Y 334
+; File name: *removed*
+; Comment: GroceryStore (MongchonProvince)
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair @storage @getback)
+%100
++30
++3
++25
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not help an evil person like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+Welcome, how may I help you?\ \
+<Buy/@buy> Item\
+<Sell/@sell> Item\
+<Cancel/@exit>
+
+
+
+[@buy]
+Which items do you need?\ \ \
+ <Back/@main>
+
+[@sell]
+We buy Candles, Amulets, Scrolls RepairOils, etc.\
+ <Back/@main>
+
+
+[goods]
+;Item		Amount		Time
+Candle		200	1
+Torch		200	1
+DungeonEscape	200	1
+DungeonEscapeBundle	200	1
+RandomTeleport	200	1
+RandomTeleportBundle	200	1
+Amulet		200	1
+Amulet(M)	200	1
+RepairOil	200	1
+TeleportHome	200	1
+
+

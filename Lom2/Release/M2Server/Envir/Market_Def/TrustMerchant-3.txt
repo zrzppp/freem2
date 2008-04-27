@@ -1,0 +1,23 @@
+; ===================================
+; Market Def NPC File : 
+; 
+; -----------------------------------
+; Name: 
+; Job: 
+; Map No: 
+; Pos X 
+; Pos Y 
+; File name: *removed*
+; Comment: 
+
+;================================================= =
+;
+
+[@main]
+Hello I am the 'Commission Merchant'. I am in charge\
+of commission sales. We are located at five places of\
+Bichon Province, Mongchon Province, Tao Village, Prajna\
+Island, and Past Bichon and the item sales information are\
+all shared by the five merchants.\ \
+
+<Exit/@exit>

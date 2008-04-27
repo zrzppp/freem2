@@ -1,0 +1,22 @@
+; ===================================
+; Market Def NPC File : 8Ega-B125
+; Pilgrimsroom
+; -----------------------------------
+; Name: GambleWoman
+; Job: 
+; Map No: B125
+; Pos X 10
+; Pos Y 6
+; File name: *removed*
+; Comment: Pilgrimsroom
+
+;================================================= =
+;
+
+[@main]
+#IF
+#ACT
+BreakTimeRecall 
+mapmove T125 8 10
+
+

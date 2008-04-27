@@ -1,0 +1,22 @@
+; ===================================
+; Market Def NPC File : 9Wae5-11
+; TaoTown
+; -----------------------------------
+; Name: Apprentice
+; Job: 
+; Map No: 11
+; Pos X 195
+; Pos Y 325
+; File name: *removed*
+; Comment: TaoTown
+
+;================================================= =
+;
+
+[@main]
+There is a cursed mountain at the end of the vicious woods,\
+the red moon is over the ridge of the mountain..\
+the whole world may be under blood.\
+Wow it's a scribbling written in an old book I never saw before.\
+It seems to indicate something but I have no idea what.\ \
+<Thanks/@exit>

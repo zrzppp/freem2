@@ -1,0 +1,37 @@
+; ===================================
+; Market Def NPC File : 3Edr-D514
+; MongchonProvince (ZumaTemple)
+; -----------------------------------
+; Name: Alexander
+; Job: 
+; Map No: D514
+; Pos X 19
+; Pos Y 25
+; File name: *removed*
+; Comment: MongchonProvince (ZumaTemple)
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair)
++10
++11
+
+[@main]
+Welcome to this dangerous place my friend,\
+here you can repair your armour.\ \
+<Repair/@repair> Armour\
+<Cancel/@exit>
+
+
+[@repair]
+Put in your Armour for repair\
+<Back/@main>
+
+[~@repair]
+Your Armour seems repaired fine.\ \
+<Back/@main>
+
+[goods]
+;Item		Amount		Time

@@ -1,0 +1,23 @@
+; ===================================
+; Npc Def NPC File : StoneLion1-LABY02
+; 
+; -----------------------------------
+; Name: StoneLion
+; Job: 
+; Map No: LABY02
+; Pos X 141
+; Pos Y 78
+; File name: *removed*
+; Comment: 
+
+;================================================= =
+;
+
+[@main]
+#ACT
+mapmove LABY01
+close
+
+
+
+

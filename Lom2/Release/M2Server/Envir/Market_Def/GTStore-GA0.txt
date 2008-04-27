@@ -1,0 +1,49 @@
+; ===================================
+; Market Def NPC File : GTStore-GA0
+; 
+; -----------------------------------
+; Name: Mira
+; Job: 
+; Map No: GA0
+; Pos X 55
+; Pos Y 71
+; File name: *removed*
+; Comment: 
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair @storage @getback)
+%100
++30
++3
++25
+
+[@main]
+#SAY
+Hello. What do you want to store?\ \
+<Store/@storage> item\
+<withdraw/@getback> stored item\
+<Talk to/@talk> Mira\ \
+<Exit/@exit>
+
+[@storage]
+You have currently stored <$SAVEITEM> items.\
+You can still place <$REMAINSAVEITEM> more items.\
+Please show me the items you want to deposit.\ \
+<back/@main>
+
+[@getback]
+You have currently stored <$SAVEITEM> items.\
+This is the list of items you have deposited here.\
+Please choose the item you wish to withdraw.\ \
+<back/@main>
+
+[@talk]
+#SAY
+Have you seen a frost tiger?\
+It looked so cute and cuddly when it seated on the grass.\
+I want to raise one someday.\ \
+<End/@exit> the conversation
+

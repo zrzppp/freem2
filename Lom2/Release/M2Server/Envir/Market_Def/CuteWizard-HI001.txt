@@ -1,0 +1,24 @@
+; ===================================
+; Market Def NPC File : CuteWizard-HI001
+; HiddenPlace
+; -----------------------------------
+; Name: CuteWizard
+; Job: 
+; Map No: HI001
+; Pos X
+; Pos Y
+; File name: *removed*
+; Comment: HiddenPlace
+
+;================================================= =
+;
+
+[@main]
+#SAY
+Oh my gosh\
+What a cute person you are.\
+Let me strengthen your magical ability.\
+Use of a magic is to get your protential energy out\
+Please raise your ability with devotion.\
+Come by see me again ~ my cute visitor\ \
+<Close/@exit>

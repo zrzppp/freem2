@@ -1,0 +1,56 @@
+; ===================================
+; Market Def NPC File : 9Ewi-01152
+; HighLeveledWizardQuestmap
+; -----------------------------------
+; Name: ArchMage
+; Job: 
+; Map No: 01152
+; Pos X 11
+; Pos Y 10
+; File name: *removed*
+; Comment: HighLeveledWizardQuestmap
+
+;================================================= =
+;
+
+[@main]
+#IF
+check [757] 1
+#ACT
+goto @Q707
+break
+
+#IF
+checkmonmap 01152 1
+#SAY
+You didn't killed monsters yet, you don't have enough time. \
+Hurry up... Good luck \ \ 
+<Close/@exit>
+#ELSEACT
+goto @next
+
+[@next]
+#IF
+checkbaggage
+#ACT
+give Fireball 1
+SET [757] 1
+#SAY
+Well you killed all monsters, you are so good \
+that you could be my apprentice... congratulation ! \
+Let me give you Fireball that is basic martial art at level 7 for a gift \ \ 
+<Close/@exit>
+#ELSESAY 
+Your bag is full. empty your bag right now.. \ \ 
+<Close/@exit>
+
+[@Q707]
+You received books already, didn't you ??   as you got books \
+Click a book called by Fireball twice (click twice the left button of mouse) \
+Then as the book disappears you master the skill \
+Hitting F11 button, you can check your martial art skill \
+How to set up your martial art skill is that after hitting martial art picture , select key button \ 
+Now go and visit Bookstore at Bichon province \
+The owner of Bookstore will advise you how to develop yourself \ \
+<Close/@exit>
+

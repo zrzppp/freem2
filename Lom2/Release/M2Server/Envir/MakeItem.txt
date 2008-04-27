@@ -1,0 +1,419 @@
+[GreyPoison(S)]
+CannibalLeaf    4
+SpiderTooth  2
+CannibalFruit  1
+
+[GreyPoison(M)]
+CannibalLeaf    8
+SpiderTooth  4
+CannibalFruit  2
+
+[GreyPoison(L)]
+CannibalLeaf    12
+SpiderTooth  6
+CannibalFruit  3
+
+[YellowPoison(S)]
+CannibalLeaf    4
+ScorpionTail    1
+MaggotPill      1
+
+[YellowPoison(M)]
+CannibalLeaf    8
+ScorpionTail    2
+MaggotPill      2
+
+[YellowPoison(L)]
+CannibalLeaf    12
+ScorpionTail    3
+MaggotPill      3
+
+[Dumpling]
+Meat           1
+Ginseng        1
+(HP)DrugLarge  1
+
+[BeefDumpling]
+Jerk           1
+Ginseng        1
+Sunpotion      1
+
+[ChickenDumplng]
+Chicken        1
+Ginseng        1
+Sunpotion      1
+
+[EggDumpling]
+SkystingerEgg  1
+Ginseng        1
+Sunpotion      1
+
+[BoneDumpling]
+Bone           1
+Ginseng        1
+Sunpotion      1
+
+[HerbalTea]
+CannibalFruit  1
+CannibalLeaf   3 
+Sunpotion      1
+
+[MeatSoup]
+Meat           1
+Ginseng        1
+StaminaAidDrug     1
+
+[ZerkSoup]
+Jerk           1
+Ginseng        1
+MagicAidDrug       1
+
+[ChickenBroth]
+Chicken        1
+Ginseng        1
+ImpactDrug     1
+
+[EggBroth]
+SkystingerEgg  1
+Ginseng        1
+MagicDrug      1
+
+[BoneBroth]
+Bone           1
+Ginseng        1
+TaoistDrug     1
+
+[CannibalFruitTea]
+BugLeg         1
+CannibalFruit  3
+SunPotion(M)   1
+
+[(HP)DrugXL]
+(HP)DrugLarge  1
+CannibalLeaf   2
+EbonyFruit     1
+
+[(MP)DrugXL]
+(MP)DrugLarge  1
+CannibalFruit  1
+Mushroom       1
+
+[(HP)DrugBundleXL]
+(HP)DrugBundle 1
+CannibalLeaf   12
+EbonyFruit     6
+
+[(MP)DrugBundleXL]
+(MP)DrugBundle 1
+CannibalFruit  6
+Mushroom       6
+
+[BraveryGem]
+PlatinumOre       1
+NephriteOre       1
+
+[MagicGem]
+PlatinumOre       1
+NephriteOre       1
+
+[SoulGem]
+PlatinumOre       1
+NephriteOre       1
+
+[ProtectionGem]
+GoldOre        1
+BlackIronOre   1
+
+[EvilSlayerGem]
+GoldOre        1
+BlackIronOre   1
+
+[DurabilityGem]
+GoldOre        1
+BlackIronOre   1
+
+[StormGem]
+PlatinumOre       1
+GoldOre        1
+
+[AgilityGem]
+PlatinumOre       1
+GoldOre        1
+
+[AccuracyGem]
+PlatinumOre       1
+GoldOre        1
+
+[PoisonGem]
+PlatinumOre       1
+GoldOre        1
+
+[FreezingGem]
+PlatinumOre       1
+GoldOre        1
+
+[DisillusionGem]
+PlatinumOre       1
+GoldOre        1
+
+[EnduranceGem]
+PlatinumOre       1
+GoldOre        1
+
+[PeddlerTorch]
+RedThread      1
+Bone           1
+Candle         1
+RepairOil      1
+
+[SewingGoods]
+WhiteThread    3
+LargeBone      1
+IronOre        2
+
+[BoneHammer]
+BlackThread    3
+LargeBone      1
+CopperOre      2
+
+[String]
+WhiteThread    3
+RedThread      3
+BlackThread    3
+
+[BoneDecapitatr]
+Bone           20
+SpiderWeb      10
+IronSword      1
+CopperOre      1
+
+[BoneHood]
+Bone           20
+SpiderWeb      10
+MagicHelmet    1
+CopperOre      1
+
+[BoneRobe(M)]
+Bone           30
+SpiderWeb      20
+MagicHelmet    1
+CopperOre      1
+
+[BoneRobe(F)]
+Bone           30
+SpiderWeb      20
+MagicHelmet    1
+CopperOre      1
+
+[BugNecklace]
+BugEye         20
+SpiderWeb      15
+WarriorNecklce 1
+SilverOre      1
+
+[BugRing]
+Mandible       10
+SpiderWeb      15
+SerpentEyeRing 1
+SilverOre      1
+
+[BugBracelet]
+BugLeg         15
+SpiderWeb      15
+SilverOre      1
+
+[WhiteGoldBelt]
+WhiteThread    15
+BugShell       20
+BronzeBelt     1
+PlatinumOre       1
+
+[WhiteGoldShoes]
+WhiteThread    15
+BugShell       20
+SilkBoots      1
+PlatinumOre       1
+
+[WhiteGoldNecklace]
+WhiteThread    10
+BugEye         50
+NagaNecklace   1
+PlatinumOre       1
+
+[WhiteGoldBracelet]
+WhiteThread    10
+BugLeg         50
+StrainBracelet 1
+PlatinumOre       1
+
+[WhiteGoldRing]
+WhiteThread    10
+Mandible       50
+BlueRing       1
+PlatinumOre       1
+
+[RedJadeBelt]
+RedThread      15
+BugShell       20
+BronzeBelt     1
+RubyOre           1
+
+[RedJadeShoes]
+RedThread      10
+BugShell       20
+SilkBoots      1
+RubyOre           1
+
+[RedJadeNecklace]
+RedThread      10
+BugEye         50
+AmberNecklace  1
+RubyOre           1
+
+[RedJadeBracelet]
+RedThread      10
+BugLeg         50
+EbonyBracelet  1
+RubyOre           1
+
+[RedJadeRing]
+RedThread      10
+Mandible       50
+IronRing       1
+RubyOre           1
+
+[NephriteBelt]
+BlackThread    15
+BugShell       20
+BronzeBelt     1
+NephriteOre       1
+
+[NephriteShoes]
+BlackThread    15
+BugShell       20
+SilkBoots      1
+NephriteOre       1
+
+[NephriteNecklace]
+BlackThread    10
+BugEye         50
+JadeNecklace   1
+NephriteOre       1
+
+[NephriteBracelet]
+BlackThread    10
+BugLeg         50
+MonkBracelet   1
+NephriteOre       1
+
+[NephriteRing]
+BlackThread    10
+Mandible       50
+WhiteJadeRing  1
+NephriteOre       1
+
+[WhiteGoldBelt(H)]
+LargeBone      80
+WhiteThread    120
+WhiteGoldBelt  1
+PlatinumOre       2
+
+[WhitGoldShoes(H)]
+LargeBone      60
+WhiteThread    90
+WhiteGoldShoes 1
+PlatinumOre       2    
+
+[WhiteGoldNecklace(H)]
+LargeBone      55
+WhiteThread    80
+WhiteGoldNecklace 1
+PlatinumOre       2
+
+[WhiteGoldBracelet(H)]
+LargeBone      40
+WhiteThread    80
+WhiteGoldBracelet 1
+PlatinumOre       2
+
+[WhiteGoldRing(H)]
+LargeBone      40
+WhiteThread    80
+WhiteGoldRing  1
+PlatinumOre       2
+
+[RedJadeBelt(H)]
+LargeBone      80
+RedThread      120
+RedJadeBelt    1
+RubyOre           2
+
+[RedJadeShoes(H)]
+LargeBone      60
+RedThread      90
+RedJadeShoes   1
+RubyOre           2
+
+
+[RedJadeNecklace(H)]
+LargeBone      55
+RedThread      80
+RedJadeNecklace   1
+RubyOre           2
+
+[RedJadeBracelet(H)]
+LargeBone      40
+RedThread      80
+RedJadeBracelet   1
+RubyOre           2
+
+[RedJadeRing(H)]
+LargeBone      40
+RedThread      80
+RedJadeRing    1
+RubyOre           2
+
+[NephriteBelt(H)]
+LargeBone      80
+BlackThread    120
+NephriteBelt   1
+NephriteOre       2
+
+[NephriteShoes(H)]
+LargeBone      60
+BlackThread    90
+NephriteShoes  1
+NephriteOre       2
+
+[NephriteNecklace(H)]
+LargeBone      55
+BlackThread    80
+NephriteNecklace  1
+NephriteOre       2
+
+[NephriteBracelet(H)]
+LargeBone      40
+BlackThread    80
+NephriteBracelet  1
+NephriteOre       2
+
+[NephriteRing(H)]
+LargeBone      40
+BlackThread    80
+NephriteRing   1
+NephriteOre       2
+
+[LargeBone]
+Bone           10
+
+[WhiteThread]
+SpiderWeb      10
+Mushroom       1
+
+[RedThread]
+SpiderWeb      10
+CannibalFruit  1
+
+[BlackThread]
+SpiderWeb      10
+BugShell       1

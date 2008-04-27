@@ -1,0 +1,70 @@
+; ===================================
+; Market Def NPC File : 3Ahe-0155
+; SabukWall (ClothesShop)
+; -----------------------------------
+; Name: Debora
+; Job: 
+; Map No: 0155
+; Pos X 9
+; Pos Y 11
+; File name: *removed*
+; Comment: SabukWall (ClothesShop)
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair)
+%100
++15
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+You are pure evil, I don't want to talk to you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+I think a big strong person like <$USERNAME> would look\
+fantastic in one of my cheap strong Helmets!\
+Members of <$OWNERGUILD> will by order of <$LORD> recieve\
+a discount on my prices, because they own this town.\
+How can I help? \ \
+<Buy/@buy>\
+<Sell/@sell>\
+<Repair/@repair>\
+<Exit/@exit>
+
+
+[@buy]
+Which Helmet do you want to buy?\ \ \
+<Back/@main>
+
+[@sell]
+Show me your Helmet to be sold. I'll give you an appraisement.\
+So if you like my store please sell them to me.\ \
+<Back/@main>
+
+[@repair]
+You can repair Helmets here.\ \ \
+<Back/@main>
+
+[~@repair]
+It seems repaired fine.\ \ \
+<Back/@main>
+
+[goods]
+;Item		Amount		Time
+BronzeHelmet		100	1
+MagicHelmet		100	1
+BrassHelmet		100	1
+GoldenTiara		100	1
+ShamanHelmet		100	1
+SkeletonHelmet		100	1
+

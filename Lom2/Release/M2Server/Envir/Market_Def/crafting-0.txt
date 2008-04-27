@@ -1,0 +1,342 @@
+; Name: CraftsLady
+; Job: 
+; Map No: 0
+; Pos X 319
+; Pos Y 276
+; File name: *removed*
+; Comment:
+
+;================================================= =
+;
+
+;Settings
+(@makegemlist)
+%100
++0
++3
++5
++9
++11
++15
++20
++22
++26
++52
++54
++31
++36
++53
++60
++61
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not help an evil person like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+欢迎，谢谢你的到来。\ \
+<合成/@makegemlist>物品\\
+<离开/@exit>
+
+[@makegemlist]
+你需要合成哪一个物品？\ \ \
+<返回/@main>
+
+[@infoDumpling]
+需要的物品:\
+Meat x1\
+Ginseng x1\
+(HP) Drug Large x1\
+<返回/@main>
+
+[@infoBeefDumpling]
+需要的物品:\
+Jerk           1\
+Ginseng        1\
+Sunpotion      1\
+<返回/@main>
+
+[@infoChickenDumpling]
+需要的物品:\
+Chicken        1\
+Ginseng        1\
+Sunpotion      1\
+<返回/@main>
+
+[@infoEggDumpling]
+需要的物品:\
+SkystingerEgg  1\
+Ginseng        1\
+Sunpotion      1\
+<返回/@main>
+
+[@infoBoneDumpling]
+需要的物品:\
+Bone           1\
+Ginseng        1\
+Sunpotion      1\
+<返回/@main>
+
+[@infoHerbalTea]
+需要的物品:\
+CannibalFruit  1\
+CannibalLeaf   3 \
+Sunpotion      1\
+<返回/@main>
+
+[@infoMeatSoup]
+需要的物品:\
+Meat           1\
+Ginseng        1\
+StaminaAidDrug     1\
+<返回/@main>
+
+[@infoZerkSoup]
+需要的物品:\
+Jerk           1\
+Ginseng        1\
+MagicAid       1\
+<返回/@main>
+
+[@infoChickenBroth]
+需要的物品:\
+Chicken        1\
+Ginseng        1\
+ImpactDrug     1\
+<返回/@main>
+
+[@infoEggBroth]
+需要的物品:\
+SkystingerEgg  1\
+Ginseng        1\
+MagicDrug      1\
+<返回/@main>
+
+[@infoBoneBroth]
+需要的物品:\
+Bone           1\
+Ginseng        1\
+TaoistDrug     1\
+<返回/@main>
+
+[@infoCannibalFruitTea]
+需要的物品:\
+BugLeg         1\
+CannibalFruit  3\
+SunPotion(M)   1\
+<返回/@main>
+
+[@info(HP)DrugXL]
+需要的物品:\
+(HP)DrugLarge  1\
+CannibalLeaf   2\
+EbonyFruit     1\
+<返回/@main>
+
+[@info(MP)DrugXL]
+需要的物品:\
+(MP)DrugLarge  1\
+CannibalFruit  1\
+Mushroom       1\
+<返回/@main>
+
+[@info(HP)DrugBundleXL]
+需要的物品:\
+(HP)DrugBundle 1\
+CannibalLeaf   12\
+EbonyFruit     6\
+<返回/@main>
+
+[@info(MP)DrugBundleXL]
+需要的物品:\
+(MP)DrugBundle 1\
+CannibalFruit  6\
+Mushroom       6\
+<返回/@main>
+
+[@infoBraveryGem]
+需要的物品:\
+Platinum       1\
+Nephrite       1\
+<返回/@main>
+
+[@infoMagicGem]
+需要的物品:\
+Platinum       1\
+Nephrite       1\
+<返回/@main>
+
+[@infoSoulGem]
+需要的物品:\
+Platinum       1\
+Nephrite       1\
+<返回/@main>
+
+[@infoProtectionGem]
+需要的物品:\
+GoldOre        1\
+BlackIronOre   1\
+<返回/@main>
+
+[@infoEvilSlayerGem]
+需要的物品:\
+GoldOre        1\
+BlackIronOre   1\
+<返回/@main>
+
+[@infoDurabilityGem]
+需要的物品:\
+GoldOre        1\
+BlackIronOre   1\
+<返回/@main>
+
+[@infoStormGem]
+需要的物品:\
+Platinum       1\
+GoldOre        1\
+<返回/@main>
+
+[@infoAgilityGem]
+需要的物品:\
+Platinum       1\
+GoldOre        1\
+<返回/@main>
+
+[@infoAccuracyGem]
+需要的物品:\
+Platinum       1\
+GoldOre        1\
+<返回/@main>
+
+[@infoPoisonGem]
+需要的物品:\
+Platinum       1\
+GoldOre        1\
+<返回/@main>
+
+[@infoFreezingGem]
+需要的物品:\
+Platinum       1\
+GoldOre        1\
+<返回/@main>
+
+[@infoDisillusionGem]
+需要的物品:\
+Platinum       1\
+GoldOre        1\
+<返回/@main>
+
+[@infoEnduranceGem]
+需要的物品:\
+Platinum       1\
+GoldOre        1\
+<返回/@main>
+
+[@infoPeddlerTorch]
+需要的物品:\
+RedThread      1\
+Bone           1\
+Candle         1\
+RepairOil      1\
+<返回/@main>
+
+[@infoSewingGoods]
+需要的物品:\
+WhiteThread    3\
+LargeBone      1\
+IronOre        2\
+<返回/@main>
+
+[@infoBoneHammer]
+需要的物品:\
+BlackThread    3\
+LargeBone      1\
+CopperOre      2\
+<返回/@main>
+
+[@infoString]
+需要的物品:\
+WhiteThread    3\
+RedThread      3\
+BlackThread    3\
+<返回/@main>
+
+[@infoBoneDecapitator]
+需要的物品:\
+Bone           20\
+SpiderWeb      10\
+IronSword      1\
+CopperOre      1\
+<返回/@main>
+
+[@infoBoneHood]
+需要的物品:\
+Bone           20\
+SpiderWeb      10\
+MagicHelmet    1\
+CopperOre      1\
+<返回/@main>
+
+[@infoBoneRobe(M)]
+需要的物品:\
+Bone           30\
+SpiderWeb      20\
+MagicHelmet    1\
+CopperOre      1\
+<返回/@main>
+
+[@infoBoneRobe(F)]
+需要的物品:\
+Bone           30\
+SpiderWeb      20\
+MagicHelmet    1\
+CopperOre      1\
+<返回/@main>
+
+[goods]
+;Item		Amount		Time
+Dumpling          200    1
+BeefDumpling      200    1
+ChickenDumplng    200    1
+EggDumpling       200    1
+BoneDumpling      200    1
+HerbalTea         200    1
+MeatSoup          200    1
+ZerkSoup          200    1
+ChickenBroth      200    1
+EggBroth          200    1
+BoneBroth         200    1
+CannibalFruitTea    200    1
+(HP)DrugXL        200    1
+(MP)DrugXL        200    1
+(HP)DrugBundleXL    200    1
+(MP)DrugBundleXL    200    1
+BraveryGem        200    1
+MagicGem          200    1
+SoulGem           200    1
+ProtectionGem     200    1
+EvilSlayerGem     200    1
+DurabilityGem     200    1
+StormGem          200    1
+AgilityGem        200    1
+AccuracyGem       200    1
+PoisonGem         200    1
+FreezingGem       200    1
+DisillusionGem    200    1
+EnduranceGem      200    1
+PeddlerTorch      200    1
+SewingGoods       200    1
+BoneHammer        200    1
+String            200    1
+BoneDecapitator    200    1
+BoneHood          200    1
+BoneRobe(M)      200    1
+BoneRobe(F)      200    1

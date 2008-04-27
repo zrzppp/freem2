@@ -1,0 +1,46 @@
+; ===================================
+; Market Def NPC File : 4Edu-D5063
+; TacticalMaze ()
+; -----------------------------------
+; Name: Nelson
+; Job: 
+; Map No: D5063
+; Pos X 62
+; Pos Y 36
+; File name: *removed*
+; Comment: TacticalMaze ()
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair @storage @getback)
+%200
++0
+
+[@main]
+Welcome to this dangerous place,\
+how may I help you?\ \
+<Buy/@buy> Drug\
+<Cancel/@exit>
+
+
+[@buy]
+Which item do you want to buy?\ \ \
+<Back/@main>
+
+
+[goods]
+;Item		Amount		Time
+(HP)DrugSmall		200	1	
+(MP)DrugSmall		200	1
+(HP)DrugMedium		200	1
+(MP)DrugMedium		200	1
+(HP)DrugLarge		200	1
+(MP)DrugLarge		200	1
+(HP)SmallDrugBundle		200	1
+(MP)SmallDrugBundle		200	1
+(HP)MediumDrugBundle		200	1
+(MP)MediumDrugBundle		200	1
+(HP)DrugBundle		200	1
+(MP)DrugBundle		200	1

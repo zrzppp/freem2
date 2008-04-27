@@ -1,0 +1,24 @@
+; ===================================
+; Npc Def NPC File : Soldier-0
+; npc in BichonProvince
+; -----------------------------------
+; Name: Soldier
+; Job: 
+; Map No: 0
+; Pos X 
+; Pos Y 
+; File name: *removed*
+; Comment: npc in BichonProvince
+
+;================================================= =
+;
+
+
+[@main]
+The empty lot across the bridge is the site\
+where stone statues of the top 10 World Heroes\
+and 10 Continental Heroes, who brought the glory to\
+Mir continent, will be erected.\
+If you wish to know the names of the heroes,\
+go over there and look at the statues.\ \
+<Close/@exit>

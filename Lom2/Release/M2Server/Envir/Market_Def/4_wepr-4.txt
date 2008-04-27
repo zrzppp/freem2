@@ -1,0 +1,40 @@
+; ===================================
+; Market Def NPC File : 4_wepr-4
+; (CastleGi-Ryoong)
+; -----------------------------------
+; Name: Wayne
+; Job: 
+; Map No: 4
+; Pos X 302
+; Pos Y 219
+; File name: *removed*
+; Comment: (CastleGi-Ryoong)
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair @storage @getback)
+%100
++5
++6
+
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+Sorry but I don't want to help such an evil person..\ \
+<Ok/@exit>
+#ELSEACT
+goto @main-1
+
+[@main-1]
+
+Welcome. What do you want to repair?\ \
+Do Special<Repair/@s_repair>\
+<close/@exit>.
+
+[goods]
+;Item		Amount		Time

@@ -1,0 +1,31 @@
+; ===================================
+; Market Def NPC File : 9brother1-F005
+;
+; -----------------------------------
+; Name: Brother
+; Job: 
+; Map No: F005
+; Pos X 
+; Pos Y 
+; File name: *removed*
+; Comment: 
+
+;================================================= =
+;
+;Brother 1
+
+[@main]
+Hi I'm one of the 4 famous brothers.\
+We are know for the special oils we can make.\
+With some special ingredients we can only find here,\
+in this dangerous place.\
+Only problem is i lost my book.
+My book with the receipt for the oils.\
+If you can't help me,
+I show you the way ouy of here.\
+<Next/@next>\
+
+[@next]
+#ACT
+mapmove 3
+

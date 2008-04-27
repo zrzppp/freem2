@@ -1,0 +1,608 @@
+; ===================================
+; Market Def NPC File : 9Ech-0126
+; 2FofEasternInn
+; -----------------------------------
+; Name: James
+; Job: 
+; Map No: 0126
+; Pos X 10
+; Pos Y 10
+; File name: *removed*
+; Comment: 2FofEasternInn
+
+;================================================= =
+;
+
+;Settings
+%100
+
+[@main]
+Do you want to know what I do here?\
+If you want to know, ask me, ok?...\ \
+<Explain about goldbars/@exgoldbars>\
+<Explain about goldbar bundles/@exgoldbarbundle>\
+<Explain about goldchest/@exgoldchest>\
+<Explain about Binding scrolls and drugs/@Bind>\\
+<Close/@exit>
+
+[@exgoldbars]
+What i can do for goldbars is that I can Exchange\
+them for money and vice versa.\
+One gold bar is equivalent to 1 million gold.\
+So are you interested to Exchange?\ \
+<Exchange/@Exchange> the money to gold bars\
+<Exchange/@changeMoney> the gold bars to money\
+<Back/@main>
+
+[@exgoldbarbundle]
+What I can do for goldbar bundles is that I can\
+UnBind them or Bind goldbars to make a bundle.\
+One goldbar bundle is equivalent to 5 goldbars.\
+So are you interested?\ \
+<Bind goldbars/@Change5set>\
+<UnBind goldbar bundle/@Reverse5set>\
+<Back/@main>
+
+
+[@exgoldchest]
+What I can do for goldchest is that I can Exchange\
+for goldbar bundles and vice versa.\
+One goldchest is equivalent to 2 goldbar bundles.\ \
+<Exchange/@Change10Set> the goldbar bundles for a goldchest\
+<Exchange/@Reverse10Set> the goldchest for goldbar bundles\
+<Back/@main>
+
+[@Exchange]
+#IF
+checkgold 1000000
+#SAY
+Do you want to change money into a goldbar?\
+The commission is 2000 gold\
+<Exchange/@changeGold_1>\
+<Cancel/@exit>
+
+#ELSESAY
+Why do you ask me whilst lacking the funds?\
+Please come Back when you have enough money.\ \
+<Back/@main>
+
+[@changeGold_1]
+#IF 
+checkgold 1002000
+#ACT
+take gold 1002000
+give GoldBar 1
+#SAY
+I Exchanged your money into goldbar.\
+Would you like to Exchange more?\ \
+<Exchange more/@Exchange>\
+<Cancel/@exit>
+
+#ELSESAY
+Why do you ask me whilst lacking the funds?\
+Please come Back when you have enough money.\ \
+<Back/@main>
+
+[@changeMoney]
+#IF
+checkitem GoldBar 1
+#SAY 
+Do you want to change goldbar into money?\
+The commission is 2000 gold\
+<Exchange/@changeMoney_1>\
+<Cancel/@exit>
+
+#ELSESAY
+You have no GoldBar for me to Exchange...\
+Come Back only if you do have one.\ \
+<Cancel/@exit>
+
+[@changeMoney_1]
+#IF
+checkitem GoldBar 1
+checkgold 49002001
+#SAY
+You cannot Exchange goldbar into money.\
+your bankbalance would exceed its limit.\ \
+<Cancel/@exit>
+
+#ELSEACT
+goto @changeMoney_2
+
+
+[@changeMoney_2]
+#IF 
+checkitem GoldBar 1
+#ACT
+take GoldBar 1
+give gold 998000
+#SAY
+GoldBar was Exchanged into money.\
+Would you like to Exchange more?\ \
+<Exchange more/@changeMoney>\
+<Cancel/@exit>
+
+
+[@Change5set]
+#IF
+checkitem Goldbar5
+#SAY
+Do you want to Exchange GoldBar into GoldBarBundle?\
+I can do it, but you have to pay me a commission.\
+The commissoin is 2000 gold, do you still want to Exchange it?\ \
+<Exchange/@changeGBB_1>\
+<Cancel/@exit>
+
+#ELSESAY
+You do not have enough GoldBars for an Exchange\
+Come again later when you have enough GoldBars\ \
+<Back/@main>
+
+[@changeGBB_1]
+#IF 
+checkgold 2000
+#ACT
+take gold 2000
+take GoldBar 5
+give GoldBarBundle 1
+#SAY
+I Exchanged your Goldbars into GoldBarBundle.\ 
+Would you like to Exchange more?\ \
+<Exchange more/@Change5set>\
+<Cancel/@exit>
+
+#ELSESAY
+I can't make Exchange... You do not have 5 GoldBars\
+or money to pay the commission\ \
+<Exit/@exit>
+
+[@Reverse5set]
+#IF
+checkitem GoldBarbundle 1
+#SAY
+Do you want to Exchange GoldBarBundle into GoldBars?\
+I can do it, but you should pay me a commission\
+The commissoin is 2000 gold, do you still want to Exchange it?\ \
+<Exchange/@REV5SET_2>\
+<Cancel/@exit>
+
+#ELSESAY
+You do not have enough GoldBarBundles for an Exchange\
+Come again later when you have enough Bundles\ \
+<Back/@main>
+
+
+[@REV5SET_2]
+#IF 
+checkitem GoldBarBundle 1
+#ACT
+take GoldBarBundle 1
+give GoldBar 5
+#SAY
+GoldBarBundle was Exchanged into GoldBars.\ 
+Would you like to Exchange more?\ \
+<Exchange more/@Reverse5set>\
+<Cancel/@exit>
+
+[@Change10set]
+#IF
+checkitem Goldbarbundle 2
+#SAY
+Do you want to Exchange GoldBarBundle into GoldChest?\
+I can do it, but you should pay me a commission\
+The commissoin is 2000 gold, do you still want to Exchange it?\ \
+<Exchange/@changeGBC_1>\
+<Cancel/@exit>
+
+#ELSESAY
+You do not have enough GoldBarBundles for an Exchange\
+Come again later when you have enough Bundles\ \
+<Back/@main>
+
+[@changeGBC_1]
+#IF 
+checkgold 2000
+checkitem GoldBarBundle 2
+#ACT
+take gold 2000
+take GoldBarBundle 2
+give GoldChest 1
+#SAY
+I Exchanged your GoldbarBundles into a GoldChest.\
+Would you like to Exchange more?\ \
+
+<Exchange more/@Change10set> \
+<Cancel/@exit>
+
+#ELSESAY
+I can't make Exchange... You do not have 2 GoldBarBundles\
+or money to pay the commission\ \
+<Cancel/@exit>
+
+[@Reverse10set]
+#IF
+checkitem GoldChest 1
+#SAY
+Do you want to Exchange GoldChest into GoldbarBundle?\
+I can do it, but you should pay me a commission\
+The commissoin is 2000 gold, do you still want to Exchange it?\ \
+<Exchange/@REV10SET_2>\
+<Cancel/@exit>
+
+#ELSESAY
+You do not have a GoldChest for an Exchange\
+Come again later when you have a GoldChest.\ \
+<Back/@main>
+
+
+[@REV10SET_2]
+#IF
+checkitem GoldChest 1
+#ACT
+take GoldChest 1
+give GoldBarBundle 2
+#SAY
+GoldBarBundle was Exchanged into GoldBars.\
+Would you like to Exchange more?\ \
+<Exchange more/@Reverse10set>\
+<Cancel/@exit>
+
+ 
+[@Tmove]
+#IF
+#ACT
+mapmove 0 288 253
+break
+
+#ELSEACT
+goto @Tmove
+
+[@Bind]
+#IF
+#SAY
+I can Bind drugs and scrolls for you.\
+you want me to do that for you?\
+Pay me 100 gold first then.\ \
+<Bind/@d_bund> drugs\
+<Bind/@t_bund> scrolls
+
+[@d_bund]
+<Bind/@ch_Bind1> (HP)DrugLarge\
+<Bind/@ma_Bind1> (MP)DrugLarge\
+<Bind/@ch_Bind2> (HP)DrugMedium\
+<Bind/@ma_Bind2> (MP)DrugMedium\
+<Bind/@ch_Bind3> (HP)DrugSmall\
+<Bind/@ma_Bind3> (MP)DrugSmall\
+<Back/@Bind>
+
+[@t_bund]
+<Bind/@zum_Bind1> DungeonEscape srolls\
+<Bind/@zum_Bind2> RandomTeleport scrolls\
+<Bind/@zum_Bind3> TownTeleport scrolls\
+<Bind/@zum_Bind4> TeleportHome scrolls\
+<Back/@Bind>
+
+
+[@ch_Bind1]
+#IF
+checkitem (HP)DrugLarge 6
+#ACT
+goto @ch_Bind1_1
+#ELSESAY
+You do not have the needed amount of potions.\
+Please come Back if you do have enough potions.\ \
+<Cancel/@exit>
+
+[@ch_Bind1_1]
+#IF 
+checkgold 100
+checkitem (HP)DrugLarge 6
+#ACT
+take gold 100
+take (HP)DrugLarge 6
+give (HP)DrugBundle 1
+#SAY
+Your potions are bundled.\
+Would you like to bundle more?\ \
+<Bind more/@ch_Bind1>\
+<Cancel/@exit>
+
+#ELSESAY
+You do not have the needed amount of potions.\
+Please come Back if u do have enough potions.\ \
+<Cancel/@exit>
+
+[@ma_Bind1]
+#IF
+checkitem (MP)DrugLarge 6
+#ACT
+goto @ma_Bind1_1
+#ELSESAY
+You do not have the needed amount of potions.\
+Please come Back if you do have enough potions.\ \
+<Cancel/@exit>
+
+[@ma_Bind1_1]
+#IF 
+checkgold 100
+checkitem (MP)DrugLarge 6
+#ACT
+take gold 100
+take (MP)DrugLarge 6
+give (MP)DrugBundle 1
+#SAY
+Your potions are bundled.\
+Would you like to bundle more?\ \
+<Bind more/@ma_Bind1>\
+<Cancel/@exit>
+
+#ELSESAY
+You do not have the needed amount of potions.\
+Please come Back when you have enough potions.\ \
+<Cancel/@exit>
+
+[@ch_Bind2]
+#IF
+checkitem (HP)DrugMedium 6
+#ACT
+goto @ch_Bind2_1
+#ELSESAY
+You do not have the needed amount of potions.\
+Please come Back if you do have enough potions.\ \
+<Cancel/@exit>
+
+
+[@ch_Bind2_1]
+#IF 
+checkgold 100
+checkitem (HP)DrugMedium 6
+#ACT
+take gold 100
+take (HP)DrugMedium 6
+give (HP)MediumDrugBundle 1
+#SAY
+Your potions are bundled.\
+Would you like to bundle more?\ \
+<Bind more/@ch_Bind2> \
+<Cancel/@exit>
+
+#ELSESAY
+You do not have the needed amount of potions.\
+Please come Back if you do have enough potions.\ \
+<Cancel/@exit>
+
+[@ma_Bind2]
+#IF
+   checkitem (MP)DrugMedium 6
+#ACT
+   goto @ma_Bind2_1
+
+#ELSESAY
+You do not have the needed amount of potions.\
+Please come Back if you do have enough potions.\ \
+<Cancel/@exit>
+
+
+[@ma_Bind2_1]
+#IF 
+checkgold 100
+checkitem (MP)DrugMedium 6
+#ACT
+take gold 100
+take (MP)DrugMedium 6
+give (MP)MediumDrugBundle 1
+
+#SAY
+Your potions are bundled.\
+Would you like to bundle more?\ \
+<Bind more/@ma_Bind2>\
+<Cancel/@exit>
+
+#ELSESAY
+You do not have the needed amount of potions.\
+Please come Back if you do have enough potions.\ \
+<Cancel/@exit>
+
+
+[@ch_Bind3]
+#IF
+checkitem (HP)DrugSmall 6
+#ACT
+goto @ch_Bind3_1
+
+#ELSESAY
+You do not have the needed amount of potions.\
+Please come Back if you do have enough potions.\ \
+<Cancel/@exit>
+
+[@ch_Bind3_1]
+#IF 
+checkgold 100
+checkitem (HP)DrugSmall 6
+#ACT
+take gold 100
+take (HP)DrugSmall 6
+give (HP)SmallDrugBundle 1
+
+#SAY
+Your potions are bundled.\
+Would you like to bundle more?\ \
+<Bind more/@ch_Bind3> \
+<Cancel/@exit>
+
+
+#ELSESAY
+You do not have the needed amount of potions.\
+Please come Back if you do have enough potions.\ \
+<Cancel/@exit>
+
+[@ma_Bind3]
+#IF
+checkitem (MP)DrugSmall 6
+#ACT
+goto @ma_Bind3_1
+
+#ELSESAY
+You do not have the needed amount of potions.\
+Please come Back if you do have enough potions.\ \
+<Cancel/@exit>
+
+
+[@ma_Bind3_1]
+#IF 
+checkgold 100
+checkitem (MP)DrugSmall 6
+#ACT
+take gold 100
+take (MP)DrugSmall 6
+give (MP)SmallDrugBundle 1
+
+#SAY
+Your potions are bundled.\
+Would you like to bundle more?\ \
+<Bind more/@ma_Bind3> \
+<Cancel/@exit>
+
+
+#ELSESAY
+You do not have the needed amount of potions.\
+Please come Back if you do have enough potions.\ \
+<Cancel/@exit>
+
+
+[@zum_Bind1]
+#IF
+checkitem DungeonEscape 6
+#ACT
+goto @zum_Bind1_1
+
+#ELSESAY
+You do not have the needed amount of teleports.\
+Please come Back if you do have enough teleports.\ \
+<Cancel/@exit>
+
+
+[@zum_Bind1_1]
+#IF 
+checkgold 100
+checkitem DungeonEscape 6
+#ACT
+take gold 100
+take DungeonEscape 6
+give DungeonEscapeBundle 1
+
+#SAY
+Your teleports are bundled.\
+Would you like to bundle more?\ \
+<Bind more/@zum_Bind1>\
+<Cancel/@exit>
+
+
+#ELSESAY
+You do not have the needed amount of teleports.\
+Please come Back if you do have enough teleports.\ \
+<Cancel/@exit>
+
+
+
+[@zum_Bind2]
+#IF
+   checkitem RandomTeleport 6
+#ACT
+   goto @zum_Bind2_1
+
+#ELSESAY
+You do not have the needed amount of teleports.\
+Please come Back if you do have enough teleports.\ \
+<Cancel/@exit>
+
+[@zum_Bind2_1]
+#IF 
+checkgold 100
+checkitem RandomTeleport 6
+#ACT
+take gold 100
+take RandomTeleport 6
+give RandomTeleportBundle 1
+
+#SAY
+Your teleports are bundled.\
+Would you like to bundle more?\ \
+<Bind more/@zum_Bind2>\
+<Cancel/@exit>
+
+
+#ELSESAY
+You do not have the needed amount of teleports.\
+Please come Back if u do have enough teleports.\
+<Cancel/@exit>
+
+
+[@zum_Bind3]
+#IF
+checkitem TownTeleport 6
+#ACT
+goto @zum_Bind3_1
+
+#ELSESAY
+You do not have the needed amount of teleports.\
+Please come Back if you do have enough teleports.\ \
+<Cancel/@exit>
+
+
+[@zum_Bind3_1]
+#IF 
+checkgold 100
+checkitem TownTeleport 6
+#ACT
+take gold 100
+take TownTeleport 6
+give TownTeleportBundle 1
+
+#SAY
+Your teleports are bundled.\
+Would you like to bundle more?\ \
+<Bind more/@zum_Bind3> \
+<Cancel/@exit>
+
+
+#ELSESAY
+You do not have the needed amount of teleports.\
+Please come Back if you do have enough teleports.\ \
+<Cancel/@exit>
+
+
+
+[@zum_Bind4]
+#IF
+checkitem TeleportHome 6
+#ACT
+goto @zum_Bind4_1
+
+#ELSESAY
+You do not have the needed amount of teleports.\
+Please come Back if you do have enough teleports.\ \
+<Cancel/@exit>
+
+
+[@zum_Bind4_1]
+#IF 
+checkgold 100
+checkitem TeleportHome 6
+#ACT
+take gold 100
+take TeleportHome 6
+give TeleportHomeBundle 1
+
+#SAY
+Your teleports are bundled.\
+Would you like to bundle more?\ \
+<Bind more/@zum_Bind4>\
+<Cancel/@exit>
+
+
+#ELSESAY
+You do not have the needed amount of teleports.\
+Please come Back if you do have enough teleports.\ \
+<Cancel/@exit>
+

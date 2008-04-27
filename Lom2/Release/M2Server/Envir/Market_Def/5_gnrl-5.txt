@@ -1,0 +1,52 @@
+; ===================================
+; Market Def NPC File : 5_gnrl-5
+; PrajnaIsland
+; -----------------------------------
+; Name: Andrew
+; Job: 
+; Map No: 5
+; Pos X 145
+; Pos Y 356
+; File name: *removed*
+; Comment: PrajnaIsland
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair @storage @getback)
+%100
++0
++42
++30
++3
+
+[@main]
+Welcome, how may I help you?\ \
+<Buy/@buy>  Items\
+<Sell/@sell>  Items\
+<Help/@questionprize>\
+<Close/@exit>
+
+[@buy]
+What Item would you like to buy?\ \ \
+ <back/@main>
+
+
+[@sell]
+What Item would you like to sell?\ \ \
+ <Back/@main>
+
+[goods]
+;Item		Amount		Time
+Candle			200	1
+Torch			200	1
+DungeonEscape		200	1
+DungeonEscapeBundlel		200	1
+RandomTeleport		200	1
+RandomTeleportBundlel		200	1
+Amulet			200	1
+Amulet(M)		200	1
+RepairOil		200	1
+TeleportHome		200	1
+Orb			200	1

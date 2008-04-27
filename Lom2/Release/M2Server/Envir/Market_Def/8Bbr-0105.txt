@@ -1,0 +1,87 @@
+; ===================================
+; Market Def NPC File : 8Bbr-0105
+; BichonProvince (GroceryStore)
+; -----------------------------------
+; Name: Olivia
+; Job: 
+; Map No: 0105
+; Pos X 12
+; Pos Y 12
+; File name: *removed*
+; Comment: BichonProvince (GroceryStore)
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair @storage @getback)
+%100
++24
++26
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not help such an evil person like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+;Bracelet Store
+[@main-1]
+Welcome, how may I help you?\ \
+<Buy/@buy> Bracelet\
+<Sell/@sell> Bracelet\
+<Repair/@repair> Bracelet\
+<Get/@Tmove> out\
+<Cancel/@exit>
+
+[@Tmove]
+#IF
+random 4
+#ACT
+mapmove 0 306 276
+break
+
+#ELSEACT
+goto @Tmove
+
+[@buy]
+Please select list you'd like to buy.\ \ \
+<Back/@main>
+
+[@sell]
+Show me the Bracelet you wish to sell.\ \ \
+<Back/@main>
+
+[@repair]
+You can repair various kinds of Bracelets,gloves and plates.\ \ \
+<Back/@main>
+
+[~@repair]
+Your Bracelet has been repaired.\ \
+<Back/@main>
+
+[goods]
+;Item		Amount		Time
+ThinBracelet		200	1
+SilverBracelet		200	1
+IronBracer		200	1
+HardGlove		200	1
+LeatherGlove 		200	1
+LargeBracelet		200	1
+SteelBracelet		200	1
+MonkBracelet		200	1
+EbonyBracelet		200	1
+MagicBracelet		200	1
+GoldBracelet		200	1
+StrainBracelet		200	1
+BronzeGlove		200	1
+DeathGauntlet		200	1
+SharpBracelet		200	1
+SpellBracelet		200	1
+EvadeBracelet		200	1
+3rdEyeBracelet		200	1

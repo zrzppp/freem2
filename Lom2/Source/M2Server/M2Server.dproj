@@ -1,0 +1,213 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{6ce39c75-d520-4b16-aace-454659287009}</ProjectGuid>
+    <MainSource>M2Server.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>..\..\Release\M2server\M2Server.exe</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Alignment>4</DCC_Alignment>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_Optimize>False</DCC_Optimize>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_MapFile>3</DCC_MapFile>
+    <DCC_ExeOutput>..\..\Release\M2server\</DCC_ExeOutput>
+    <DCC_DcuOutput>..\..\Build\M2Server\</DCC_DcuOutput>
+    <DCC_ObjOutput>..\..\Build\M2Server\</DCC_ObjOutput>
+    <DCC_HppOutput>..\..\Build\M2Server\</DCC_HppOutput>
+    <DCC_UnitSearchPath>..\Common\</DCC_UnitSearchPath>
+    <DCC_ResourcePath>..\Common\</DCC_ResourcePath>
+    <DCC_ObjPath>..\Common\</DCC_ObjPath>
+    <DCC_IncludePath>..\Common\</DCC_IncludePath>
+    <DCC_Define>RELEASE</DCC_Define>
+    <DCC_UNSAFE_TYPE>True</DCC_UNSAFE_TYPE>
+    <DCC_UNSAFE_CODE>True</DCC_UNSAFE_CODE>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Alignment>4</DCC_Alignment>
+    <DCC_Optimize>False</DCC_Optimize>
+    <DCC_MapFile>3</DCC_MapFile>
+    <DCC_ExeOutput>..\..\Release\M2server\</DCC_ExeOutput>
+    <DCC_DcuOutput>..\..\Build\M2Server\</DCC_DcuOutput>
+    <DCC_ObjOutput>..\..\Build\M2Server\</DCC_ObjOutput>
+    <DCC_HppOutput>..\..\Build\M2Server\</DCC_HppOutput>
+    <DCC_UnitSearchPath>..\Common\</DCC_UnitSearchPath>
+    <DCC_ResourcePath>..\Common\</DCC_ResourcePath>
+    <DCC_ObjPath>..\Common\</DCC_ObjPath>
+    <DCC_IncludePath>..\Common\</DCC_IncludePath>
+    <DCC_Define>DEBUG</DCC_Define>
+    <DCC_UNSAFE_TYPE>True</DCC_UNSAFE_TYPE>
+    <DCC_UNSAFE_CODE>True</DCC_UNSAFE_CODE>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject xmlns=""> <Delphi.Personality>   <Parameters>
+      <Parameters Name="UseLauncher">False</Parameters>
+      <Parameters Name="LoadAllSymbols">True</Parameters>
+      <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+    </Parameters>
+    <VersionInfo>
+      <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+      <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+      <VersionInfo Name="MajorVer">8</VersionInfo>
+      <VersionInfo Name="MinorVer">3</VersionInfo>
+      <VersionInfo Name="Release">24</VersionInfo>
+      <VersionInfo Name="Build">2</VersionInfo>
+      <VersionInfo Name="Debug">False</VersionInfo>
+      <VersionInfo Name="PreRelease">False</VersionInfo>
+      <VersionInfo Name="Special">False</VersionInfo>
+      <VersionInfo Name="Private">False</VersionInfo>
+      <VersionInfo Name="DLL">False</VersionInfo>
+      <VersionInfo Name="Locale">2052</VersionInfo>
+      <VersionInfo Name="CodePage">936</VersionInfo>
+    </VersionInfo>
+    <VersionInfoKeys>
+      <VersionInfoKeys Name="CompanyName">龙之软件</VersionInfoKeys>
+      <VersionInfoKeys Name="FileDescription">龙的传说游戏引擎</VersionInfoKeys>
+      <VersionInfoKeys Name="FileVersion">8.3.24.2</VersionInfoKeys>
+      <VersionInfoKeys Name="InternalName">mir2</VersionInfoKeys>
+      <VersionInfoKeys Name="LegalCopyright">中国Lom2开发联盟www.lom2.net</VersionInfoKeys>
+      <VersionInfoKeys Name="LegalTrademarks">mir2</VersionInfoKeys>
+      <VersionInfoKeys Name="OriginalFilename">mir2</VersionInfoKeys>
+      <VersionInfoKeys Name="ProductName">Legend of Mir 2</VersionInfoKeys>
+      <VersionInfoKeys Name="ProductVersion">8.3.24.2</VersionInfoKeys>
+      <VersionInfoKeys Name="Comments"></VersionInfoKeys>
+    </VersionInfoKeys>
+    <Source>
+      <Source Name="MainSource">M2Server.dpr</Source>
+    </Source>
+  </Delphi.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <ItemGroup />
+  <ItemGroup>
+    <DelphiCompile Include="M2Server.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="..\Common\EDcode.pas" />
+    <DCCReference Include="..\Common\EncryptUnit.pas" />
+    <DCCReference Include="..\Common\Grobal2.pas" />
+    <DCCReference Include="..\Common\HUtil32.pas" />
+    <DCCReference Include="..\Common\MudUtil.pas" />
+    <DCCReference Include="..\Common\nixtime.pas" />
+    <DCCReference Include="..\Common\svn.pas" />
+    <DCCReference Include="..\Common\WSockBuf.pas" />
+    <DCCReference Include="..\Common\WSocket.pas" />
+    <DCCReference Include="..\SDK\SDK.pas" />
+    <DCCReference Include="AboutUnit.pas">
+      <Form>FrmAbout</Form>
+    </DCCReference>
+    <DCCReference Include="ActionSpeedConfig.pas">
+      <Form>frmActionSpeed</Form>
+    </DCCReference>
+    <DCCReference Include="BnkEngn.pas" />
+    <DCCReference Include="Castle.pas" />
+    <DCCReference Include="CastleManage.pas">
+      <Form>frmCastleManage</Form>
+    </DCCReference>
+    <DCCReference Include="ConfigGameShop.pas">
+      <Form>frmConfigGameShop</Form>
+    </DCCReference>
+    <DCCReference Include="ConfigMerchant.pas">
+      <Form>frmConfigMerchant</Form>
+    </DCCReference>
+    <DCCReference Include="ConfigMonGen.pas">
+      <Form>frmConfigMonGen</Form>
+    </DCCReference>
+    <DCCReference Include="DBLogDlg.pas">
+      <Form>LoginDialog</Form>
+    </DCCReference>
+    <DCCReference Include="DBPWDlg.pas">
+      <Form>PasswordDialog</Form>
+    </DCCReference>
+    <DCCReference Include="Envir.pas" />
+    <DCCReference Include="Event.pas" />
+    <DCCReference Include="FrnEngn.pas" />
+    <DCCReference Include="FSrvValue.pas">
+      <Form>FrmServerValue</Form>
+    </DCCReference>
+    <DCCReference Include="FunctionConfig.pas">
+      <Form>frmFunctionConfig</Form>
+    </DCCReference>
+    <DCCReference Include="GameCommand.pas">
+      <Form>frmGameCmd</Form>
+    </DCCReference>
+    <DCCReference Include="GameConfig.pas">
+      <Form>frmGameConfig</Form>
+    </DCCReference>
+    <DCCReference Include="GeneralConfig.pas">
+      <Form>frmGeneralConfig</Form>
+    </DCCReference>
+    <DCCReference Include="Guild.pas" />
+    <DCCReference Include="GuildManage.pas">
+      <Form>frmGuildManage</Form>
+    </DCCReference>
+    <DCCReference Include="GuildTerritory.pas" />
+    <DCCReference Include="HumanInfo.pas">
+      <Form>frmHumanInfo</Form>
+    </DCCReference>
+    <DCCReference Include="IdSrvClient.pas">
+      <Form>FrmIDSoc</Form>
+    </DCCReference>
+    <DCCReference Include="InterMsgClient.pas">
+      <Form>FrmMsgClient</Form>
+    </DCCReference>
+    <DCCReference Include="InterServerMsg.pas">
+      <Form>FrmSrvMsg</Form>
+    </DCCReference>
+    <DCCReference Include="ItemSet.pas">
+      <Form>frmItemSet</Form>
+    </DCCReference>
+    <DCCReference Include="ItmUnit.pas" />
+    <DCCReference Include="JClasses.pas" />
+    <DCCReference Include="LocalDB.pas" />
+    <DCCReference Include="M2Share.pas" />
+    <DCCReference Include="Magic.pas" />
+    <DCCReference Include="MD5Unit.pas" />
+    <DCCReference Include="Mission.pas" />
+    <DCCReference Include="MonsterConfig.pas">
+      <Form>frmMonsterConfig</Form>
+    </DCCReference>
+    <DCCReference Include="NoticeM.pas" />
+    <DCCReference Include="ObjAxeMon.pas" />
+    <DCCReference Include="ObjBase.pas" />
+    <DCCReference Include="ObjGuard.pas" />
+    <DCCReference Include="ObjMon.pas" />
+    <DCCReference Include="ObjMon2.pas" />
+    <DCCReference Include="ObjMon3.pas" />
+    <DCCReference Include="ObjNpc.pas" />
+    <DCCReference Include="ObjRobot.pas" />
+    <DCCReference Include="OnlineMsg.pas">
+      <Form>frmOnlineMsg</Form>
+    </DCCReference>
+    <DCCReference Include="RunDB.pas" />
+    <DCCReference Include="RunSock.pas" />
+    <DCCReference Include="svMain.pas">
+      <Form>FrmMain</Form>
+    </DCCReference>
+    <DCCReference Include="UnitManage.pas" />
+    <DCCReference Include="UsrEngn.pas" />
+    <DCCReference Include="ViewKernelInfo.pas">
+      <Form>frmViewKernelInfo</Form>
+    </DCCReference>
+    <DCCReference Include="ViewLevel.pas">
+      <Form>frmViewLevel</Form>
+    </DCCReference>
+    <DCCReference Include="ViewList.pas">
+      <Form>frmViewList</Form>
+    </DCCReference>
+    <DCCReference Include="ViewOnlineHuman.pas">
+      <Form>frmViewOnlineHuman</Form>
+    </DCCReference>
+    <DCCReference Include="ViewSession.pas">
+      <Form>frmViewSession</Form>
+    </DCCReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+</Project>

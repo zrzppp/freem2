@@ -1,0 +1,14 @@
+;Info [ Npc Name{Test26} X=106 Y=103 MapName={EventMap} ]
+
+;Settings
+%100
+
+[@main]
+Skin numbers in NPC order:\
+41,42,43,44,30,45\
+46,47,48,49,50\
+51,52,53,54,55\
+56,57\ \
+<Close/@exit>\
+
+

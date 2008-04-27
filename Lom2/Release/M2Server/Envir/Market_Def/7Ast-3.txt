@@ -1,0 +1,53 @@
+; ===================================
+; Market Def NPC File : 7Ast-3
+; GroceryStore (SabukWall)
+; -----------------------------------
+; Name: Tony
+; Job: 
+; Map No: 3
+; Pos X 663
+; Pos Y 304
+; File name: *removed*
+; Comment: GroceryStore (SabukWall)
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair @storage @getback)
+%100
++30
++3
++25
+
+[@main]
+I will Sell and Buy Items to you.\ \
+Members of <$OWNERGUILD> will get a discount on my\
+prices because <$LORD> said so.\
+
+<Buy/@buy> Items\
+<Sell/@sell> Items\
+<Close/@exit>
+
+
+[@buy]
+Which items do you need?\ \ \
+ <Back/@main>
+
+[@sell]
+We buy Candles, Amulets, Scrolls RepairOils, etc.\
+ <Back/@main>
+
+
+[goods]
+;Item		Amount		Time
+Candle		200	1
+Torch		200	1
+DungeonEscape	200	1
+DungeonEscapeBundle	200	1
+RandomTeleport	200	1
+RandomTeleportBundle	200	1
+Amulet		200	1
+Amulet(M)	200	1
+RepairOil	200	1
+TeleportHome	200	1

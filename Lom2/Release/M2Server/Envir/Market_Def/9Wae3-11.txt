@@ -1,0 +1,21 @@
+; ===================================
+; Market Def NPC File : 9Wae3-11
+; TaoTown
+; -----------------------------------
+; Name: Apprentice
+; Job: 
+; Map No: 11
+; Pos X 191
+; Pos Y 325
+; File name: *removed*
+; Comment: TaoTown
+
+;================================================= =
+;
+
+[@main]
+The person who stole the best sword of\
+this taoist school in the past\
+was a notorious villain at that time,\
+his criminal record would fill a book\ \
+<Thanks/@exit>

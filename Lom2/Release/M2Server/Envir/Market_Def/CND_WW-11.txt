@@ -1,0 +1,75 @@
+; ===================================
+; Market Def NPC File : CND_WW-11
+; ChestnutDealer in TaoVillage
+; -----------------------------------
+; Name: ChestnutDealer
+; Job: 
+; Map No: 11
+; Pos X 
+; Pos Y 
+; File name: *removed*
+; Comment: ChestnutDealer in TaoVillage
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair @storage @getback)
+%100
++45
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not help an evil person like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+Have you ever seen a chestnut tree\ 
+that bears mysterious chestnuts?\
+That trees bears chestnuts of various colors ranging\
+from Gold,Silver,and Copper They are all beautiful.\
+If you can find a chestnut like this,bring it to me.\
+Then I will pay you good.\\
+
+<I have one like that,do you want to have a look?/@look>\
+<Could you tell me more about the tree?/@talkwith>\
+<I will get it right away/@exit>\\
+
+[@look]
+Oh oh...you got the chestnut right\
+ok. Will you sell it to me?\\
+
+<Sell/@sell>\
+<next time/@next>\
+
+[@Sell]
+Show me your chestnuts to be sold. I'll pay a nice price.\
+So if you like my store please sell them to me.\ \
+<next time/@exit>
+
+[@next]
+I see If you find a good chestnut,\
+bring it to me anytime.\ \
+<close/@exit>\
+
+[@talkwith]
+The chestnut trees only grows around\
+Bichon and woomyon regions.\
+They bears the special chestnuts at all 4 seasons.\
+The chestnuts are not edible\
+but they are used for making accessories.\
+If you find them,please bring them to me and sell them.\\
+<close/@exit>\
+
+[goods]
+BrownChestnut
+BronzeChestnut
+SilverChestnut
+GoldChestnut

@@ -1,0 +1,2 @@
+;Enter in here your connection string!
+Connect=Provider=SQLOLEDB.1;Password=code21;Persist Security Info=True;User ID=sa;Initial Catalog=LegendOfMir;Data Source=DRD-AMD64

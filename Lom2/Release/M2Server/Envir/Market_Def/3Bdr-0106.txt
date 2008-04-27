@@ -1,0 +1,403 @@
+; ===================================
+; Market Def NPC File : 3Bdr-0106
+; BichonProvince (ClothesShop)
+; -----------------------------------
+; Name: Ann
+; Job: 
+; Map No: 0106
+; Pos X 19
+; Pos Y 6
+; File name: *removed*
+; Comment: BichonProvince (ClothesShop)
+
+;================================================= =
+;
+; Brief Description of the switches used in this NPC.
+; [109] please tells me Liu Lao Tou the position.
+; [110] and settles down the cotton garment agreement
+; [111] snatches for golden necklace
+; [112] with settles down the cotton garment is intimate (when man)
+; [113] with settles down the cotton garment is very intimate
+; [114] starts to settle down the cotton garment sad story 
+;
+
+;Settings
+(@buy @sell @repair @s_repair)
+%100
++10
++11
++15
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not help an evil person like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+[@main-1]
+Welcome, how may I help you?\ \
+ <Buy/@buy> clothes\
+ <Sell/@sell> clothes\
+ <Repair/@repair> clothes\
+ <Dialogue/@talkwith>\
+ <Get/@Tmove> out\
+ <Cancel/@exit>
+
+[@Tmove]
+#IF
+random 4
+#ACT
+mapmove 0 318 303
+break
+
+#IF
+random 4
+#ACT
+mapmove 0 318 302
+break
+
+#IF
+random 4
+#ACT
+mapmove 0 307 312
+break
+
+#IF
+random 4
+#ACT
+mapmove 0 308 311
+break
+
+#ELSEACT
+goto @Tmove
+
+[@buy]
+ What item do you want to buy?\ \ \
+ <Back/@main>
+
+[@sell]
+ Show me your clothes to be sold.\ 
+ I'll give you an appraisement.\
+ We also trade Helmets or headsets,\
+ So if you like my store please sell them to me.\ \
+ <Back/@main>
+
+[@repair]
+ You can repair clothes,Helmets and headpieces.\ \
+ <Back/@main>
+
+[~@repair]
+ It seems repaired fine.\ \ \
+ <Back/@main>
+
+[@talkwith]
+#IF
+#ACT
+goto  @talkwith_1
+
+
+[@talkwith_1]
+#IF
+check [114] 1
+#ACT
+goto  @eppuni_sad_story
+break
+
+#IF
+check [112] 1
+#ACT
+goto  @lover_eppuni
+break
+ 
+#IF
+check [108] 1
+check [109] 0
+#ACT
+goto  @talk_eppuni
+break
+
+#IF
+daytime  day
+#SAY
+The weather is nice today.\
+I might go out with my boyfriend.\
+
+#ACT
+break
+
+#IF
+#SAY
+Be careful in the dark, there are thieves around. They are\
+deliberately causeing trouble on the road. We need to get rid\
+of these robbers as soon as we can.
+
+[@talk_eppuni]
+Whats the matter? I must work now.
+<Ask about medicine matter/@talk_yu_doctor>\ 
+
+
+[@talk_yu_doctor]
+#IF
+checkitemw GoldNecklace 1
+#SAY
+oh, originally is is saying Liu Lao Tou. \ 
+but do I promise him all not to say him to any person in where. \ \
+<brings for the body on golden necklace./@give_goldnecklace>\ 
+
+#ELSESAY
+Oh, originally is speaking the Liu old man.\
+But I promise him to see any person but i carnt say where he is.\ 
+Was sorry very much that, I also do not have the means,\
+You or go back.\
+
+
+[@give_goldnecklace]
+#IF
+checkitemw  GoldNecklace 1
+#SAY
+Oh, for me the such precious thing, I thank you\
+Really too has thanked,\
+This is a thing which I long for even in dreams.\ \
+ <Ask Liu Chinese medicine once more the matter/@talk_yu_again>\
+
+#ACT
+takew  GoldNecklace 1
+
+[@talk_yu_again]
+#IF
+random 5
+#SAY
+How can this manage? I have all received the gift,\
+Also cannot pretend not to know, I or tell you,\
+But you surely do not say with Grandpa Liu are I say,\
+Asks you certainly to promise me.\\
+ <OK/@ok_make_promise>\
+ <No Thankyou/@no_make_promise>\
+
+#ELSESAY
+Is not good, cannot say\
+For me the necklace, cannot be because of this?\
+ <Return the necklace./@getback_necklace>\
+ <How meets./@noproblem>\
+
+
+[@getback_necklace]
+#SAY
+Humph, you too were preliminary.\
+After that, later don't again will appear in here.\
+Humph. . .
+
+#ACT
+give GoldNecklace 1
+set  [109]  1
+set  [111]  1
+
+[@noproblem]
+#IF
+gender man
+random 20
+#SAY
+<$USERNAME> You are the genuine man.\
+.. Later will be called you elder brother, will be allowed to call like this?\
+Also has, in very is together happy with elder brother on the feeling.\
+Next time will pass through here, certainly will come to see me oh.\
+Good?\
+
+#ACT
+set  [112] 1
+#ELSESAY
+You really are a good person.\
+Certainly must come our shop after neighbor oh.\
+
+[@ok_make_promise]
+#SAY
+Certainly must do this.\
+Grandpa Liu now in natural cavern underground,\
+I have not gone, therefore is concrete does not know.\
+Walks time said must live for several months in there,\
+I want to be supposed in there.\
+Calculates saw that,\
+Surely do not have to mention me.\
+
+#ACT
+set  [109] 1
+
+[@no_make_promise]
+Oh, this may not be good.\
+I but have pledged with Grandpa Liu.\
+If he knew I have not defended the credit,\
+Can very disappointed.\
+Sorry.\ \
+ <Says permits the Chinese medicine the request./@talk_her_order>\
+
+
+[@talk_her_order]
+#SAY
+Originally is this.\
+Since permits the speech which the Chinese medicine says, should early say.\
+I tell you\
+Said is in the natural cavern underground,\
+You may look for him to the there. Concrete I did not know.\
+I Hope you find him.\
+
+#ACT
+set  [109]  1
+set  [110]  1
+
+
+;-----------------------------------------------------
+
+[@lover_eppuni]
+#IF
+check [109] 0
+#SAY
+<$USERNAME> Elder brother, what matter this does also have?\
+So long as can help elder brother's busy, any matter all may do.\ \
+ <Asks Liu old man's matter/@about_yu_2>\
+
+#ACT
+break
+
+#IF
+random 5
+#SAY
+<$USERNAME> Elder brother, I now very am weary.\
+Really sorry, I do not have the means to listen to you to say.\ \
+ <Bring me my necklace./@give_my_necklace>\
+
+#ACT
+break
+
+#IF
+random 5
+check [113] 1
+#SAY
+<$USERNAME> Elder brother, I now very am weary.\
+Really sorry, I do not have the means to listen to you to say.\ \
+ <Brings the necklace the body on to treat as the gift to deliver. /@give_my_necklace>\
+ <Bring me my ring./@give_my_ring>\
+
+#ACT
+break
+
+#IF
+#SAY
+<$USERNAME> Elder brother, you come just right, my true enlightenment bored.\
+Tells the interesting story to me.\
+Good?\ \
+ <Speaks fertile Masurium Dabao the belch the story./@talk_about_oma>\
+
+#ACT
+break
+
+[@about_yu_2]
+Because you are elder brother, therefore only then tells you,\
+Grandpa Liu in natural cavern underground.\
+I promise him all not to say to any person,\
+Elder brother also wants to promise me not to be able to say to everybody.\
+
+
+[@talk_about_oma]
+Ha ha ha ha Kazak....\
+Too interesting, elder brother really is an interesting person.\
+
+[@give_my_necklace]
+#IF
+checkitemw  GoldNecklace
+#ACT
+takew  GoldNecklace
+goto  @thanks_neckl
+#ELSESAY
+Elder brother also really can say the joke.\
+But has this speech, I already very much thank...\
+
+
+[@thanks_neckl]
+#IF
+random 5
+#ACT
+set [113] 1
+#SAY
+Elder brother, you unexpectedly gives me such gift, too was good.\
+I looked like also have the strength.\
+#ELSESAY
+Elder brother, you unexpectedly gives me such gift, too was good.\
+I looked like also have the strength.\
+
+
+
+[@give_my_ring]
+#IF
+checkitemw  SkeletonRing
+#ACT
+takew SkeletonRing
+#ELSESAY
+Elder brother also really can say the joke.\
+But has this speech, I already very much thank...\
+
+
+#IF
+istakeitem SkeletonRing
+#ACT
+goto  @eppuni_stroy_1
+#ELSEACT
+goto  @thanks_ring
+
+[@thanks_ring]
+Really? Really gives this I?\
+Elder brother, kisses you\
+
+
+[@eppuni_stroy_1]
+#SAY
+Hum hum...\
+..............................\
+Really thank you.. to give the such good ring I...\
+...........\
+Sorry The sudden body is uncomfortable...\
+
+#ACT
+set [114] 1
+
+
+;-----------------------------------------------------
+;Clothing store female sales clerk's inside story...
+
+[@eppuni_sad_story]
+Does elder brother, how not want to speak today.\
+Sorry.. Next time again will come...\
+
+
+
+
+;-----------------------------------------------------
+
+[goods]
+;Item		Amount		Time
+BaseDress(M)		100	1	
+BaseDress(F)		100	1
+LightArmour(M)		100	1
+LightArmour(F)		100	1
+HeavyArmour(M)		100	1
+HeavyArmour(F)		100	1
+SoulArmour(M)		100	1
+SoulArmour(F)		100	1
+MagicRobe(M)		100	1
+MagicRobe(F)		100	1
+IronArmour(M)		100	1
+IronArmour(M)		100	1
+PearlArmour(M)		100	1
+PearlArmour(F)		100	1
+WizardRobe(M)		100	1
+WizardRobe(F)		100	1
+BrassHelmet		100	1
+MagicHelmet		100	1
+BronzeHelmet		100	1
+SkeletonHelmet		100	1
+ShamanHelmet		100	1
+GoldenTiara		100	1

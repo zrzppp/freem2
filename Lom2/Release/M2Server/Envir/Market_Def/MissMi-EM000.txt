@@ -1,0 +1,385 @@
+[@Main]
+#SAY
+Hello, I am Miss Do. I will be guiding the people of Level 41 or above.\
+The arena is a place to test your own power only\
+so summoned mobs are prohibitied to be used. The fee is 3000 Gold.\
+Time Limit is 2 hours. I hope you will pass all stages and\
+go home safely.\ \
+Pay 3000 Gold <and challenge./@start>\
+<Return to/@tavern> the tavern.\
+<Let me think some more/@exit>\
+
+[@tavern]
+#ACT
+
+MAP 0101
+
+[@start]
+#IF
+CHECKLEVEL 41
+#ACT
+SET [500] 0
+SET [501] 1
+SET [502] 1
+SET [503] 1
+SET [504] 1
+SET [505] 1
+SET [506] 1
+SET [507] 1
+SET [508] 1
+SET [509] 1
+SET [510] 1
+SET [511] 1
+SET [512] 1
+SET [513] 1
+SET [514] 1
+SET [515] 1
+SET [516] 1
+SET [517] 1
+SET [518] 1
+SET [519] 1
+SET [520] 1
+SET [521] 1
+SET [522] 1
+SET [523] 1
+SET [524] 1
+SET [525] 1
+BREAKTIMERECALL
+GOTO @class
+#ELSESAY
+You are not yet qualified to fight here.\
+Try one of my sisters, MissDo or MissRe\ \ \
+<Close/@exit>\
+
+[@class]
+#IF
+CHECKJOB warrior
+#ACT
+GOTO @checkwarriorroom
+#IF
+CHECKJOB wizard
+#ACT
+GOTO @checkwizardroom
+#ELSEACT
+GOTO @checktaoistroom
+
+[@checkwarriorroom]
+#IF
+CHECKHUM EM031 1
+#ACT
+GOTO @checkwarriorroom2
+#ELSEACT
+GOTO @movewarriorroom1
+
+[@checkwarriorroom2]
+#IF
+CHECKHUM EM032 1
+#ACT
+GOTO @checkwarriorroom3
+#ELSEACT
+GOTO @movewarriorroom2
+
+[@checkwarriorroom3]
+#IF
+CHECKHUM EM033 1
+#ACT
+GOTO @checkwarriorroom4
+#ELSEACT
+GOTO @movewarriorroom3
+
+[@checkwarriorroom4]
+#IF
+CHECKHUM EM034 1
+#ACT
+GOTO @checkwarriorroom5
+#ELSEACT
+GOTO @movewarriorroom4
+
+[@checkwarriorroom5]
+#IF
+CHECKHUM EM035 1
+#SAY
+Im Sorry, but all the rooms are currently in use.\
+Try again later...\ \ \
+<Close/@exit>\
+#ELSEACT
+GOTO @movewarriorroom5
+
+[@movewarriorroom1]
+#IF
+CHECKGOLD 3000
+#ACT
+TAKE Gold 3000
+MONCLEAR EM031
+TIMERECALL 120
+MAPMOVE EM031 13 16
+BREAK
+#ELSESAY
+You dont have the 3000 Gold entrance fee.\ \ \
+<Close/@exit>\
+
+[@movewarriorroom2]
+#IF
+CHECKGOLD 3000
+#ACT
+TAKE Gold 3000
+MONCLEAR EM032
+TIMERECALL 120
+MAPMOVE EM032 13 16
+BREAK
+#ELSESAY
+You dont have the 3000 Gold entrance fee.\ \ \
+<Close/@exit>\
+
+[@movewarriorroom3]
+#IF
+CHECKGOLD 3000
+#ACT
+TAKE Gold 3000
+MONCLEAR EM033
+TIMERECALL 120
+MAPMOVE EM033 13 16
+BREAK
+#ELSESAY
+You dont have the 3000 Gold entrance fee.\ \ \
+<Close/@exit>\
+
+[@movewarriorroom4]
+#IF
+CHECKGOLD 3000
+#ACT
+TAKE Gold 3000
+MONCLEAR EM034
+TIMERECALL 120
+MAPMOVE EM034 13 16
+BREAK
+#ELSESAY
+You dont have the 3000 Gold entrance fee.\ \ \
+<Close/@exit>\
+
+[@movewarriorroom5]
+#IF
+CHECKGOLD 3000
+#ACT
+TAKE Gold 3000
+MONCLEAR EM035
+TIMERECALL 120
+MAPMOVE EM035 13 16
+BREAK
+#ELSESAY
+You dont have the 3000 Gold entrance fee.\ \ \
+<Close/@exit>\
+
+[@checkwizardroom]
+#IF
+CHECKHUM EM036 1
+#ACT
+GOTO @checkwizardroom2
+#ELSEACT
+GOTO @movewizzroom1
+
+[@checkwizardroom2]
+#IF
+CHECKHUM EM037 1
+#ACT
+GOTO @checkwizardroom3
+#ELSEACT
+GOTO @movewizzroom2
+
+[@checkwizardroom3]
+#IF
+CHECKHUM EM038 1
+#ACT
+GOTO @checkwizardroom4
+#ELSEACT
+GOTO @movewizzroom3
+
+[@checkwizardroom4]
+#IF
+CHECKHUM EM039 1
+#ACT
+GOTO @checkwizardroom5
+#ELSEACT
+GOTO @movewizzroom4
+
+[@checkwizardroom5]
+#IF
+CHECKHUM EM040 1
+#SAY
+Im Sorry, but all the rooms are currently in use.\
+Try again later...\ \ \
+<Close/@exit>\
+#ELSEACT
+GOTO @movewizzroom5
+
+[@movewizzroom1]
+#IF
+CHECKGOLD 3000
+#ACT
+TAKE Gold 3000
+MONCLEAR EM036
+TIMERECALL 120
+MAPMOVE EM036 13 16
+BREAK
+#ELSESAY
+You dont have the 3000 Gold entrance fee.\ \ \
+<Close/@exit>\
+
+[@movewizzroom2]
+#IF
+CHECKGOLD 3000
+#ACT
+TAKE Gold 3000
+MONCLEAR EM037
+TIMERECALL 120
+MAPMOVE EM037 13 16
+BREAK
+#ELSESAY
+You dont have the 3000 Gold entrance fee.\ \ \
+<Close/@exit>\
+
+[@movewizzroom3]
+#IF
+CHECKGOLD 3000
+#ACT
+TAKE Gold 3000
+MONCLEAR EM038
+TIMERECALL 120
+MAPMOVE EM038 13 16
+BREAK
+#ELSESAY
+You dont have the 3000 Gold entrance fee.\ \ \
+<Close/@exit>\
+
+[@movewizzroom4]
+#IF
+CHECKGOLD 3000
+#ACT
+TAKE Gold 3000
+MONCLEAR EM039
+TIMERECALL 120
+MAPMOVE EM039 13 16
+BREAK
+#ELSESAY
+You dont have the 3000 Gold entrance fee.\ \ \
+<Close/@exit>\
+
+[@movewizzroom5]
+#IF
+CHECKGOLD 3000
+#ACT
+TAKE Gold 3000
+MONCLEAR EM040
+TIMERECALL 120
+MAPMOVE EM040 13 16
+BREAK
+#ELSESAY
+You dont have the 3000 Gold entrance fee.\ \ \
+<Close/@exit>\
+
+[@checktaoistroom]
+#IF
+CHECKHUM EM041 1
+#ACT
+GOTO @checktaoistroom2
+#ELSEACT
+GOTO @movetaoistroom1
+
+[@checktaoistroom2]
+#IF
+CHECKHUM EM042 1
+#ACT
+GOTO @checktaoistroom3
+#ELSEACT
+GOTO @movetaoistroom2
+
+[@checktaoistroom3]
+#IF
+CHECKHUM EM043 1
+#ACT
+GOTO @checktaoistroom4
+#ELSEACT
+GOTO @movetaoistroom3
+
+[@checktaoistroom4]
+#IF
+CHECKHUM EM044 1
+#ACT
+GOTO @checktaoistroom5
+#ELSEACT
+GOTO @movetaoistroom4
+
+[@checktaoistroom5]
+#IF
+CHECKHUM EM045 1
+#SAY
+Im Sorry, but all the rooms are currently in use.\
+Try again later...\ \ \
+<Close/@exit>\
+#ELSEACT
+GOTO @movetaoistroom5
+
+[@movetaoistroom1]
+#IF
+CHECKGOLD 3000
+#ACT
+TAKE Gold 3000
+MONCLEAR EM041
+TIMERECALL 120
+MAPMOVE EM041 13 16
+BREAK
+#ELSESAY
+You dont have the 3000 Gold entrance fee.\ \ \
+<Close/@exit>\
+
+[@movetaoistroom2]
+#IF
+CHECKGOLD 3000
+#ACT
+TAKE Gold 3000
+MONCLEAR EM042
+TIMERECALL 120
+MAPMOVE EM042 13 16
+BREAK
+#ELSESAY
+You dont have the 3000 Gold entrance fee.\ \ \
+<Close/@exit>\
+
+[@movetaoistroom3]
+#IF
+CHECKGOLD 3000
+#ACT
+TAKE Gold 3000
+MONCLEAR EM043
+TIMERECALL 120
+MAPMOVE EM043 13 16
+BREAK
+#ELSESAY
+You dont have the 3000 Gold entrance fee.\ \ \
+<Close/@exit>\
+
+[@movetaoistroom4]
+#IF
+CHECKGOLD 3000
+#ACT
+TAKE Gold 3000
+MONCLEAR EM044
+TIMERECALL 120
+MAPMOVE EM044 13 16
+BREAK
+#ELSESAY
+You dont have the 3000 Gold entrance fee.\ \ \
+<Close/@exit>\
+
+[@movetaoistroom5]
+#IF
+CHECKGOLD 3000
+#ACT
+TAKE Gold 3000
+MONCLEAR EM045
+TIMERECALL 120
+MAPMOVE EM045 13 16
+BREAK
+#ELSESAY
+You dont have the 3000 Gold entrance fee.\ \ \
+<Close/@exit>\

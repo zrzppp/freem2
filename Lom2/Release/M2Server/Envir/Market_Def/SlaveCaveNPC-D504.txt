@@ -1,0 +1,52 @@
+; ===================================
+; Market Def NPC File : 
+; Slave Cave Quest
+; -----------------------------------
+; Name: Isaac
+; Job: 
+; Map No: D504
+; Pos X 511
+; Pos Y 465
+; File name: *removed*
+; Comment: Slave Cave Quest
+
+;================================================= =
+;
+
+[@main]
+#IF
+checklevel 30
+#SAY
+Hello <$USERNAME>\
+You are approaching a gateway between evil powers and the normal\
+world. Last year i was also here, and before i knew it I was\
+somewhere else a place full of terror and evil monsters,\
+I ran for my life.There were loads of evil beast running after me.\
+I found a deep small corner where i could hide myself and where\
+those evil creatures couldn't reach me.\
+<Next/@next>\
+
+#ELSESAY
+Im busy. Come back later!\\
+<Exit/@exit>
+
+[@next]
+You want to proceed walking around here,\
+it's your choice. Bye dont say i didnt warn you.\\
+<Thanks for your advice, I will leave now/@next2>\
+<Don't tell me what i should or shouldn't do/@next3>\
+
+[@next2]
+#ACT
+mapmove 2
+
+[@next3]
+#IF
+#ACT
+timerecall 90
+map F005
+close
+
+
+
+

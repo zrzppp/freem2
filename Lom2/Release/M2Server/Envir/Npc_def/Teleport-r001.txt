@@ -1,0 +1,105 @@
+; ===================================
+; Npc Def NPC File : Teleport-r001
+; Town Teleport npc
+; -----------------------------------
+; Name: Teleport
+; Job: 
+; Map No: r001
+; Pos X 
+; Pos Y 
+; File name: *removed*
+; Comment: Town Teleport
+
+;================================================= =
+;
+
+
+[@main]
+<Move to Bichon Wall/@bwmove>\
+<Move to Gingko tree Valley/@ginmove>\
+<Move to Border Village/@brdmove>\
+<Move to Serpent Village/@svmove>\
+<Move to Mongchon Mud Wall/@mwmove>\
+<Move to TaoVillage/@wwmove>\
+<Move to CastleGi-Ryoong/@cgrmove>\
+<Move to PrajnaIsland/@simove>\
+<Move to PastBichon/@pbmove>\
+<Next/@next>
+
+[@next]
+here the guild stuff\ \
+<Make Food/@agitextend>\
+<Make Potion/@agitremain>\
+<Make Gem/@gaboardlist>\
+<Make Item/@makeitem>\
+<Make Stuff/@makestuff>
+
+[@makefood]
+Please imput the required items.\
+
+[@makepotion]
+Please imput the required items.\
+
+[@makegem]
+Please imput the required items.\
+
+[@makeitem]
+Please imput the required items.\
+
+[@makestuff]
+Please imput the required items.\
+
+
+[@bwmove]
+#IF
+#ACT
+mapmove 0 333 268
+
+[@brdmove]
+#IF
+#ACT
+mapmove 0 288 615
+
+[@ginmove]
+#IF
+#ACT
+mapmove 0 634 612
+break
+
+[@svmove]
+#IF
+#ACT
+mapmove 2 504 484
+break
+
+[@mwmove]
+#IF
+#ACT
+mapmove 3 330 330
+break
+
+[@wwmove]
+#IF
+#ACT
+mapmove 11 177 324
+break
+
+[@cgrmove]
+#IF
+#ACT
+mapmove 4 264 257
+break
+
+[@simove]
+#IF
+#ACT
+mapmove 5 134 338
+break
+
+[@pbmove]
+#IF
+#ACT
+mapmove 6 130 150
+break
+
+

@@ -1,0 +1,137 @@
+; ===================================
+; Market Def NPC File : 5_access-B352
+; Jeweler (PrajnaIsland)
+; -----------------------------------
+; Name: Grace
+; Job: 
+; Map No: B352
+; Pos X 
+; Pos Y 
+; File name: *removed*
+; Comment: Jeweler (PrajnaIsland)
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair @storage @getback)
+%100
++22
++23
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not help such an evil person like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+Tst,tst.. When Emily will grow up....\
+oh, Welcome Sir/Ma'am.\ \
+<Buy/@buy>\
+<Sell/@sell>\
+<Repair/@repair>\
+<Move outsie/@Tmove>\
+<Close/@exit>
+
+[@Tmove]
+#IF
+random 3
+#ACT
+mapmove 5 157 337
+break
+
+#IF
+random 3
+#ACT
+mapmove 5 158 338
+break
+
+#IF
+random 3
+#ACT
+mapmove 5 159 339
+break
+
+#ELSEACT
+goto @Tmove
+
+[@buy]
+There are many accessories.\
+Please take your time and have a look.\ \ \
+ <Back/@main>
+
+[@sell]
+The proce is up to the condition of the item\
+you want to sell.\
+Please show me what you want to sell.\ \ \
+ <Back/@main>
+
+[@repair]
+I'll throughly repair it, just show me.\ \ \
+ <Back/@main>
+
+[~@repair]
+It is repaired very well.\ \
+ <Back/@main>
+
+[goods]
+;Item		Amount		Time
+GoldNecklace		200	1
+PrecisionNeck		200	1
+WarriorNecklce		200	1
+BlueCrystlNeck		200	1
+JadeNecklace		200	1
+ThinBracelet		200	1
+SilverBracelet		200	1
+IronBracer		200	1
+CopperRing		200	1
+HexagonalRing		200	1
+WhiteJadeRing		200	1
+BlackNecklace		200	1
+YellowNecklace		200	1
+HardGlove		200	1
+HornRing		200	1
+LeatherGlove 		200	1
+LargeBracelet		200	1
+BlackRing		200	1
+NagaNecklace		200	1
+LanternNeck		200	1
+SerpentEyeRing		200	1
+SteelBracelet		200	1
+MundaneRing		200	1
+SkeletonRing		200	1
+MonkBracelet		200	1
+GoldRing		200	1
+IronRing		200	1
+EbonyBracelet		200	1
+MagicBracelet		200	1
+PearlRing		200	1
+BlueJadeNeckl		200	1
+MoralRing		200	1
+TigerNecklace		200	1
+BlueRing		200	1
+PhoenixBead		200	1
+CharmRing		200	1
+AmberNecklace		200	1
+EbonyNecklace		200	1
+BambooPipe		200	1
+GoldBracelet		200	1
+StrainBracelet		200	1
+PlatinumNeck		200	1
+DeathGauntlet		200	1
+ExpelRing		200	1
+ConvexLens		200	1
+CoralRing		200	1
+SharpBracelet		200	1
+GlassRing		200	1
+SpellBracelet		200	1
+EvadeBracelet		200	1
+MysteryWheel		200	1
+3rdEyeBracelet		200	1

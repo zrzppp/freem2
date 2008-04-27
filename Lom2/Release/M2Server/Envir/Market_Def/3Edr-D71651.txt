@@ -1,0 +1,41 @@
+; ===================================
+; Market Def NPC File : 3Edr-D608
+;          (clothesroom)
+; -----------------------------------
+; Name: Louise
+; Job: 
+; Map No: D608
+; Pos X 23
+; Pos Y 27
+; File name: *removed*
+; Comment:       (clothesroom)
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair)
+%200
++10
++11
++15
+
+
+[@main]
+Are you here to find out something new?\
+I guess you may know that it is dangerous here\
+The only thing I can do for you is repair your clothes and Helmet.\ \
+<Repair/@repair> Clothes\
+<Cancel/@exit>
+
+[@repair]
+Do you want to repair your accessory?\ \
+<back/@main>
+
+[~@repair]
+It seems to be well done.\ \
+<back/@main>
+
+[Goods]
+;Item		Amount		Time
+

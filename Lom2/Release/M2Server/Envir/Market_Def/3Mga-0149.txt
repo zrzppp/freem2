@@ -1,0 +1,129 @@
+; ===================================
+; Market Def NPC File : 3Mga-0149
+; 
+; -----------------------------------
+; Name: Laura
+; Job: 
+; Map No: 0149
+; Pos X 11
+; Pos Y 18
+; File name: *removed*
+; Comment: Clothesshop
+
+;================================================= =
+;
+
+;Settings
+(@buy @sell @repair @s_repair)
+%100
++26
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not talk to an evil person like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+Welcome, how may I help you?\ \
+<Buy/@buy> Bracelet\
+<Sell/@sell> Bracelet\
+<Repair/@repair> Bracelet\
+<Get/@Tmove> out\
+<Cancel/@exit>
+
+[@Tmove]
+#IF
+random 8
+#ACT
+mapmove 3 320 303
+break
+
+#IF
+random 8
+#ACT
+mapmove 3 320 304
+break
+
+#IF
+random 8
+#ACT
+mapmove 3 321 304
+break
+
+#IF
+random 8
+#ACT
+mapmove 3 321 303
+break
+
+#IF
+random 8
+#ACT
+mapmove 3 310 293
+break
+
+#IF
+random 8
+#ACT
+mapmove 3 310 294
+break
+
+#IF
+random 8
+#ACT
+mapmove 3 311 294
+break
+
+#IF
+random 8
+#ACT
+mapmove 3 311 293
+break
+
+#ELSEACT
+goto @Tmove
+
+[@buy]
+Which Bracelet would you like?\ \
+<Back/@main>
+
+[@sell]
+Show me the Bracelet you wish to sell.\ \ \
+<Back/@main>
+
+[@repair]
+Give me the Bracelet you want to repair.\ \ \
+<Back/@main>
+
+[~@repair]
+Your Bracelet seems repaired fine.\\
+<Back/@main>
+
+[goods]
+;Item		Amount		Time
+ThinBracelet		200	1
+SilverBracelet		200	1
+IronBracer		200	1
+HardGlove		200	1
+LeatherGlove 		200	1
+LargeBracelet		200	1
+SteelBracelet		200	1
+MonkBracelet		200	1
+EbonyBracelet		200	1
+MagicBracelet		200	1
+GoldBracelet		200	1
+StrainBracelet		200	1
+BronzeGlove		200	1
+DeathGauntlet		200	1
+SharpBracelet		200	1
+SpellBracelet		200	1
+EvadeBracelet		200	1
+3rdEyeBracelet		200	1
+
