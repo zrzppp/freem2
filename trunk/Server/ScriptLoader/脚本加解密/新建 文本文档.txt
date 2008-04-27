@@ -1,0 +1,59 @@
+看这个贴上边有关于怎么编译这个delphi源代码的http://www.delphibbs.com/delphibbs/dispq.asp?lid=2636928
+
+下面是有关编译的注意,都是引用来的:
+//////////////////////////////////////////////////////////////
+
+来自：解元, 时间：2004-5-31 14:09:34, ID：2637684
+这个游戏的源代码部分使用了DelphiX组件，另外自定义了角色。
+
+来自：林枫, 时间：2004-6-1 16:07:35, ID：2639381
+TDbutton、TDGrid、TDControl、TDWindow、TDWinManager
+找到了，控件在DWinCtr文件中  
+
+
+来自：解元, 时间：2004-6-1 16:03:34, ID：2639398
+DWinCtl单元里就有。这些缺的控件在源代码包里都有的，自己慢慢找吧，另外还需要一个DelphiX，这个在网上到处都是，自己去搜索。
+
+来自：daxian, 时间：2004-6-12 0:06:37, ID：2658911
+Delphi 7 可以编译， TClientSocket 的安装看Delphi的安装目录下的Readme.TXT
+那个不能付值的错误，可以把const 直接改为var。
+
+但是缺少那些.wil文件，哪里有？  
+
+来自：西门, 时间：2004-6-29 15:57:29, ID：2686973
+说起来令人伤心，虽然传奇最初是用delphi开发但后来就转向了C
+
+Delphi开发游戏的重量级控件DelphiX早在2000年就没有更新过了，当然不支持direct8以上版本，而且很多用该控件开发游戏的人都抱怨这个控件速度慢功能差。我最近看了些其他的游戏控件，没想到在Direct上就很少重量级的控件，还有几个不错的direct控件也相继停止了开发。DelphiX反而是用的最多的也是最有名的
+
+传奇2在DelphiX基础上开发，其后续开发可想而知
+
+
+来自：fan_lit_cn, 时间：2004-7-13 17:40:18, ID：2710472
+怎么把DWinCtl中的控件加进去,是不是新建一个包,然后安装!
+但在装包的时候会出现
+[Warning] Unit 'cliUtil' implicitly imported into package 'DWinCtlpg'
+[Warning] Unit 'WIL' implicitly imported into package 'DWinCtlpg'
+[Warning] Unit 'HUtil32' implicitly imported into package 'DWinCtlpg'
+[Warning] Unit 'wmutil' implicitly imported into package 'DWinCtlpg'
+[Error] Never-build package 'DWinCtlpg' requires always-build package 'DelphiX_for6'
+
+我机子里已经装了DelphiX了  
+
+来自：江枫, 时间：2004-9-8 18:44:54, ID：2798848
+to baby2018:
+真的可以用了吗?
+这几个参数需不需要改一下:
+
+来自：baby2018, 时间：2004-9-9 11:19:22, ID：2799589
+to 江枫:
+可以用!
+几个参数需改一下:
+SERVERADDR: string = '你的服务器IP';//'211.174.174.130'; //'194.153.73.54'; //'210.121.143.205';
+   TESTSERVERADDR = '你的服务器IP;//'211.174.174.250';
+   kornetworldaddress = '你的服务器IP';//'211.48.62.250'; //内齿岿靛
+我用过几个私服的服务端都可以进入吧，现在用的是"帝王传奇"修改的服务端，不过要注意IP，还有服务器名称要用ktest，否则进入不了。
+这个源程序修改还没完全成功，主要问题还是grobal2.pas中的协议代码和原版传奇2客户端的协议不一致，共享出来是希望和大家一起研究，而不是收藏！！
+说一下我的方法：
+我是用网上最初发出来的那个"传奇2客户端delphi源程序"中的一个编译好的文件mir2.exe 反汇编，然后再和delphi源程序对照，并且严重参考了解元的cq.rar中的代码来修改的。测试的时候用了几个私服的服务端并且在我的源程序中加入通信解码部分可以看出客户端与服务端的通信情况（程序运行时按热键可以调出这个部分显示在屏幕上)。前前后后花了几个月时间吧。  
+
+///////////////////引用结束//////////////////////////////////
