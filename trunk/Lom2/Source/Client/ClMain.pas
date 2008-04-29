@@ -4,12 +4,11 @@ interface
 
 uses
   svn, nixtime, Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  SocketComp, ExtCtrls, DXDraws, DirectX, DXClass, DrawScrn,
+  ExtCtrls, DXDraws, DirectX, DXClass, DrawScrn,
   IntroScn, PlayScn, MapUnit, WIL, Grobal2, SDK,
   Actor, DIB, StdCtrls, CliUtil, HUtil32, EdCode, CLIParser,
   DWinCtl, ClFunc, magiceff, SoundUtil, DXSounds, clEvent, IniFiles,
-  Spin, ComCtrls, Grids, Mpeg, Menus, Mask, MShare, Share, StrUtils,
-  SocketComp;
+  Spin, ComCtrls, Grids, Mpeg, Menus, Mask, MShare, Share, StrUtils;
 
 const
    BO_FOR_TEST = FALSE;

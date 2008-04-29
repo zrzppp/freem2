@@ -2,7 +2,7 @@ unit grobal2;
 
 interface
 uses
-  svn, Windows, SysUtils, Classes, strUtils, SocketComp;
+  svn, Windows, SysUtils, Classes, strUtils, Jsocket;
 
 const
   {$IFDEF Timeinc}{$I TimeStamp.inc}{$ELSE}BUILDTIME = 0;{$ENDIF}

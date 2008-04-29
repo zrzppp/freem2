@@ -8,7 +8,7 @@ uses
   Dialogs, JSocket, ExtCtrls, Buttons, StdCtrls, IniFiles, M2Share,
   Grobal2, SDK, HUtil32, RunSock, Envir, ItmUnit, Magic, NoticeM, Guild, Event,
   Castle,  FrnEngn, UsrEngn, MudUtil, SyncObjs, Menus, ComCtrls, Grids, MD5Unit,
-  GuildTerritory, WSocket, jpeg, SocketComp;
+  GuildTerritory, WSocket, jpeg;
 
 type
   TFrmMain = class(TForm)
